@@ -23,4 +23,4 @@ MonoBehaviour:
   currentHP: 10
   HitValues: 10
   baseHitValue: 2
-  enemySprite: {fileID: 21300000, guid: 7364c31623115c940957752cc6eeadf2, type: 3}
+  enemySprite: {fileID: 21300000, guid: 4c478ae9516b0fe4c895962852bbdac4, type: 3}

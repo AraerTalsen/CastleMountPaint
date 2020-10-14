@@ -27,7 +27,8 @@ public class CombatSystem : MonoBehaviour
 
     public TextMeshProUGUI[] enemyHP;
     public TextMeshProUGUI[] enemyName;
-    public TextMeshProUGUI[] enemyAction;
+    public Image[] enemyAction;
+    public Sprite[] actions;
     public Slider[] enemyHPSlider;
     public Image[] enemyImg;
 
@@ -211,7 +212,7 @@ public class CombatSystem : MonoBehaviour
         if (state != BattleState.ENEMYTURN) //if the state is not Enemy Turn it will not work
             return;
         Debug.Log("Start Enemy Turn");
-        for(int i = 0; i < enemyParty.Length; i++) enemyAction[i].text = em.ChooseAction(player1, enemyParty[i], enemyParty);
+        for(int i = 0; i < enemyParty.Length; i++) enemyAction[i].sprite = ImageAssign(em.ChooseAction(player1, enemyParty[i], enemyParty));
         PlayerDeadCheck(); //switches to Player Dead Check
     }
 
@@ -266,6 +267,34 @@ public class CombatSystem : MonoBehaviour
 
         }
         //over?
+    }
+
+    private Sprite ImageAssign(string s)
+    {
+        switch(s)
+        {
+            case "Heal":
+            {
+                return actions[0];
+            }
+            case "Attack":
+            {
+                return actions[1];
+            }
+            case "Buff":
+            {
+                return actions[2];
+            }
+            case "Debuff":
+            {
+                return actions[3];
+            }
+            default:
+            {
+                return null;
+            }
+            
+        }
     }
 
     // Update is called once per frame
