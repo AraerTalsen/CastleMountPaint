@@ -9,6 +9,8 @@ public class UpdateHUD : MonoBehaviour
     //Scriptable Objects
     public Player player1; //player scriptable object reference
 
+    public Player summonedMinion; //player summonable reference
+
     public Enemy enemy1; //enemy scriptable object references
     public Enemy enemy2;
     public Enemy enemy3;
@@ -16,6 +18,9 @@ public class UpdateHUD : MonoBehaviour
     //UI Elements
     public TextMeshProUGUI playerHPText; //player UI
     public Slider playerHPSlider;
+
+    public TextMeshProUGUI minionHPText; //player UI
+    public Slider minionHPSlider;
 
     public TextMeshProUGUI enemy1HPText; //enemy UI
     public TextMeshProUGUI enemy2HPText;
