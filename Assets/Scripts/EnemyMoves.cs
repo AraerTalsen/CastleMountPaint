@@ -83,7 +83,8 @@ public class EnemyMoves : MonoBehaviour
 
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].currentHP = Mathf.Clamp(enemies[i].HitValues, 0, enemies[i].maxHP);
+            enemies[i].currentHP += enemies[i].HitValues;
+            enemies[i].currentHP = Mathf.Clamp(enemies[i].currentHP, 0, enemies[i].maxHP);
         }
 
         p.playerTargeted = false; //the player is no longer targeted
