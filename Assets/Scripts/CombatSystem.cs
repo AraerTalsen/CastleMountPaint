@@ -16,22 +16,22 @@ public class CombatSystem : MonoBehaviour
     //SetUpCombat
     public Player player1; //player scriptable object reference
 
-    public Player summonedMinion; //player summonable reference
+    public Player summonedMinion1, summonedMinion2, summonedMinion3; //player summonable reference
 
     private Enemy[] enemyParty; //enemy scriptable object references
     private Enemy[] e;
 
     public Transform playerSpawn; //Spawn point for player character
-    public Transform minionSpawn;
+    public Transform minionSpawn1, minionSpawn2, minionSpawn3;
     public Transform[] pos; //Spawn points for enemies
 
     public TextMeshProUGUI playerNameText; //player UI
     public TextMeshProUGUI playerHPText;
     public Slider playerHPSlider;
 
-    public TextMeshProUGUI minionNameText; //minion UI
-    public TextMeshProUGUI minionHPText;
-    public Slider minionHPSlider;
+    public TextMeshProUGUI minionNameText1, minionNameText2, minionNameText3; //minion UI
+    public TextMeshProUGUI minionHPText1, minionHPText2, minionHPText3;
+    public Slider minionHPSlider1, minionHPSlider2, minionHPSlider3;
 
     public TextMeshProUGUI[] enemyHP;
     public TextMeshProUGUI[] enemyName;
@@ -49,9 +49,11 @@ public class CombatSystem : MonoBehaviour
     //Select Target
     public Button[] enemySelect;
 
-    public GameObject minionHUD;
+    public GameObject minionHUD1, minionHUD2, minionHUD3;
 
-    public bool minionSummoned = false;
+    public bool minionSummoned1 = false;
+    public bool minionSummoned2 = false;
+    public bool minionSummoned3 = false;
 
     public bool enemySelected = false;
 
@@ -59,6 +61,8 @@ public class CombatSystem : MonoBehaviour
     private EnemyMoves em;
 
     public bool playerDeadCheckBool = false;
+
+    public int numMinionsSummoned = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -89,7 +93,9 @@ public class CombatSystem : MonoBehaviour
         playerHPText.text = "HP: " + player1.maxHP;
         playerHPSlider.maxValue = player1.maxHP;
         //sets Minion name
-        minionNameText.text = "Name: " + summonedMinion.playerName;
+        minionNameText1.text = "Name: " + summonedMinion1.playerName;
+        minionNameText2.text = "Name: " + summonedMinion2.playerName;
+        minionNameText3.text = "Name: " + summonedMinion3.playerName;
 
         for (int i = 0; i < e.Length; i++)
         {
@@ -124,7 +130,7 @@ public class CombatSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //this is where we could show player options (Basic Attacks, Special Attacks, Items etc.)
-        if (minionSummoned == true)
+        if (minionSummoned1 == true && minionSummoned2 == true && minionSummoned3 == true)
         {
             summonAllyButton.SetActive(false);
         } else
@@ -281,14 +287,39 @@ public class CombatSystem : MonoBehaviour
 
     void SummonAllies()
     {
-        minionSummoned = true;
-        if (minionSummoned == true)
+        if (numMinionsSummoned == 0)
         {
-            minionHUD.SetActive(true);
-            Instantiate(summonedMinion.playerPrefab, minionSpawn);
+            numMinionsSummoned++;
+            minionSummoned1 = true;
+            if (minionSummoned1 == true)
+            {
+                minionHUD1.SetActive(true);
+                Instantiate(summonedMinion1.playerPrefab, minionSpawn1);
+            }
+            EnemyDeadCheck();
+        } else if (numMinionsSummoned == 1)
+        {
+            numMinionsSummoned++;
+            minionSummoned2 = true;
+            if (minionSummoned2 == true)
+            {
+                minionHUD2.SetActive(true);
+                Instantiate(summonedMinion2.playerPrefab, minionSpawn2);
+            }
+            EnemyDeadCheck();
+        } else if (numMinionsSummoned == 2)
+        {
+            minionSummoned3 = true;
+            if (minionSummoned3 == true)
+            {
+                minionHUD3.SetActive(true);
+                Instantiate(summonedMinion3.playerPrefab, minionSpawn3);
+            }
+            EnemyDeadCheck();
+        } else {
+            EnemyDeadCheck();
         }
-        Debug.Log("summoned one dude hoprefully");
-        EnemyDeadCheck();
+        Debug.Log("Summoned a minion");
     }
 
     //Checks if any enemies are dead after the Player Attacks
@@ -425,8 +456,14 @@ public class CombatSystem : MonoBehaviour
             playerHPText.text = "HP: " + player1.currentHP;
             playerHPSlider.value = player1.currentHP;
 
-            minionHPText.text = "HP: " + summonedMinion.currentHP; //SummonedMinion Text Update
-            minionHPSlider.value = summonedMinion.currentHP;
+            minionHPText1.text = "HP: " + summonedMinion1.currentHP; //SummonedMinion Text Update
+            minionHPSlider1.value = summonedMinion1.currentHP;
+
+            minionHPText2.text = "HP: " + summonedMinion2.currentHP; //SummonedMinion Text Update
+            minionHPSlider2.value = summonedMinion2.currentHP;
+
+            minionHPText3.text = "HP: " + summonedMinion3.currentHP; //SummonedMinion Text Update
+            minionHPSlider3.value = summonedMinion3.currentHP;
 
             enemyHP[i].text = "HP: " + enemyParty[i].currentHP;
             enemyHPSlider[i].value = enemyParty[i].currentHP;
