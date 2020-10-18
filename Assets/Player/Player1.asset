@@ -20,4 +20,4 @@ MonoBehaviour:
   currentHP: 30
   HitValue: 5
   baseHitValue: 5
-  playerTargeted: 1
+  playerTargeted: 0

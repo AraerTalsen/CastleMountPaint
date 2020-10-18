@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PreCombatPlaceHolder.unity
+    guid: c6a7408f4a822c64c8f073a271f99be2
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CombatLoseState.unity
+    guid: 119be4bb9c4b3fd47bc0173b1d8c0e6c
+  - enabled: 1
+    path: Assets/Scenes/CombatWinState.unity
+    guid: 922cabf58cdff36449cd64952f0ef014
   m_configObjects: {}

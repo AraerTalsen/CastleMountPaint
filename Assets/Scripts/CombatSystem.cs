@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public enum BattleState {START, PLAYERTURN, ENEMYTURN, WON, LOST} //sets up state machine for combat
 
@@ -56,6 +57,8 @@ public class CombatSystem : MonoBehaviour
 
     private int livingEnemies;
     private EnemyMoves em;
+
+    public bool playerDeadCheckBool = false;
 
     // Start is called before the first frame update
     void Start()
@@ -232,7 +235,6 @@ public class CombatSystem : MonoBehaviour
     IEnumerator SketchEnemies()
     {
         yield return new WaitForSeconds(2f);
-        //Escape Combat
         HealAllies(); //sketch the enemies
     }
 
@@ -340,7 +342,7 @@ public class CombatSystem : MonoBehaviour
         if (state != BattleState.ENEMYTURN) //if it is not the enemy turn it will not check
             return;
         Debug.Log("Check if Player is Dead");
-        if (player1.currentHP <= 0) //if the player's health calue is less than or equal to 0
+        if (player1.currentHP <= 0) //if the player's health value is less than or equal to 0
         {
             state = BattleState.LOST; //switch state to Lost
             EndCombat(); //Start End Combat function
@@ -358,12 +360,12 @@ public class CombatSystem : MonoBehaviour
         if(state == BattleState.WON) //if the state is Won
         {
             Debug.Log("You did it!");
-            //change scene
+            SceneManager.LoadScene(3);
         }
         if (state == BattleState.LOST) //if the state is Lost
         {
             Debug.Log("You died");
-            //change scene
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -428,6 +430,15 @@ public class CombatSystem : MonoBehaviour
 
             enemyHP[i].text = "HP: " + enemyParty[i].currentHP;
             enemyHPSlider[i].value = enemyParty[i].currentHP;
+        }
+
+        //For some reason, this needs to be here. 
+        //In the player dead check function, it skips the first check. If you play through the next round, the player will die at the start of the player dead check. 
+        //This is most likely temp fix, but for now it solves the problem
+        if (player1.currentHP <= 0) //if the player's health value is less than or equal to 0
+        {
+            state = BattleState.LOST; //switch state to Lost
+            EndCombat(); //Start End Combat function
         }
     }
 }
