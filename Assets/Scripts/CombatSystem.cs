@@ -19,7 +19,6 @@ public class CombatSystem : MonoBehaviour
     public Player summonedMinion1, summonedMinion2, summonedMinion3; //player summonable reference
 
     private Enemy[] enemyParty; //enemy scriptable object references
-    private Enemy[] e;
 
     public Transform playerSpawn; //Spawn point for player character
     public Transform minionSpawn1, minionSpawn2, minionSpawn3;
@@ -67,8 +66,7 @@ public class CombatSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        e = BattleHandler.EnemyParty();
-        enemyParty = new Enemy[e.Length];
+        enemyParty = BattleHandler.EnemyParty();
         livingEnemies = enemyParty.Length;
 
         em = FindObjectOfType<EnemyMoves>();
@@ -97,14 +95,17 @@ public class CombatSystem : MonoBehaviour
         minionNameText2.text = "Name: " + summonedMinion2.playerName;
         minionNameText3.text = "Name: " + summonedMinion3.playerName;
 
-        for (int i = 0; i < e.Length; i++)
+        for (int i = 0; i < enemyParty.Length; i++)
         {
-            print(e[i].enemyName);
-            enemyParty[i] = Instantiate(e[i], pos[i]);
+            print(enemyParty[i].enemyName);
+            enemyParty[i] = Instantiate(enemyParty[i], pos[i]);
             enemyParty[i].currentHP = enemyParty[i].maxHP;
             enemyParty[i].HitValues = enemyParty[i].baseHitValue;
             enemyParty[i].enemyTargeted = false;
             enemyParty[i].isDead = false;
+            enemyParty[i].personality = EnemyPersonality.RandomAssignPersonality();
+            enemyParty[i].pWeightRange = EnemyPersonality.AssignPersonalityWeights(enemyParty[i].personality);
+            print(enemyParty[i].personality);
 
             enemyHP[i].enabled = true;
             enemyHP[i].text = "HP: " + enemyParty[i].maxHP;
@@ -261,10 +262,11 @@ public class CombatSystem : MonoBehaviour
             {
                 Debug.Log("Enemy " + i + " has been Damaged");
 
-                enemyParty[i].currentHP = Mathf.Clamp(player1.HitValue, 0, enemyParty[i].maxHP); //apply the player's hit value
+                enemyParty[i].currentHP -= player1.HitValue; //apply the player's hit value
+                Mathf.Clamp(enemyParty[i].currentHP, 0, enemyParty[i].maxHP);
                 enemyParty[i].enemyTargeted = false; //Target Toggle switched to false
             }
-            if (enemyParty[i].currentHP <= 0) //if the enemy's health is less than or equal to 0
+            if (!enemyParty[i].isDead && enemyParty[i].currentHP <= 0) //if the enemy's health is less than or equal to 0
             {
                 //Kill enemy
                 Debug.Log("Enemy " + i + " is Dead");
@@ -325,7 +327,7 @@ public class CombatSystem : MonoBehaviour
     //Checks if any enemies are dead after the Player Attacks
     void EnemyDeadCheck()
     {
-        Debug.Log("Check if Enemy is dead");
+        /*Debug.Log("Check if Enemy is dead");
         if (state != BattleState.PLAYERTURN) //if the state is not Player Turn it will not check
             return;
 
@@ -338,7 +340,7 @@ public class CombatSystem : MonoBehaviour
                 enemyParty[i].isDead = true; //isDead toogle on Enemy Object is toggled on
                 livingEnemies--;
             }
-        }
+        }*/
 
         if(livingEnemies <= 0) //if all enemies are dead
         {
@@ -363,7 +365,8 @@ public class CombatSystem : MonoBehaviour
         if (state != BattleState.ENEMYTURN) //if the state is not Enemy Turn it will not work
             return;
         Debug.Log("Start Enemy Turn");
-        for(int i = 0; i < enemyParty.Length; i++) enemyAction[i].sprite = ImageAssign(em.ChooseAction(player1, enemyParty[i], enemyParty));
+        for(int i = 0; i < enemyParty.Length; i++)
+            if(!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(player1, enemyParty[i], enemyParty));
         PlayerDeadCheck(); //switches to Player Dead Check
     }
 
@@ -451,20 +454,20 @@ public class CombatSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < enemyParty.Length; i++)
+        playerHPText.text = "HP: " + player1.currentHP;
+        playerHPSlider.value = player1.currentHP;
+
+        minionHPText1.text = "HP: " + summonedMinion1.currentHP; //SummonedMinion Text Update
+        minionHPSlider1.value = summonedMinion1.currentHP;
+
+        minionHPText2.text = "HP: " + summonedMinion2.currentHP; //SummonedMinion Text Update
+        minionHPSlider2.value = summonedMinion2.currentHP;
+
+        minionHPText3.text = "HP: " + summonedMinion3.currentHP; //SummonedMinion Text Update
+        minionHPSlider3.value = summonedMinion3.currentHP;
+
+        for (int i = 0; i < enemyParty.Length; i++)
         {
-            playerHPText.text = "HP: " + player1.currentHP;
-            playerHPSlider.value = player1.currentHP;
-
-            minionHPText1.text = "HP: " + summonedMinion1.currentHP; //SummonedMinion Text Update
-            minionHPSlider1.value = summonedMinion1.currentHP;
-
-            minionHPText2.text = "HP: " + summonedMinion2.currentHP; //SummonedMinion Text Update
-            minionHPSlider2.value = summonedMinion2.currentHP;
-
-            minionHPText3.text = "HP: " + summonedMinion3.currentHP; //SummonedMinion Text Update
-            minionHPSlider3.value = summonedMinion3.currentHP;
-
             enemyHP[i].text = "HP: " + enemyParty[i].currentHP;
             enemyHPSlider[i].value = enemyParty[i].currentHP;
         }

@@ -22,4 +22,7 @@ public class Enemy : ScriptableObject
     public int baseHitValue;
 
     public Sprite enemySprite;
+
+    public string personality;
+    public int[] pWeightRange;
 }

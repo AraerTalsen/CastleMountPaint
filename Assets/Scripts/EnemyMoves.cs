@@ -9,27 +9,27 @@ public class EnemyMoves : MonoBehaviour
     public string ChooseAction(Player p, Enemy e, Enemy[] enemies)
     {
         //random choose an attack state for the enemy to perform
-        int enemyAttackPhase = Random.Range(0, 3);
+        int enemyAttackPhase = Random.Range(0, 100);
 
-        if (enemyAttackPhase == 0)
-        {
-            StartCoroutine(HealFellowEnemies(p, enemies)); //Start Heal Allies
-            return "Heal";
-        }
-        else if (enemyAttackPhase == 1)
-        {
-            StartCoroutine(DealDamage(p, e)); //Start Take Damage
-            return "Attack";
-        }
-        else if (enemyAttackPhase == 2)
+        if (enemyAttackPhase <= e.pWeightRange[0])
         {
             StartCoroutine(BuffFellowEnemies(p, enemies)); //Start Buff Allies
             return "Buff";
         }
-        else if (enemyAttackPhase == 3)
+        else if (enemyAttackPhase > e.pWeightRange[0] && enemyAttackPhase <= e.pWeightRange[1])
+        {
+            StartCoroutine(HealFellowEnemies(p, enemies)); //Start Heal Allies
+            return "Heal";
+        }
+        else if (enemyAttackPhase > e.pWeightRange[1] && enemyAttackPhase <= e.pWeightRange[2])
         {
             StartCoroutine(DebuffPlayer(p)); //Start Debuff Player
             return "Debuff";
+        }
+        else if (enemyAttackPhase > e.pWeightRange[2])
+        {
+            StartCoroutine(DealDamage(p, e)); //Start Take Damage
+            return "Attack";
         }
         else
         {
@@ -58,7 +58,7 @@ public class EnemyMoves : MonoBehaviour
         Debug.Log("Increase enemy ally damage");
 
         //increase the amount of damage that the enemies are dealing 
-        for (int i = 0; i < enemies.Length; i++) enemies[i].HitValues++;
+        for (int i = 0; i < enemies.Length; i++) if(!enemies[i].isDead) enemies[i].HitValues++;
         p.playerTargeted = false; //the player is no longer targeted
     }
 
@@ -83,8 +83,11 @@ public class EnemyMoves : MonoBehaviour
 
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].currentHP += enemies[i].HitValues;
-            enemies[i].currentHP = Mathf.Clamp(enemies[i].currentHP, 0, enemies[i].maxHP);
+            if(!enemies[i].isDead)
+            {
+                enemies[i].currentHP += enemies[i].HitValues;
+                enemies[i].currentHP = Mathf.Clamp(enemies[i].currentHP, 0, enemies[i].maxHP);
+            }
         }
 
         p.playerTargeted = false; //the player is no longer targeted
