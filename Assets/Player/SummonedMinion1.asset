@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4e04f5988404290b3d3536acdba4e7, type: 3}
   m_Name: SummonedMinion1
   m_EditorClassIdentifier: 
-  playerName: Steve
-  Description: Minion
-  playerPrefab: {fileID: 398724924085973504, guid: a7ddde629e4834209b9f93c93385acf4,
-    type: 3}
   maxHP: 5
   currentHP: 5
   HitValue: 2
+  targeted: 0
+  eName: Steve
+  Description: Minion
+  playerPrefab: {fileID: 398724924085973504, guid: a7ddde629e4834209b9f93c93385acf4,
+    type: 3}
   baseHitValue: 2
-  playerTargeted: 0

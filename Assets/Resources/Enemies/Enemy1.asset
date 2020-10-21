@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb9a6233e68846b4b933b3447adf8ad, type: 3}
   m_Name: Enemy1
   m_EditorClassIdentifier: 
-  enemyName: Sean
+  maxHP: 10
+  currentHP: 10
+  HitValue: 3
+  targeted: 0
+  eName: Sean
   Description: Fuck
   enemyToggle: 1
-  enemyTargeted: 0
   isDead: 0
   enemyType: {fileID: 398724924085973504, guid: a7ddde629e4834209b9f93c93385acf4,
     type: 3}
-  maxHP: 10
-  currentHP: 10
-  HitValues: 10
   baseHitValue: 2
   enemySprite: {fileID: 21300000, guid: 4c478ae9516b0fe4c895962852bbdac4, type: 3}
+  personality: Angry
+  pWeightRange: 510000005c0000004500000063000000
