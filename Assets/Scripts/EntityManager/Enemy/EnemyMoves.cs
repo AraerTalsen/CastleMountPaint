@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoves : MonoBehaviour
+public class EnemyMoves : EntityBehaviours
 {
     //checks if it is the enemy's turn
     //this could later be used to decide what attacks the enemy is doing
@@ -18,7 +18,7 @@ public class EnemyMoves : MonoBehaviour
         }
         else if (enemyAttackPhase > e.pWeightRange[0] && enemyAttackPhase <= e.pWeightRange[1])
         {
-            StartCoroutine(HealFellowEnemies(t, enemies)); //Start Heal Allies
+            HealAllies(t, e); //Start Heal Allies
             return "Heal";
         }
         else if (enemyAttackPhase > e.pWeightRange[1] && enemyAttackPhase <= e.pWeightRange[2])
@@ -28,18 +28,18 @@ public class EnemyMoves : MonoBehaviour
         }
         else if (enemyAttackPhase > e.pWeightRange[2])
         {
-            StartCoroutine(DealDamage(t, e)); //Start Take Damage
+            DealDamage(t, e); //Start Take Damage
             return "Attack";
         }
         else
         {
-            StartCoroutine(DealDamage(t, e)); //Start Take Damage
+            DealDamage(t, e); //Start Take Damage
             return "Attack";
         }
     }
 
     //Applies damage onto the player
-    IEnumerator DealDamage(Entity t, Enemy e)
+    /*IEnumerator DealDamage(Entity t, Enemy e)
     {
         if (t.targeted == true) //if the player is targeted
         {
@@ -49,7 +49,7 @@ public class EnemyMoves : MonoBehaviour
             t.currentHP -= e.HitValue; //apply enemy's hit value to the player
             t.targeted = false; //the player is no longer targeted
         }
-    }
+    }*/
 
     //Applies damage onto the player
     IEnumerator BuffFellowEnemies(Entity t, Enemy[]enemies)
@@ -70,7 +70,7 @@ public class EnemyMoves : MonoBehaviour
         if (t.targeted == true) //if the player is targeted
         {
             yield return new WaitForSeconds(2f);
-            Debug.Log("Damage to Player");
+            print("Debuff player");
 
             t.HitValue = t.HitValue--; //apply enemy's hit value to the player
             t.targeted = false; //the player is no longer targeted
@@ -78,7 +78,7 @@ public class EnemyMoves : MonoBehaviour
     }
 
     //Enemies heal one another using this
-    IEnumerator HealFellowEnemies(Entity t, Enemy[]enemies)
+    /*IEnumerator HealFellowEnemies(Entity t, Enemy[]enemies)
     {
         yield return new WaitForSeconds(2f);
         Debug.Log("Healing for other enemies");
@@ -93,5 +93,5 @@ public class EnemyMoves : MonoBehaviour
         }
 
         t.targeted = false; //the player is no longer targeted
-    }
+    }*/
 }

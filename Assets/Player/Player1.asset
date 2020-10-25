@@ -17,7 +17,9 @@ MonoBehaviour:
   HitValue: 5
   targeted: 0
   eName: Casey
+  isDead: 0
   Description: is cool
   playerPrefab: {fileID: 5394900565442393736, guid: c9041df8c1db04f41896cb762819526a,
     type: 3}
   baseHitValue: 5
+  maxMinions: 3

@@ -14,6 +14,7 @@ public class Player : Entity
     //public int currentHP;
     //public int HitValue;
     public int baseHitValue;
+    public int maxMinions = 3;
 
     //public bool playerTargeted = false;
 }

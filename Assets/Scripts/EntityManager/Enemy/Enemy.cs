@@ -12,7 +12,7 @@ public class Enemy : Entity
 
     public bool enemyToggle = true;
     //public bool enemyTargeted = false;
-    public bool isDead = false;
+    //public bool isDead = false;
 
     public GameObject enemyType;
 
