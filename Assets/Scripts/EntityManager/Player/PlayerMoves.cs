@@ -17,7 +17,7 @@ public class PlayerMoves : EntityBehaviours
     private PlayerButtons pb;
     private MinionBehaviours mb;
     private MoveChoice selectedMove;
-
+        
     public delegate void MoveChoice(Entity target, Entity user);
 
     public void Start()
@@ -53,7 +53,9 @@ public class PlayerMoves : EntityBehaviours
 
         selectedMove(target, user);
 
-        cs.EnemyDeadCheck();
+        cs.MinionTurn();
+
+        //cs.EnemyDeadCheck();
     }
 
     //Used to delay the Player's Attack
@@ -137,7 +139,7 @@ public class PlayerMoves : EntityBehaviours
         if(mb.numMinions < p.maxMinions)
         {
             mb.NewMinion();
-            a[mb.numMinions] = mb.minions[mb.numMinions];
+            a[mb.numMinions] = mb.minions[mb.numMinions -1];
         }
 
         Debug.Log("Summoned a minion");

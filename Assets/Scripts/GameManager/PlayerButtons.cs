@@ -48,7 +48,7 @@ public class PlayerButtons : MonoBehaviour
 
         if (targetedParty != null) SelectTarget(false, wasEnemyParty);
         SelectTarget(true, num % 2 == 0);
-        //SetButtonsActive(false);
+        SetButtonsActive(false);
     }
 
     //Set accessibility of action buttons

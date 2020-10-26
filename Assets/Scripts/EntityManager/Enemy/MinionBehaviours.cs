@@ -6,6 +6,8 @@ using UnityEngine;
 public class MinionBehaviours : MonoBehaviour
 {
     public int numMinions = 0;
+    //This is to check to see if minions are summoned to start new minion state, needs its own variable to send
+    public static int numMinionsSendable = 0;
     public Image[] minionHUDS;
     public GameObject minionBody;
     public Vector2[] spawnPoints;
@@ -24,5 +26,7 @@ public class MinionBehaviours : MonoBehaviour
         minionBodies[numMinions].GetComponent<SpriteRenderer>().sprite = minions[numMinions].enemySprite;
         minionBodies[numMinions].transform.localScale = new Vector3(-1, 1, 1);
         numMinions++;
+        numMinionsSendable = numMinions;
     }
+    
 }

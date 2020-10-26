@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum BattleState {START, PLAYERTURN, ENEMYTURN, WON, LOST} //sets up state machine for combat
+public enum BattleState {START, PLAYERTURN, ENEMYTURN, MINIONTURN, WON, LOST} //sets up state machine for combat
 
 public class CombatSystem : MonoBehaviour
 {
@@ -48,6 +48,9 @@ public class CombatSystem : MonoBehaviour
 
     public int numMinionsSummoned = 0;
 
+    public GameObject minionAttackButton1, minionAttackButton2, minionAttackButton3;
+    public GameObject minionHealButton1, minionHealButton2, minionHealButton3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +83,7 @@ public class CombatSystem : MonoBehaviour
         minionNameText1.text = "Name: " + summonedMinion1.eName;
         minionNameText2.text = "Name: " + summonedMinion2.eName;
         minionNameText3.text = "Name: " + summonedMinion3.eName;
+        MinionBehaviours.numMinionsSendable = 0;
 
         for (int i = 0; i < enemyParty.Length; i++)
         {
@@ -102,13 +106,41 @@ public class CombatSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        state = BattleState.PLAYERTURN; //changes the state to Player's Turn
+        
         PlayerTurn(); //switches to Player's Decision
     }
 
     private void PlayerTurn()
     {
+        state = BattleState.PLAYERTURN; //changes the state to Player's Turn
         pm.PlayerDecision(player1, enemyParty);
+        Debug.Log("player turn started");
+    }
+
+    //Janky and bad, but I'm honestly gonna pull my hair out at this point so just gonna deal with it
+    //At the moment, minions take up the turn of the player, using their attack. This is bad and not what we want
+    public void MinionTurn()
+    {
+        Debug.Log("MinionTurnStarted");
+        if (MinionBehaviours.numMinionsSendable > 0)
+        {
+            state = BattleState.MINIONTURN; //changes the state to Minion's Turn
+        } else {
+            EnemyDeadCheck();
+        }
+
+    }
+
+    public void MinionAttack()
+    {
+        enemyParty[Random.Range(0, 2)].currentHP = enemyParty[Random.Range(0, 2)].currentHP - 1;
+        EnemyDeadCheck();
+    }
+
+    public void MinionHeal()
+    {
+        player1.currentHP = player1.currentHP + 1;
+        EnemyDeadCheck();
     }
 
     //Checks if any enemies are dead after the Player Attacks
@@ -155,7 +187,8 @@ public class CombatSystem : MonoBehaviour
         }
         else
         {
-            pm.PlayerDecision(player1, enemyParty); //if the player is not dead start the cycle over(Player Turn)
+            //pm.PlayerDecision(player1, enemyParty); //if the player is not dead start the cycle over(Player Turn)
+            PlayerTurn();
         }
     }
 
@@ -231,6 +264,26 @@ public class CombatSystem : MonoBehaviour
         {
             state = BattleState.LOST; //switch state to Lost
             EndCombat(); //Start End Combat function
+        }
+
+        //enables and disables the minion attack and heal buttons so that it is easy to see what turn it is
+        if (state == BattleState.MINIONTURN)
+        {
+            minionAttackButton1.SetActive(true);
+            minionAttackButton2.SetActive(true);
+            minionAttackButton3.SetActive(true);
+            minionHealButton1.SetActive(true);
+            minionHealButton2.SetActive(true);
+            minionHealButton3.SetActive(true);
+        }
+        else
+        {
+            minionAttackButton1.SetActive(false);
+            minionAttackButton2.SetActive(false);
+            minionAttackButton3.SetActive(false);
+            minionHealButton1.SetActive(false);
+            minionHealButton2.SetActive(false);
+            minionHealButton3.SetActive(false);
         }
     }
 }
