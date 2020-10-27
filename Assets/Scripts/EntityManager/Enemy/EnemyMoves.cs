@@ -10,7 +10,7 @@ public class EnemyMoves : EntityBehaviours
     {
         //random choose an attack state for the enemy to perform
         int enemyAttackPhase = Random.Range(0, 100);
-
+        /*
         if (enemyAttackPhase <= e.pWeightRange[0])
         {
             StartCoroutine(BuffFellowEnemies(t, enemies)); //Start Buff Allies
@@ -27,6 +27,34 @@ public class EnemyMoves : EntityBehaviours
             return "Debuff";
         }
         else if (enemyAttackPhase > e.pWeightRange[2])
+        {
+            DealDamage(t, e); //Start Take Damage
+            return "Attack";
+        }
+        else
+        {
+            DealDamage(t, e); //Start Take Damage
+            return "Attack";
+        }
+        */
+
+        //This is a temp workaround until we get the personalites sorted. At the moment, they super heavily favor buffing themselves, this should smooth that out for playtest
+        if (enemyAttackPhase <= 24)
+        {
+            StartCoroutine(BuffFellowEnemies(t, enemies)); //Start Buff Allies
+            return "Buff";
+        }
+        else if (enemyAttackPhase > 24 && enemyAttackPhase <= 49)
+        {
+            HealAllies(t, e); //Start Heal Allies
+            return "Heal";
+        }
+        else if (enemyAttackPhase > 49 && enemyAttackPhase <= 74)
+        {
+            StartCoroutine(DebuffPlayer(t)); //Start Debuff Player
+            return "Debuff";
+        }
+        else if (enemyAttackPhase > 74)
         {
             DealDamage(t, e); //Start Take Damage
             return "Attack";

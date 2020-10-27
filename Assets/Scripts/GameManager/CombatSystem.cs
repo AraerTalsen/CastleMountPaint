@@ -51,6 +51,8 @@ public class CombatSystem : MonoBehaviour
     public GameObject minionAttackButton1, minionAttackButton2, minionAttackButton3;
     public GameObject minionHealButton1, minionHealButton2, minionHealButton3;
 
+    public static bool enemy1Dead = false, enemy2Dead = false, enemy3Dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +64,9 @@ public class CombatSystem : MonoBehaviour
 
         state = BattleState.START; //sets the state to START
         StartCoroutine(SetUpCombat()); //calls SetUpCombat Coroutine
+        enemy1Dead = false;
+        enemy2Dead = false;
+        enemy3Dead = false;
     }
 
     IEnumerator SetUpCombat()
@@ -106,19 +111,24 @@ public class CombatSystem : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        
         PlayerTurn(); //switches to Player's Decision
     }
 
     private void PlayerTurn()
     {
         state = BattleState.PLAYERTURN; //changes the state to Player's Turn
+
+        if (enemy1Dead && enemy2Dead && enemy3Dead)
+        {
+            EnemyDeadCheck();
+        }
+
         pm.PlayerDecision(player1, enemyParty);
         Debug.Log("player turn started");
+
+
     }
 
-    //Janky and bad, but I'm honestly gonna pull my hair out at this point so just gonna deal with it
-    //At the moment, minions take up the turn of the player, using their attack. This is bad and not what we want
     public void MinionTurn()
     {
         Debug.Log("MinionTurnStarted");
@@ -146,7 +156,8 @@ public class CombatSystem : MonoBehaviour
     //Checks if any enemies are dead after the Player Attacks
     public void EnemyDeadCheck()
     {
-        if(livingEnemies <= 0) //if all enemies are dead
+        Debug.Log("EnemyDeadCheck Function Running");
+        if (livingEnemies <= 0) //if all enemies are dead
         {
             //Battle Won
             Debug.Log("Battle Won");
@@ -158,7 +169,7 @@ public class CombatSystem : MonoBehaviour
             //Enemy Turn
             player1.targeted = true; //the player is now targeted
             state = BattleState.ENEMYTURN; //the state is now the Enemy Turn
-            EnemyTurn(); //switch to the Enemy Turn Function
+            Invoke("EnemyTurn", 1); //switch to the Enemy Turn Function with a small delay
         }
     }
 
@@ -188,7 +199,7 @@ public class CombatSystem : MonoBehaviour
         else
         {
             //pm.PlayerDecision(player1, enemyParty); //if the player is not dead start the cycle over(Player Turn)
-            PlayerTurn();
+            Invoke("PlayerTurn", 1);
         }
     }
 
@@ -285,5 +296,28 @@ public class CombatSystem : MonoBehaviour
             minionHealButton2.SetActive(false);
             minionHealButton3.SetActive(false);
         }
+
+        //janky garbage but I dont know what is causing them to not die, this is temp fix i think
+        if (enemyParty[0].currentHP <= 0)
+        {
+            enemyParty[0].isDead = true;
+            enemy1Dead = true;
+        }
+        if (enemyParty[1].currentHP <= 0)
+        {
+            enemyParty[1].isDead = true;
+            enemy2Dead = true;
+        }
+        if (enemyParty[2].currentHP <= 0)
+        {
+            enemyParty[2].isDead = true;
+            enemy3Dead = true;
+        }
+
+        if (enemy1Dead && enemy2Dead && enemy3Dead)
+        {
+            livingEnemies = 0;
+        }
+
     }
 }

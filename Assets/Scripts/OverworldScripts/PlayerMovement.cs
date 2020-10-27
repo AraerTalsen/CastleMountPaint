@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D body;
 
+    public bool facingRight;
+
     //horizontal and vertical floats for player movement
     float hor;
     float vert;
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        facingRight = true;
     }
 
     //Takes the wasd and arrow keys for movement in 8 directions
@@ -27,6 +30,14 @@ public class PlayerMovement : MonoBehaviour
         // Gives a value between -1 and 1
         hor = Input.GetAxisRaw("Horizontal"); // -1 is left
         vert = Input.GetAxisRaw("Vertical"); // -1 is down
+
+        if (hor > 0 && !facingRight)
+        {
+            changeDirectionFacing();
+        } else if (hor < 0 && facingRight)
+        {
+            changeDirectionFacing();
+        }
     }
 
     //every frame, move the dude on screen
@@ -43,11 +54,22 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(hor * playerSpeed, vert * playerSpeed);
     }
 
+    void changeDirectionFacing()
+    {
+        facingRight = !facingRight;
+
+        var imageDirection = transform.localScale;
+
+        imageDirection.x *= -1;
+
+        transform.localScale = imageDirection;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "enemy1")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
