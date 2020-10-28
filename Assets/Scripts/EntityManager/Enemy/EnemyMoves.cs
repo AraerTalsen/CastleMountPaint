@@ -4,6 +4,28 @@ using UnityEngine;
 
 public class EnemyMoves : EntityBehaviours
 {
+    public MoveChoice[] moves;
+    private MoveChoice selectedMove;
+
+    public delegate void MoveChoice(Entity target, Entity user);
+
+    private void Start()
+    {
+        moves = new MoveChoice[] { DealDamage, HealAllies, BuffAlly, DebuffOpponent };
+    }
+
+    private void Directory(int index)
+    {
+        selectedMove = moves[index];
+    }
+
+    public void UseMove(int index, Entity target, Entity user)
+    {
+        Directory(index);
+
+        selectedMove(target, user);
+    }
+
     //checks if it is the enemy's turn
     //this could later be used to decide what attacks the enemy is doing
     public string ChooseAction(Entity t, Enemy e, Enemy[] enemies)
@@ -41,7 +63,7 @@ public class EnemyMoves : EntityBehaviours
         //This is a temp workaround until we get the personalites sorted. At the moment, they super heavily favor buffing themselves, this should smooth that out for playtest
         if (enemyAttackPhase <= 24)
         {
-            StartCoroutine(BuffFellowEnemies(t, enemies)); //Start Buff Allies
+            BuffAlly(t, e); //Start Buff Allies
             return "Buff";
         }
         else if (enemyAttackPhase > 24 && enemyAttackPhase <= 49)
@@ -51,7 +73,7 @@ public class EnemyMoves : EntityBehaviours
         }
         else if (enemyAttackPhase > 49 && enemyAttackPhase <= 74)
         {
-            StartCoroutine(DebuffPlayer(t)); //Start Debuff Player
+            DebuffOpponent(t, e); //Start Debuff Player
             return "Debuff";
         }
         else if (enemyAttackPhase > 74)
@@ -80,28 +102,25 @@ public class EnemyMoves : EntityBehaviours
     }*/
 
     //Applies damage onto the player
-    IEnumerator BuffFellowEnemies(Entity t, Enemy[]enemies)
+    private void BuffAlly(Entity target, Entity user)
     {
-        yield return new WaitForSeconds(2f);
         //Debug.Log("Increase enemy ally damage");
         //increase the amount of damage that the enemies are dealing 
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (!enemies[i].isDead) enemies[i].HitValue++;
-        }
-        t.targeted = false; //the player is no longer targeted
+
+        if (!target.isDead) target.HitValue++;
+
+        target.targeted = false; //the player is no longer targeted
     }
 
     //Applies debuff to the player
-    IEnumerator DebuffPlayer(Entity t)
+    private void DebuffOpponent(Entity target, Entity user)
     {
-        if (t.targeted == true) //if the player is targeted
+        if (target.targeted == true) //if the player is targeted
         {
-            yield return new WaitForSeconds(2f);
             print("Debuff player");
 
-            t.HitValue = t.HitValue--; //apply enemy's hit value to the player
-            t.targeted = false; //the player is no longer targeted
+            target.HitValue = target.HitValue--; //apply enemy's hit value to the player
+            target.targeted = false; //the player is no longer targeted
         }
     }
 

@@ -17,7 +17,7 @@ public class CombatSystem : MonoBehaviour
 
     public Player summonedMinion1, summonedMinion2, summonedMinion3; //player summonable reference
 
-    private Enemy[] enemyParty; //enemy scriptable object references
+    public static Enemy[] enemyParty; //enemy scriptable object references
 
     public Transform playerSpawn; //Spawn point for player character
     public Transform minionSpawn1, minionSpawn2, minionSpawn3;
@@ -47,9 +47,6 @@ public class CombatSystem : MonoBehaviour
     public bool playerDeadCheckBool = false;
 
     public int numMinionsSummoned = 0;
-
-    public GameObject minionAttackButton1, minionAttackButton2, minionAttackButton3;
-    public GameObject minionHealButton1, minionHealButton2, minionHealButton3;
 
     public static bool enemy1Dead = false, enemy2Dead = false, enemy3Dead = false;
 
@@ -88,7 +85,6 @@ public class CombatSystem : MonoBehaviour
         minionNameText1.text = "Name: " + summonedMinion1.eName;
         minionNameText2.text = "Name: " + summonedMinion2.eName;
         minionNameText3.text = "Name: " + summonedMinion3.eName;
-        MinionBehaviours.numMinionsSendable = 0;
 
         for (int i = 0; i < enemyParty.Length; i++)
         {
@@ -124,38 +120,15 @@ public class CombatSystem : MonoBehaviour
         }
 
         pm.PlayerDecision(player1, enemyParty);
-        Debug.Log("player turn started");
-
-
-    }
-
-    public void MinionTurn()
-    {
-        Debug.Log("MinionTurnStarted");
-        if (MinionBehaviours.numMinionsSendable > 0)
-        {
-            state = BattleState.MINIONTURN; //changes the state to Minion's Turn
-        } else {
-            EnemyDeadCheck();
-        }
-
-    }
-
-    public void MinionAttack()
-    {
-        enemyParty[Random.Range(0, 2)].currentHP = enemyParty[Random.Range(0, 2)].currentHP - 1;
-        EnemyDeadCheck();
-    }
-
-    public void MinionHeal()
-    {
-        player1.currentHP = player1.currentHP + 1;
-        EnemyDeadCheck();
+        //Debug.Log("player turn started");
     }
 
     //Checks if any enemies are dead after the Player Attacks
     public void EnemyDeadCheck()
     {
+        for (int i = 0; i < enemyParty.Length; i++)
+            if (enemyParty[i].currentHP <= 0) enemyParty[i].isDead = true;
+
         Debug.Log("EnemyDeadCheck Function Running");
         if (livingEnemies <= 0) //if all enemies are dead
         {
@@ -164,21 +137,14 @@ public class CombatSystem : MonoBehaviour
             state = BattleState.WON; //switch the state to Won
             EndCombat(); //start End Combat Function
         }
-        else
-        {
-            //Enemy Turn
-            player1.targeted = true; //the player is now targeted
-            state = BattleState.ENEMYTURN; //the state is now the Enemy Turn
-            Invoke("EnemyTurn", 1); //switch to the Enemy Turn Function with a small delay
-        }
     }
 
     //checks if it is the enemy's turn
     //this could later be used to decide what attacks the enemy is doing
-    void EnemyTurn()
+    public void EnemyTurn()
     {
-        if (state != BattleState.ENEMYTURN) //if the state is not Enemy Turn it will not work
-            return;
+        player1.targeted = true;
+
         //Debug.Log("Start Enemy Turn");
         for(int i = 0; i < enemyParty.Length; i++)
             if(!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(player1, enemyParty[i], enemyParty));
@@ -188,8 +154,6 @@ public class CombatSystem : MonoBehaviour
     //Checks to see if the Player is dead
     void PlayerDeadCheck()
     {
-        if (state != BattleState.ENEMYTURN) //if it is not the enemy turn it will not check
-            return;
         //Debug.Log("Check if Player is Dead");
         if (player1.currentHP <= 0) //if the player's health value is less than or equal to 0
         {
@@ -276,48 +240,5 @@ public class CombatSystem : MonoBehaviour
             state = BattleState.LOST; //switch state to Lost
             EndCombat(); //Start End Combat function
         }
-
-        //enables and disables the minion attack and heal buttons so that it is easy to see what turn it is
-        if (state == BattleState.MINIONTURN)
-        {
-            minionAttackButton1.SetActive(true);
-            minionAttackButton2.SetActive(true);
-            minionAttackButton3.SetActive(true);
-            minionHealButton1.SetActive(true);
-            minionHealButton2.SetActive(true);
-            minionHealButton3.SetActive(true);
-        }
-        else
-        {
-            minionAttackButton1.SetActive(false);
-            minionAttackButton2.SetActive(false);
-            minionAttackButton3.SetActive(false);
-            minionHealButton1.SetActive(false);
-            minionHealButton2.SetActive(false);
-            minionHealButton3.SetActive(false);
-        }
-
-        //janky garbage but I dont know what is causing them to not die, this is temp fix i think
-        if (enemyParty[0].currentHP <= 0)
-        {
-            enemyParty[0].isDead = true;
-            enemy1Dead = true;
-        }
-        if (enemyParty[1].currentHP <= 0)
-        {
-            enemyParty[1].isDead = true;
-            enemy2Dead = true;
-        }
-        if (enemyParty[2].currentHP <= 0)
-        {
-            enemyParty[2].isDead = true;
-            enemy3Dead = true;
-        }
-
-        if (enemy1Dead && enemy2Dead && enemy3Dead)
-        {
-            livingEnemies = 0;
-        }
-
     }
 }

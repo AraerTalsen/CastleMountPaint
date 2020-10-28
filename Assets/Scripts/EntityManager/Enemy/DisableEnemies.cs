@@ -10,15 +10,15 @@ public class DisableEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CombatSystem.enemy1Dead == true)
+        if (CombatSystem.enemyParty[0].isDead == true)
         {
             enemy1Assets.gameObject.SetActive(false);
         }
-        if (CombatSystem.enemy2Dead == true)
+        if (CombatSystem.enemyParty[1].isDead == true)
         {
             enemy2Assets.gameObject.SetActive(false);
         }
-        if (CombatSystem.enemy3Dead == true)
+        if (CombatSystem.enemyParty[2].isDead == true)
         {
             enemy3Assets.gameObject.SetActive(false);
         }

@@ -36,10 +36,11 @@ public class PlayerMoves : EntityBehaviours
         //Debug.Log("Start Player Turn");
 
         p = player;
+        pb.SetPlayer(p);
         e = enemies;
         a[0] = p;
 
-        pb.PlayerNewTurn(p, e, a);
+        pb.PlayerNewTurn(0, e, a);
     }
 
     private void Directory(int index)
@@ -53,7 +54,9 @@ public class PlayerMoves : EntityBehaviours
 
         selectedMove(target, user);
 
-        cs.MinionTurn();
+        cs.EnemyDeadCheck();
+
+        mb.MinionTurn(1, e, a);
 
         //cs.EnemyDeadCheck();
     }
@@ -134,15 +137,16 @@ public class PlayerMoves : EntityBehaviours
 
     public void SummonAllies(Entity target, Entity user)
     {
+        int nMinions = MinionBehaviours.numMinions;
         //print("Summon");
-        print(mb.numMinions + " " + p.maxMinions);
-        if(mb.numMinions < p.maxMinions)
+        if (nMinions < p.maxMinions)
         {
             mb.NewMinion();
-            a[mb.numMinions] = mb.minions[mb.numMinions -1];
+
+            a[nMinions + 1] = mb.minions[nMinions];
         }
 
-        Debug.Log("Summoned a minion");
+        //Debug.Log("Summoned a minion");
     }
 
     /*void MinionTurn()
