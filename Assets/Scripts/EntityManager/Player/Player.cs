@@ -18,3 +18,4 @@ public class Player : Entity
 
     //public bool playerTargeted = false;
 }
+//hello this is sean. if youre reading this, not only have i hijacked your project but i will also kiss you on the lips. there is no escape
