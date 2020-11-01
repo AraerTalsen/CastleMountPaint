@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 5
   currentHP: 5
-  HitValue: 2
+  HitValue: 1
   targeted: 0
   eName: Steve
+  isDead: 0
   Description: Minion
   playerPrefab: {fileID: 398724924085973504, guid: a7ddde629e4834209b9f93c93385acf4,
     type: 3}
-  baseHitValue: 2
+  baseHitValue: 1
+  maxMinions: 3

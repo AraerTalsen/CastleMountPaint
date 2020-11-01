@@ -240,5 +240,20 @@ public class CombatSystem : MonoBehaviour
             state = BattleState.LOST; //switch state to Lost
             EndCombat(); //Start End Combat function
         }
+
+
+        //TEMP FIXES BELOW - THESE ARE TO ENSURE COMBAT FLOWS CORRECTLY WITHOUT BUGS FOR PLAYTEST TOMORROW - SIMPLY BORROWING LINES ABOVE AND MOVING THEM TO UPDATE FUNCTION
+
+        //temp fix to make sure that you can actually win (fixes issue where player can kill all enemies but combat continues)
+        if (enemyParty[0].currentHP <=0 && enemyParty[1].currentHP <= 0 && enemyParty[2].currentHP <= 0) //if all enemies are dead
+        {
+            SceneManager.LoadScene(3);
+        }
+
+        //makes sure the enemy dies when its health gets to or below 0 - minions were leaving them alive sometimes
+        for (int i = 0; i < enemyParty.Length; i++)
+            if (enemyParty[i].currentHP <= 0) enemyParty[i].isDead = true;
+
+        //END OF TEMP FIXES
     }
 }

@@ -61,22 +61,22 @@ public class EnemyMoves : EntityBehaviours
         */
 
         //This is a temp workaround until we get the personalites sorted. At the moment, they super heavily favor buffing themselves, this should smooth that out for playtest
-        if (enemyAttackPhase <= 24)
+        if (enemyAttackPhase <= 20)
         {
             BuffAlly(t, e); //Start Buff Allies
             return "Buff";
         }
-        else if (enemyAttackPhase > 24 && enemyAttackPhase <= 49)
+        else if (enemyAttackPhase > 20 && enemyAttackPhase <= 39)
         {
             HealAllies(t, e); //Start Heal Allies
             return "Heal";
         }
-        else if (enemyAttackPhase > 49 && enemyAttackPhase <= 74)
+        else if (enemyAttackPhase > 39 && enemyAttackPhase <= 69)
         {
             DebuffOpponent(t, e); //Start Debuff Player
             return "Debuff";
         }
-        else if (enemyAttackPhase > 74)
+        else if (enemyAttackPhase > 69)
         {
             DealDamage(t, e); //Start Take Damage
             return "Attack";
@@ -101,13 +101,13 @@ public class EnemyMoves : EntityBehaviours
         }
     }*/
 
-    //Applies damage onto the player
+    //Applies damage buff onto allies
     private void BuffAlly(Entity target, Entity user)
     {
         //Debug.Log("Increase enemy ally damage");
         //increase the amount of damage that the enemies are dealing 
 
-        if (!target.isDead) target.HitValue++;
+        if (!target.isDead) user.HitValue++;
 
         target.targeted = false; //the player is no longer targeted
     }

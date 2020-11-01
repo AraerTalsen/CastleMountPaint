@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4e04f5988404290b3d3536acdba4e7, type: 3}
   m_Name: SummonedMinion3
   m_EditorClassIdentifier: 
-  maxHP: 1
-  currentHP: 1
-  HitValue: 3
+  maxHP: 5
+  currentHP: 5
+  HitValue: 1
   targeted: 0
   eName: Jacob
+  isDead: 0
   Description: who knows anymore
   playerPrefab: {fileID: 7039985120971442677, guid: 56376df567fa14bf3b638c12604a610d,
     type: 3}
-  baseHitValue: 3
+  baseHitValue: 1
+  maxMinions: 3

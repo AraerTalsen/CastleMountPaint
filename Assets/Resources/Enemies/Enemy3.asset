@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb9a6233e68846b4b933b3447adf8ad, type: 3}
   m_Name: Enemy3
   m_EditorClassIdentifier: 
-  maxHP: 10
-  currentHP: 10
-  HitValue: 0
+  maxHP: 15
+  currentHP: 15
+  HitValue: 4
   targeted: 0
   eName: Mike
+  isDead: 0
   Description: It's me Mike Murphy!
   enemyToggle: 1
-  isDead: 0
   enemyType: {fileID: 1642797598595214994, guid: a5f37a3feae3b4f8a8749139f9125148,
     type: 3}
-  baseHitValue: 2
+  baseHitValue: 4
   enemySprite: {fileID: 21300000, guid: 4c478ae9516b0fe4c895962852bbdac4, type: 3}
   personality: Caring
   pWeightRange: 5100000045000000630000005c000000

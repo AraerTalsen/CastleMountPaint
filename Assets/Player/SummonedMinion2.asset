@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 5
   currentHP: 5
-  HitValue: 2
+  HitValue: 1
   targeted: 0
   eName: Mort
+  isDead: 0
   Description: Idk
   playerPrefab: {fileID: 1642797598595214994, guid: a5f37a3feae3b4f8a8749139f9125148,
     type: 3}
-  baseHitValue: 2
+  baseHitValue: 1
+  maxMinions: 3
