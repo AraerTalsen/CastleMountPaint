@@ -5,19 +5,15 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum BattleState {START, PLAYERTURN, ENEMYTURN, MINIONTURN, WON, LOST} //sets up state machine for combat
-
 public class CombatSystem : MonoBehaviour
 {
-    //States
-    public BattleState state;
-
     //SetUpCombat
     public Player player1; //player scriptable object reference
 
     public Player summonedMinion1, summonedMinion2, summonedMinion3; //player summonable reference
 
     public static Enemy[] enemyParty; //enemy scriptable object references
+    public static Entity[] allyParty = new Entity[4];
 
     public Transform playerSpawn; //Spawn point for player character
     public Transform minionSpawn1, minionSpawn2, minionSpawn3;
@@ -38,17 +34,12 @@ public class CombatSystem : MonoBehaviour
     public Slider[] enemyHPSlider;
     public Image[] enemyImg;
 
-    public bool enemySelected = false;
-
     public static int livingEnemies;
     private EnemyMoves em;
     private PlayerMoves pm;
+    private UpdateHUD uh;
 
     public bool playerDeadCheckBool = false;
-
-    public int numMinionsSummoned = 0;
-
-    public static bool enemy1Dead = false, enemy2Dead = false, enemy3Dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -58,15 +49,12 @@ public class CombatSystem : MonoBehaviour
 
         em = FindObjectOfType<EnemyMoves>();
         pm = FindObjectOfType<PlayerMoves>();
+        uh = FindObjectOfType<UpdateHUD>();
 
-        state = BattleState.START; //sets the state to START
-        StartCoroutine(SetUpCombat()); //calls SetUpCombat Coroutine
-        enemy1Dead = false;
-        enemy2Dead = false;
-        enemy3Dead = false;
+        SetUpCombat(); //calls SetUpCombat Coroutine
     }
 
-    IEnumerator SetUpCombat()
+    private void SetUpCombat()
     {
         //Debug.Log("Set up Combat");
 
@@ -105,20 +93,15 @@ public class CombatSystem : MonoBehaviour
             enemyImg[i].sprite = enemyParty[i].enemySprite;
         }
 
-        yield return new WaitForSeconds(2f);
+        allyParty[0] = player1;
+
+        uh.UpdateEveryHUD();
 
         PlayerTurn(); //switches to Player's Decision
     }
 
     private void PlayerTurn()
     {
-        state = BattleState.PLAYERTURN; //changes the state to Player's Turn
-
-        if (enemy1Dead && enemy2Dead && enemy3Dead)
-        {
-            EnemyDeadCheck();
-        }
-
         pm.PlayerDecision(player1, enemyParty);
         //Debug.Log("player turn started");
     }
@@ -129,13 +112,14 @@ public class CombatSystem : MonoBehaviour
         for (int i = 0; i < enemyParty.Length; i++)
             if (enemyParty[i].currentHP <= 0) enemyParty[i].isDead = true;
 
-        Debug.Log("EnemyDeadCheck Function Running");
+        uh.UpdateEveryHUD();
+
+        //Debug.Log("EnemyDeadCheck Function Running");
         if (livingEnemies <= 0) //if all enemies are dead
         {
             //Battle Won
             Debug.Log("Battle Won");
-            state = BattleState.WON; //switch the state to Won
-            EndCombat(); //start End Combat Function
+            EndCombat(true); //start End Combat Function
         }
     }
 
@@ -147,36 +131,37 @@ public class CombatSystem : MonoBehaviour
 
         //Debug.Log("Start Enemy Turn");
         for(int i = 0; i < enemyParty.Length; i++)
-            if(!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(player1, enemyParty[i], enemyParty));
+            if(!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(player1, enemyParty[i]));
         PlayerDeadCheck(); //switches to Player Dead Check
     }
 
     //Checks to see if the Player is dead
     void PlayerDeadCheck()
     {
+        uh.UpdateEveryHUD();
+
         //Debug.Log("Check if Player is Dead");
         if (player1.currentHP <= 0) //if the player's health value is less than or equal to 0
         {
-            state = BattleState.LOST; //switch state to Lost
-            EndCombat(); //Start End Combat function
+            EndCombat(false); //Start End Combat function
         }
         else
         {
-            //pm.PlayerDecision(player1, enemyParty); //if the player is not dead start the cycle over(Player Turn)
+            //if the player is not dead start the cycle over(Player Turn)
             Invoke("PlayerTurn", 1);
         }
     }
 
     //checks which state is active when entering the function
     //this is where we would put functionality for if a battle is won or lost (win animations/lose states etc.)
-    void EndCombat()
+    void EndCombat(bool won)
     {
-        if(state == BattleState.WON) //if the state is Won
+        if(won) //if the state is Won
         {
             Debug.Log("You did it!");
             SceneManager.LoadScene(3);
         }
-        if (state == BattleState.LOST) //if the state is Lost
+        else
         {
             Debug.Log("You died");
             SceneManager.LoadScene(2);
@@ -209,51 +194,5 @@ public class CombatSystem : MonoBehaviour
             }
             
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        playerHPText.text = "HP: " + player1.currentHP;
-        playerHPSlider.value = player1.currentHP;
-
-        minionHPText1.text = "HP: " + summonedMinion1.currentHP; //SummonedMinion Text Update
-        minionHPSlider1.value = summonedMinion1.currentHP;
-
-        minionHPText2.text = "HP: " + summonedMinion2.currentHP; //SummonedMinion Text Update
-        minionHPSlider2.value = summonedMinion2.currentHP;
-
-        minionHPText3.text = "HP: " + summonedMinion3.currentHP; //SummonedMinion Text Update
-        minionHPSlider3.value = summonedMinion3.currentHP;
-
-        for (int i = 0; i < enemyParty.Length; i++)
-        {
-            enemyHP[i].text = "HP: " + enemyParty[i].currentHP;
-            enemyHPSlider[i].value = enemyParty[i].currentHP;
-        }
-
-        //For some reason, this needs to be here. 
-        //In the player dead check function, it skips the first check. If you play through the next round, the player will die at the start of the player dead check. 
-        //This is most likely temp fix, but for now it solves the problem
-        if (player1.currentHP <= 0) //if the player's health value is less than or equal to 0
-        {
-            state = BattleState.LOST; //switch state to Lost
-            EndCombat(); //Start End Combat function
-        }
-
-
-        //TEMP FIXES BELOW - THESE ARE TO ENSURE COMBAT FLOWS CORRECTLY WITHOUT BUGS FOR PLAYTEST TOMORROW - SIMPLY BORROWING LINES ABOVE AND MOVING THEM TO UPDATE FUNCTION
-
-        //temp fix to make sure that you can actually win (fixes issue where player can kill all enemies but combat continues)
-        if (enemyParty[0].currentHP <=0 && enemyParty[1].currentHP <= 0 && enemyParty[2].currentHP <= 0) //if all enemies are dead
-        {
-            SceneManager.LoadScene(3);
-        }
-
-        //makes sure the enemy dies when its health gets to or below 0 - minions were leaving them alive sometimes
-        for (int i = 0; i < enemyParty.Length; i++)
-            if (enemyParty[i].currentHP <= 0) enemyParty[i].isDead = true;
-
-        //END OF TEMP FIXES
     }
 }

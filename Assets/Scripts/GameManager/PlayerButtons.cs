@@ -25,7 +25,7 @@ public class PlayerButtons : MonoBehaviour
 
     private delegate void allyUseMove(int target);
 
-    private void Start()
+    private void Awake()
     {
         pm = FindObjectOfType<PlayerMoves>();
         em = FindObjectOfType<EnemyMoves>();
@@ -97,7 +97,6 @@ public class PlayerButtons : MonoBehaviour
         {
             if (targetedParty[i] != null && !targetedParty[i].isDead)
             {
-                
                 targetedPartyButtons[i].gameObject.SetActive(isActive);
             }
         }

@@ -32,9 +32,10 @@ public class MinionBehaviours : MonoBehaviour
         minionBodies[numMinions].transform.localScale = new Vector3(-1, 1, 1);
         numMinions++;
         pb.SetAllyToButtons(numMinions);
-        print(minions[numMinions - 1].HitValue + " " + minions[numMinions - 1].isDead + " " + minions[numMinions - 1].maxHP + " " + minions[numMinions - 1].currentHP);
         //hard set minion attack value
-        minions[numMinions -1].HitValue = 1;
+        minions[numMinions - 1].HitValue = 1;
+
+        CombatSystem.allyParty[numMinions] = minions[numMinions - 1];
     }
 
     public void MinionTurn(int index, Enemy[] e, Entity[]a)

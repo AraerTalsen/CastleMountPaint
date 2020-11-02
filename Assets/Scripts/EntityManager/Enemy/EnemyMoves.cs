@@ -11,7 +11,7 @@ public class EnemyMoves : EntityBehaviours
 
     private void Start()
     {
-        moves = new MoveChoice[] { DealDamage, HealAllies, BuffAlly, DebuffOpponent };
+        moves = new MoveChoice[] { DealDamage, HealAllies, DebuffOpponent, BuffAlly };
     }
 
     private void Directory(int index)
@@ -28,85 +28,63 @@ public class EnemyMoves : EntityBehaviours
 
     //checks if it is the enemy's turn
     //this could later be used to decide what attacks the enemy is doing
-    public string ChooseAction(Entity t, Enemy e, Enemy[] enemies)
+    public string ChooseAction(Entity t, Entity user)
     {
+        Entity target;
+        string action;
         //random choose an attack state for the enemy to perform
-        int enemyAttackPhase = Random.Range(0, 100);
-        /*
-        if (enemyAttackPhase <= e.pWeightRange[0])
-        {
-            StartCoroutine(BuffFellowEnemies(t, enemies)); //Start Buff Allies
-            return "Buff";
-        }
-        else if (enemyAttackPhase > e.pWeightRange[0] && enemyAttackPhase <= e.pWeightRange[1])
-        {
-            HealAllies(t, e); //Start Heal Allies
-            return "Heal";
-        }
-        else if (enemyAttackPhase > e.pWeightRange[1] && enemyAttackPhase <= e.pWeightRange[2])
-        {
-            StartCoroutine(DebuffPlayer(t)); //Start Debuff Player
-            return "Debuff";
-        }
-        else if (enemyAttackPhase > e.pWeightRange[2])
-        {
-            DealDamage(t, e); //Start Take Damage
-            return "Attack";
-        }
-        else
-        {
-            DealDamage(t, e); //Start Take Damage
-            return "Attack";
-        }
-        */
+        int enemyAttackPhase = Random.Range(0, 4);
 
-        //This is a temp workaround until we get the personalites sorted. At the moment, they super heavily favor buffing themselves, this should smooth that out for playtest
-        if (enemyAttackPhase <= 20)
+        if (user.currentHP <= user.maxHP / 2) enemyAttackPhase = Random.Range(0, 2);
+
+        Directory(enemyAttackPhase);
+
+        switch(enemyAttackPhase)
         {
-            BuffAlly(t, e); //Start Buff Allies
-            return "Buff";
+            case 0:
+            {
+                target = t;//Start Attack opponent
+                action = "Attack";
+                break;
+            }
+            case 1:
+            {
+                target = user;//Start Heal opponent
+                action = "Heal";
+                break;
+            }
+            case 2:
+            {
+                target = t;//Start Debuff opponent
+                action = "Debuff";
+                break;
+            }
+            case 3:
+            {
+                target = user;//Start Attack opponent
+                action = "Buff";
+                break;
+            }
+            default:
+            {
+                target = t;//Start Attack opponent
+                action = "Attack";
+                break;
+            }
+
         }
-        else if (enemyAttackPhase > 20 && enemyAttackPhase <= 39)
-        {
-            HealAllies(t, e); //Start Heal Allies
-            return "Heal";
-        }
-        else if (enemyAttackPhase > 39 && enemyAttackPhase <= 69)
-        {
-            DebuffOpponent(t, e); //Start Debuff Player
-            return "Debuff";
-        }
-        else if (enemyAttackPhase > 69)
-        {
-            DealDamage(t, e); //Start Take Damage
-            return "Attack";
-        }
-        else
-        {
-            DealDamage(t, e); //Start Take Damage
-            return "Attack";
-        }
+
+        selectedMove(target, user);
+
+        return action;
     }
-
-    //Applies damage onto the player
-    /*IEnumerator DealDamage(Entity t, Enemy e)
-    {
-        if (t.targeted == true) //if the player is targeted
-        {
-            yield return new WaitForSeconds(2f);
-            Debug.Log("Damage to Player");
-
-            t.currentHP -= e.HitValue; //apply enemy's hit value to the player
-            t.targeted = false; //the player is no longer targeted
-        }
-    }*/
 
     //Applies damage buff onto allies
     private void BuffAlly(Entity target, Entity user)
     {
         //Debug.Log("Increase enemy ally damage");
         //increase the amount of damage that the enemies are dealing 
-
+        print(target.eName);
         if (!target.isDead) user.HitValue++;
 
         target.targeted = false; //the player is no longer targeted
@@ -118,27 +96,8 @@ public class EnemyMoves : EntityBehaviours
         if (target.targeted == true) //if the player is targeted
         {
             print("Debuff player");
-
             target.HitValue = target.HitValue--; //apply enemy's hit value to the player
             target.targeted = false; //the player is no longer targeted
         }
     }
-
-    //Enemies heal one another using this
-    /*IEnumerator HealFellowEnemies(Entity t, Enemy[]enemies)
-    {
-        yield return new WaitForSeconds(2f);
-        Debug.Log("Healing for other enemies");
-
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if(!enemies[i].isDead)
-            {
-                enemies[i].currentHP += enemies[i].HitValue;
-                enemies[i].currentHP = Mathf.Clamp(enemies[i].currentHP, 0, enemies[i].maxHP);
-            }
-        }
-
-        t.targeted = false; //the player is no longer targeted
-    }*/
 }

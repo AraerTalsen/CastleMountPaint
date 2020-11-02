@@ -1389,42 +1389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603d3ca0052be475da7a9899929b2637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 11400000, guid: 55754be53267745ac8f3dcc84747d04a, type: 2}
-  summonedMinion1: {fileID: 11400000, guid: 4ecc24bcafb82d542a7e9579c0fd4eb2, type: 2}
-  summonedMinion2: {fileID: 11400000, guid: 7adf91aadf123d34ab7dd4759997cf27, type: 2}
-  summonedMinion3: {fileID: 11400000, guid: c88e7a2689782534398539740028e405, type: 2}
-  enemy1: {fileID: 11400000, guid: 326f561e4afa043f78d3b47bc8cc4a60, type: 2}
-  enemy2: {fileID: 11400000, guid: 13b925d02ea37430ca10c2a95d112b3e, type: 2}
-  enemy3: {fileID: 11400000, guid: fd7600cf832374e18bfcf71ae0ecfc89, type: 2}
-  playerHPText: {fileID: 1083142892}
-  playerHPSlider: {fileID: 2062665956}
-  minionHPText1: {fileID: 1087588278}
-  minionHPText2: {fileID: 722868129}
-  minionHPText3: {fileID: 296023817}
-  minionHPSlider1: {fileID: 2106062199}
-  minionHPSlider2: {fileID: 133882485}
-  minionHPSlider3: {fileID: 997505479}
-  enemy1HPText: {fileID: 1173524851}
-  enemy2HPText: {fileID: 726780548}
-  enemy3HPText: {fileID: 496525679}
-  enemy1HPSlider: {fileID: 433999308}
-  enemy2HPSlider: {fileID: 161630331}
-  enemy3HPSlider: {fileID: 46901553}
-  enemy1TextBoxGO: {fileID: 1907698049}
-  enemy2TextBoxGO: {fileID: 553829373}
-  enemy3TextBoxGO: {fileID: 1432266462}
-  enemy1SelectButtonGO: {fileID: 2037408005}
-  enemy2SelectButtonGO: {fileID: 220404204}
-  enemy3SelectButtonGO: {fileID: 954894571}
-  enemy1NameTextGO: {fileID: 1388857960}
-  enemy2NameTextGO: {fileID: 1087638527}
-  enemy3NameTextGO: {fileID: 1310797437}
-  enemy1HPTextGO: {fileID: 1173524849}
-  enemy2HPTextGO: {fileID: 726780546}
-  enemy3HPTextGO: {fileID: 496525677}
-  enemy1HPSliderGO: {fileID: 433999306}
-  enemy2HPSliderGO: {fileID: 161630329}
-  enemy3HPSliderGO: {fileID: 46901551}
+  allyHP: []
+  allyHPSlider: []
+  enemyHP: []
+  enemyHPSlider: []
 --- !u!4 &224765524
 Transform:
   m_ObjectHideFlags: 0
@@ -1451,7 +1419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a4a1fc53f9e4aa8a4d100e6851d1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
   player1: {fileID: 11400000, guid: 55754be53267745ac8f3dcc84747d04a, type: 2}
   summonedMinion1: {fileID: 11400000, guid: 4ecc24bcafb82d542a7e9579c0fd4eb2, type: 2}
   summonedMinion2: {fileID: 11400000, guid: 7adf91aadf123d34ab7dd4759997cf27, type: 2}
@@ -1502,9 +1469,7 @@ MonoBehaviour:
   - {fileID: 1901502069}
   - {fileID: 127636931}
   - {fileID: 1360061369}
-  enemySelected: 0
   playerDeadCheckBool: 0
-  numMinionsSummoned: 0
 --- !u!114 &224765526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2542,6 +2507,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2626,6 +2592,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603d3ca0052be475da7a9899929b2637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allyHP:
+  - {fileID: 1083142892}
+  - {fileID: 1087588278}
+  - {fileID: 722868129}
+  - {fileID: 296023817}
+  allyHPSlider:
+  - {fileID: 2062665956}
+  - {fileID: 2106062199}
+  - {fileID: 133882485}
+  - {fileID: 997505479}
+  enemyHP:
+  - {fileID: 1173524851}
+  - {fileID: 726780548}
+  - {fileID: 496525679}
+  enemyHPSlider:
+  - {fileID: 433999308}
+  - {fileID: 161630331}
+  - {fileID: 46901553}
 --- !u!1 &548884759
 GameObject:
   m_ObjectHideFlags: 0

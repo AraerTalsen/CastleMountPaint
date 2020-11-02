@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHP: 30
   currentHP: 30
   HitValue: 5
-  targeted: 0
+  targeted: 1
   eName: Casey
   isDead: 0
   Description: is cool

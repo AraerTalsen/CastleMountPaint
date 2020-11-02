@@ -20,7 +20,7 @@ public class PlayerMoves : EntityBehaviours
         
     public delegate void MoveChoice(Entity target, Entity user);
 
-    public void Start()
+    public void Awake()
     {
         pb = FindObjectOfType<PlayerButtons>();
         cs = FindObjectOfType<CombatSystem>();
