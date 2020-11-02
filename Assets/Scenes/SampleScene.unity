@@ -1366,7 +1366,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224765524}
-  - component: {fileID: 224765523}
   - component: {fileID: 224765525}
   - component: {fileID: 224765526}
   - component: {fileID: 224765527}
@@ -1377,22 +1376,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &224765523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224765522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603d3ca0052be475da7a9899929b2637, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allyHP: []
-  allyHPSlider: []
-  enemyHP: []
-  enemyHPSlider: []
 --- !u!4 &224765524
 Transform:
   m_ObjectHideFlags: 0
