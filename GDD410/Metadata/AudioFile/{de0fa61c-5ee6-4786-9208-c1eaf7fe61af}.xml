@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{de0fa61c-5ee6-4786-9208-c1eaf7fe61af}">
+		<property name="assetPath">
+			<value>Sound FX/Base Sound FX/Small Mite Clip 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.2207256235827664</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ab222e9b-9496-4ace-a5db-a57b475998d6}</destination>
+		</relationship>
+	</object>
+</objects>
