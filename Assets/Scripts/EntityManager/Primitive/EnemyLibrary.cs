@@ -12,7 +12,6 @@ public class EnemyLibrary : MonoBehaviour
     {
         enemyList = Resources.LoadAll("Enemies", typeof(Object));
         size = enemyList.Length;
-        print(size);
     }
 
     public static Enemy ChooseEnemy(int num)
