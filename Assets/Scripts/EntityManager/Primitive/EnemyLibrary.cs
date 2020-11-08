@@ -6,7 +6,7 @@ public class EnemyLibrary : MonoBehaviour
 {
     public static int size;
     public enum EnemyList { Mike, Sean, Dan }
-    private static Object[] enemyList;
+    public static Object[] enemyList;
 
     private void Awake()
     {

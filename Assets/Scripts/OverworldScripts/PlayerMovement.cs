@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     float vert;
     float moveLimiter = 0.7f;
 
+    //sets the enemy that the player collided with - loads that enemy type
+    public static bool enemy1Combat, enemy2Combat, enemy3Combat = false;
+
     //sets the speed the player moves at
     public float playerSpeed = 2.0f;
 
@@ -22,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         facingRight = true;
+        enemy1Combat = false;
+        enemy2Combat = false;
+        enemy3Combat = false;
     }
 
     //Takes the wasd and arrow keys for movement in 8 directions
@@ -70,6 +76,24 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "enemy1")
         {
             SceneManager.LoadScene(1);
+            enemy3Combat = true;
+        }
+
+        if (collision.gameObject.tag == "enemy2")
+        {
+            SceneManager.LoadScene(1);
+            enemy2Combat = true;
+        }
+
+        if (collision.gameObject.tag == "enemy3")
+        {
+            SceneManager.LoadScene(1);
+            enemy3Combat = true;
+        }
+
+        if (collision.gameObject.tag == "painting1")
+        {
+            SceneManager.LoadScene(4);
         }
     }
 }
