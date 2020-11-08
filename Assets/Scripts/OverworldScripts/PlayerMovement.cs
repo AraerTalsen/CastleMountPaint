@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "enemy1")
         {
             SceneManager.LoadScene(1);
-            enemy3Combat = true;
+            enemy1Combat = true;
         }
 
         if (collision.gameObject.tag == "enemy2")

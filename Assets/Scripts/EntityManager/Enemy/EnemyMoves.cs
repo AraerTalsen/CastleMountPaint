@@ -33,13 +33,101 @@ public class EnemyMoves : EntityBehaviours
         Entity target;
         string action;
         //random choose an attack state for the enemy to perform
-        int enemyAttackPhase = Random.Range(0, 4);
+        int enemyAttackPhase = Random.Range(0, 2);
 
         if (user.currentHP <= user.maxHP / 2) enemyAttackPhase = Random.Range(0, 2);
 
         Directory(enemyAttackPhase);
 
-        switch(enemyAttackPhase)
+        if (user.eName == "Sean")
+        {
+            switch (enemyAttackPhase)
+            {
+                case 0:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Attack";
+                        break;
+                    }
+                case 1:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Debuff";
+                        break;
+                    }
+                default:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Debuff";
+                        break;
+                    }
+            }
+            selectedMove(target, user);
+
+            return action;
+
+        }
+
+        if (user.eName == "Dan")
+        {
+            switch (enemyAttackPhase)
+            {
+                case 0:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Attack";
+                        break;
+                    }
+                case 1:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Heal";
+                        break;
+                    }
+                default:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Heal";
+                        break;
+                    }
+            }
+            selectedMove(target, user);
+
+            return action;
+
+        }
+
+        if (user.eName == "Mike")
+        {
+            switch (enemyAttackPhase)
+            {
+                case 0:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Attack";
+                        break;
+                    }
+                case 1:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Buff";
+                        break;
+                    }
+                default:
+                    {
+                        target = t;//Start Attack opponent
+                        action = "Buff";
+                        break;
+                    }
+            }
+            selectedMove(target, user);
+
+            return action;
+
+        } 
+
+        /*
+        switch (enemyAttackPhase)
         {
             case 0:
             {
@@ -73,10 +161,11 @@ public class EnemyMoves : EntityBehaviours
             }
 
         }
-
+        
         selectedMove(target, user);
-
-        return action;
+        */
+        return null;
+        
     }
 
     //Applies damage buff onto allies
