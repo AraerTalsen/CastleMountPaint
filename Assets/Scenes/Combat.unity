@@ -1402,14 +1402,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a4a1fc53f9e4aa8a4d100e6851d1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dE:
+  - {fileID: 11400000, guid: 326f561e4afa043f78d3b47bc8cc4a60, type: 2}
+  - {fileID: 11400000, guid: 13b925d02ea37430ca10c2a95d112b3e, type: 2}
+  - {fileID: 11400000, guid: fd7600cf832374e18bfcf71ae0ecfc89, type: 2}
   player1: {fileID: 11400000, guid: 55754be53267745ac8f3dcc84747d04a, type: 2}
-  summonedMinion1: {fileID: 11400000, guid: 4ecc24bcafb82d542a7e9579c0fd4eb2, type: 2}
-  summonedMinion2: {fileID: 11400000, guid: 7adf91aadf123d34ab7dd4759997cf27, type: 2}
-  summonedMinion3: {fileID: 11400000, guid: c88e7a2689782534398539740028e405, type: 2}
   playerSpawn: {fileID: 1046169366}
-  minionSpawn1: {fileID: 921343272}
-  minionSpawn2: {fileID: 1910042252}
-  minionSpawn3: {fileID: 1003041204}
   pos:
   - {fileID: 498083956}
   - {fileID: 498083956}
@@ -1417,15 +1415,10 @@ MonoBehaviour:
   playerNameText: {fileID: 1445611792}
   playerHPText: {fileID: 1083142892}
   playerHPSlider: {fileID: 2062665956}
-  minionNameText1: {fileID: 792257574}
-  minionNameText2: {fileID: 1174433332}
-  minionNameText3: {fileID: 615910291}
-  minionHPText1: {fileID: 1087588278}
-  minionHPText2: {fileID: 722868129}
-  minionHPText3: {fileID: 296023817}
-  minionHPSlider1: {fileID: 2106062199}
-  minionHPSlider2: {fileID: 133882485}
-  minionHPSlider3: {fileID: 997505479}
+  display:
+  - {fileID: 1907698051}
+  - {fileID: 1907698051}
+  - {fileID: 1432266464}
   enemyHP:
   - {fileID: 1173524851}
   - {fileID: 726780548}
@@ -1452,7 +1445,6 @@ MonoBehaviour:
   - {fileID: 1901502069}
   - {fileID: 127636931}
   - {fileID: 1360061369}
-  playerDeadCheckBool: 0
 --- !u!114 &224765526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,9 +1469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12a5cf2402e1d8479e813f24ccbfbb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy1Assets: {fileID: 1907698049}
-  enemy2Assets: {fileID: 553829373}
-  enemy3Assets: {fileID: 1432266462}
 --- !u!1 &227989836
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class MinionBehaviours : MonoBehaviour
     public Vector2[] spawnPoints;
     public Enemy[] minions = new Enemy[3];
     private GameObject[] minionBodies = new GameObject[3];
+
+    //Accessed libraries
     private PlayerButtons pb;
     private CombatSystem cs;
 

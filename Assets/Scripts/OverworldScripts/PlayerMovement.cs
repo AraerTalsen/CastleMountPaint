@@ -73,24 +73,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "enemy1")
-        {
-            SceneManager.LoadScene(1);
-            enemy1Combat = true;
-        }
-
-        if (collision.gameObject.tag == "enemy2")
-        {
-            SceneManager.LoadScene(1);
-            enemy2Combat = true;
-        }
-
-        if (collision.gameObject.tag == "enemy3")
-        {
-            SceneManager.LoadScene(1);
-            enemy3Combat = true;
-        }
-
         if (collision.gameObject.tag == "painting1")
         {
             SceneManager.LoadScene(4);

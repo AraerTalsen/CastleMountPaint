@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Class holds each enemy type and makes them easily accessible
 public class EnemyLibrary : MonoBehaviour
 {
     public static int size;
@@ -10,10 +11,12 @@ public class EnemyLibrary : MonoBehaviour
 
     private void Awake()
     {
+        //Accesses folder Enemies inside of folder Resources and creates an array of general objects
         enemyList = Resources.LoadAll("Enemies", typeof(Object));
         size = enemyList.Length;
     }
 
+    //Returns the enemy based on the index given to it
     public static Enemy ChooseEnemy(int num)
     {
         switch(num)

@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCombatSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 5394900565442393736, guid: c9041df8c1db04f41896cb762819526a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9041df8c1db04f41896cb762819526a, type: 3}
 --- !u!1 &170494818 stripped
@@ -519,6 +524,10 @@ MonoBehaviour:
   target: {x: 0, y: 0}
   position: {x: 0, y: 0}
   PlayerPosition: {fileID: 170494818}
+  party:
+  - {fileID: 11400000, guid: 326f561e4afa043f78d3b47bc8cc4a60, type: 2}
+  - {fileID: 11400000, guid: 13b925d02ea37430ca10c2a95d112b3e, type: 2}
+  - {fileID: 11400000, guid: fd7600cf832374e18bfcf71ae0ecfc89, type: 2}
 --- !u!50 &524711966
 Rigidbody2D:
   serializedVersion: 4
