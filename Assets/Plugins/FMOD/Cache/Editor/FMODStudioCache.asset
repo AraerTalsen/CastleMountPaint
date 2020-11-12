@@ -1,0 +1,545 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7100091194929450462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.assets.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Master.assets.bank
+  SubDir: 
+  lastModified: 637396781320000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6882662891135264535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.assets.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Master.assets.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6739462981881965984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Test Events/Test_Sound
+  m_EditorClassIdentifier: 
+  Path: event:/Test Events/Test_Sound
+  guid: 50f5e14061e2a44fb808a5c5eb510919
+  Banks:
+  - {fileID: 6541151468428427647}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &-6582081734436433785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Test_Music/Combat
+  m_EditorClassIdentifier: 
+  Name: Combat
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &-4509990979144839143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat Events/Hover Option
+  m_EditorClassIdentifier: 
+  Path: event:/Combat Events/Hover Option
+  guid: c96fd45f017cd842a41902a501c0a3b4
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 115
+--- !u!114 &-4258543979994558672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Test_Music/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  Min: 0
+  Max: 30
+  Default: 30
+  Exists: 1
+--- !u!114 &-3241825559262293428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1708
+  Exists: 1
+--- !u!114 &-1298298643365884536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat Events/Enemy Special
+  m_EditorClassIdentifier: 
+  Path: event:/Combat Events/Enemy Special
+  guid: 56640cd00ed2514da6a28e60d1af64c0
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1889
+--- !u!114 &-613305899098922784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat Events/Select Option
+  m_EditorClassIdentifier: 
+  Path: event:/Combat Events/Select Option
+  guid: 54a86cf44422c6448a239db6c431ce94
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 818
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -3241825559262293428}
+  - {fileID: 7164111030817352800}
+  - {fileID: 9126794098436421549}
+  - {fileID: 6042957061002071313}
+  - {fileID: -6882662891135264535}
+  - {fileID: 6392136462037205041}
+  - {fileID: 2643298627756635773}
+  - {fileID: 3101063790360972119}
+  - {fileID: 6541151468428427647}
+  - {fileID: 3048920349462168516}
+  EditorEvents:
+  - {fileID: 9170936606133114696}
+  - {fileID: 4487734690752971705}
+  - {fileID: -613305899098922784}
+  - {fileID: -1298298643365884536}
+  - {fileID: 7733214163055267253}
+  - {fileID: 6844770824076855630}
+  - {fileID: -4509990979144839143}
+  - {fileID: 3525158566106828328}
+  - {fileID: -6739462981881965984}
+  - {fileID: 8493453060305956661}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 6392136462037205041}
+  StringsBanks:
+  - {fileID: -3241825559262293428}
+  stringsBankWriteTime: 637400896180000000
+  cacheVersion: 3
+--- !u!114 &1232367607700588354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637400603320000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2643298627756635773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.streams.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Master.streams.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3048920349462168516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Test Bank.streams.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Test Bank.streams.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3101063790360972119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Test Bank.assets.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Test Bank.assets.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3525158566106828328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat Events/Enemy Debuff Player
+  m_EditorClassIdentifier: 
+  Path: event:/Combat Events/Enemy Debuff Player
+  guid: cc9e0b7ebeb56642a6030285c6032196
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1423
+--- !u!114 &4487734690752971705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat Events/Enemy Buff Ally
+  m_EditorClassIdentifier: 
+  Path: event:/Combat Events/Enemy Buff Ally
+  guid: 450103e0f29dda4c9eb28dc9a00ad5e4
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 561
+--- !u!114 &6042957061002071313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Base Sound Effects.streams.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Base Sound Effects.streams.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6392136462037205041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6541151468428427647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Test Bank.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Test Bank.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6844770824076855630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat Events/Combat Start
+  m_EditorClassIdentifier: 
+  Path: event:/Combat Events/Combat Start
+  guid: 90f8736b8671c4488a39a7349303b457
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2089
+--- !u!114 &7164111030817352800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Base Sound Effects.assets.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Base Sound Effects.assets.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7733214163055267253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld Events/Overworld Bump
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld Events/Overworld Bump
+  guid: 681d7482ebdec84cafacbc7cdb8468d2
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4000
+--- !u!114 &8493453060305956661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Test Events/Test_Music
+  m_EditorClassIdentifier: 
+  Path: event:/Test Events/Test_Music
+  guid: a2ab8392264c914db3bfcd753fd57b00
+  Banks:
+  - {fileID: 6541151468428427647}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4258543979994558672}
+  - {fileID: -6582081734436433785}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 139636
+--- !u!114 &8648350856113142867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.streams.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Master.streams.bank
+  SubDir: 
+  lastModified: 637396781320000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &9126794098436421549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Base Sound Effects.bank
+  m_EditorClassIdentifier: 
+  Path: GDD410/Build/Desktop/Base Sound Effects.bank
+  SubDir: 
+  lastModified: 637400896180000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &9170936606133114696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat Events/Minion Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/Combat Events/Minion Spawn
+  guid: 152f48ea34838e48a63c76e1df809f57
+  Banks:
+  - {fileID: 9126794098436421549}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1220
