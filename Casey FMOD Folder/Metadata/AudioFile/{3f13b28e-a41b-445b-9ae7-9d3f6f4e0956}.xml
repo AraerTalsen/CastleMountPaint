@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{3f13b28e-a41b-445b-9ae7-9d3f6f4e0956}">
+		<property name="assetPath">
+			<value>Combat/Sound FX/Base Sounds/Debuff Clip 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.4239002267573697</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{30e6cc85-5e7d-4bd1-9e15-99fcd13df9b4}</destination>
+		</relationship>
+	</object>
+</objects>

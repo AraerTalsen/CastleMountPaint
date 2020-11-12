@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: GDD410/GDD410.fspro
-  sourceBankPath: GDD410/Build
+  sourceProjectPath: Casey FMOD Folder/Casey FMOD Folder.fspro
+  sourceBankPath: Casey FMOD Folder/Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -78,14 +78,6 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks:
-  - Base Sound Effects
-  - Base Sound Effects.assets
-  - Base Sound Effects.streams
-  - Master.assets
-  - Master.streams
-  - Test Bank
-  - Test Bank.assets
-  - Test Bank.streams
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

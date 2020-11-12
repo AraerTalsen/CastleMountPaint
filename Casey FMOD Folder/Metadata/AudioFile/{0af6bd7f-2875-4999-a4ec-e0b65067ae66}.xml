@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{0af6bd7f-2875-4999-a4ec-e0b65067ae66}">
+		<property name="assetPath">
+			<value>Combat/Sound FX/Base Sounds/Run Clip.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.72136054421768703</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{30e6cc85-5e7d-4bd1-9e15-99fcd13df9b4}</destination>
+		</relationship>
+	</object>
+</objects>

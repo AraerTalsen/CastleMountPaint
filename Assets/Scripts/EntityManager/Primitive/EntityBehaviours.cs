@@ -8,6 +8,7 @@ public class EntityBehaviours : MonoBehaviour
     public void DealDamage(Entity t, Entity u)
     {
         t.currentHP -= u.HitValue;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Player Damaged");
     }
 
     public void HealAllies(Entity t, Entity u)

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{5325a57d-4901-49f0-9398-db60f36c840a}">
+		<property name="assetPath">
+			<value>Combat/Sound FX/Base Sounds/Enemy Sound 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.3556009070294786</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{30e6cc85-5e7d-4bd1-9e15-99fcd13df9b4}</destination>
+		</relationship>
+	</object>
+</objects>

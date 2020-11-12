@@ -7,7 +7,7 @@
 [WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x7ff322e4b008 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x7fc24ba93a08 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,31 +17,11 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {de0fa61c-5ee6-4786-9208-c1eaf7fe61af}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {a871d855-d94f-45a2-a380-3fcc86887722}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {b37cdba6-c01a-45d4-94ef-cbbc7a0e12d0}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {c2c52c44-40f7-499d-be83-621fd62f727d}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {b92ba99a-28c6-4d7e-9de6-f70c1d4aeae1}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {0127f28e-cb38-4302-9483-9c36eff01be3}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {f2c50b9f-0ee6-40d8-99f1-764a402a7a6e}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {fa0aa67f-92cb-469a-ba9b-9a79be65bf7b}
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {c10d13c5-03c2-4423-bb24-88d127cf5c48}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {204ecac6-16b6-45f2-a830-1c5f502c931b}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {061a3bfa-a936-4364-b581-25b88a6166da}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {016f12c5-0092-4428-a810-2b92f41c1e1f}
-[WRN] ObjectLookup::get                        : Lookup failed for WaveformResourceModel: {156d78a5-719c-4928-a37b-f3d7d1f677e0}
-[LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
