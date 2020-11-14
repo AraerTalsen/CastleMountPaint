@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class MinionBehaviours : MonoBehaviour
 {
+    //Minion components
     public static int numMinions = 0;
     public Image[] minionHUDS;
-    public GameObject minionBody;
     public Vector2[] spawnPoints;
-    public Enemy[] minions = new Enemy[3];
+    public GameObject minionBody;
     private GameObject[] minionBodies = new GameObject[3];
+    public Enemy[] minions = new Enemy[3];
 
     //Accessed libraries
     private PlayerButtons pb;
@@ -34,6 +35,7 @@ public class MinionBehaviours : MonoBehaviour
         minionBodies[numMinions].transform.localScale = new Vector3(-1, 1, 1);
         numMinions++;
         pb.SetAllyToButtons(numMinions);
+
         //hard set minion attack value
         minions[numMinions - 1].HitValue = 1;
 
@@ -50,5 +52,6 @@ public class MinionBehaviours : MonoBehaviour
         else Invoke("EnemyTurn", 1); //switch to the Enemy Turn Function with a small delay
     }
 
-    public void EnemyTurn() { cs.EnemyTurn(); }
+    //Invoke can only be called on a method in the same class, but Enemy Turn is in a different class.
+    public void EnemyTurn() { cs.EnemyTurn(); } 
 }
