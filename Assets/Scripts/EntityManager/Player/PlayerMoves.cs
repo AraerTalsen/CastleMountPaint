@@ -75,6 +75,8 @@ public class PlayerMoves : EntityBehaviours
 
     public void SummonAllies(Entity target, Entity user)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
+
         int nMinions = MinionBehaviours.numMinions;
 
         //summon a new minion if they aren't all on the field
