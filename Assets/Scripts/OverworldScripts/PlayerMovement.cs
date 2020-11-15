@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         enemy1Combat = false;
         enemy2Combat = false;
         enemy3Combat = false;
+        
     }
 
     //Takes the wasd and arrow keys for movement in 8 directions
@@ -76,6 +77,24 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "painting1")
         {
             SceneManager.LoadScene(4);
+        }
+
+        if (collision.gameObject.tag == "enemy1Sketch")
+        {
+            PlayerMinionInventory.sketch1Active = true;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "enemy2Sketch")
+        {
+            PlayerMinionInventory.sketch2Active = true;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "enemy3Sketch")
+        {
+            PlayerMinionInventory.sketch3Active = true;
+            Destroy(collision.gameObject);
         }
     }
 }

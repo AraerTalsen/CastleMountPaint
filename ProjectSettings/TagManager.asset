@@ -6,6 +6,9 @@ TagManager:
   tags:
   - enemy1
   - painting1
+  - enemy1Sketch
+  - enemy2Sketch
+  - enemy3Sketch
   layers:
   - Default
   - TransparentFX
