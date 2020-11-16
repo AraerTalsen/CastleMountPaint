@@ -13,7 +13,7 @@ public class EntityBehaviours : MonoBehaviour
 
     public void HealAllies(Entity t, Entity u)
     {
-        u.currentHP += u.HitValue;
-        u.currentHP = Mathf.Clamp(u.currentHP, 0, u.maxHP);
+        t.currentHP += u.HitValue;
+        t.currentHP = Mathf.Clamp(t.currentHP, 0, t.maxHP);
     }
 }

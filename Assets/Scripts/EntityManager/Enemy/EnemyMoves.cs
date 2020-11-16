@@ -27,11 +27,34 @@ public class EnemyMoves : EntityBehaviours
         selectedMove(target, user);
     }
 
+    private Entity ChooseTarget()
+    {
+        Entity[] a = CombatSystem.allyParty;
+        int count = 0, j = 0;
+
+        //if (a[1] != null && !a[1].isDead) return a[1];
+
+        for (int i = 0; i < a.Length; i++)
+            if (a[i] != null && !a[i].isDead) count++;
+
+        int[] active = new int[count];
+
+        for(int i = 0; i < a.Length; i++)
+            if (a[i] != null && !a[i].isDead)
+            {
+                active[j] = i;
+                j++;
+            }
+
+        return a[active[Random.Range(0, active.Length)]];
+    }
+
     //DEBUG: Enemies cannot buff or debuff because enemyAttackPhase (below) can only be set to 0 or 1,
     //ignoring moves 2 and 3.
     //Randomly choose an action for enemy to perform
-    public string ChooseAction(Entity t, Entity user)
+    public string ChooseAction(Entity user)
     {
+        Entity t = ChooseTarget();
         Entity target;
         string action;
 

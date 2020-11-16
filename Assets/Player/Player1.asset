@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4e04f5988404290b3d3536acdba4e7, type: 3}
   m_Name: Player1
   m_EditorClassIdentifier: 
+  eName: Casey
+  Description: is cool
   maxHP: 30
-  currentHP: 30
+  currentHP: 26
+  baseHitValue: 5
   HitValue: 5
   targeted: 1
-  eName: Casey
   isDead: 0
-  Description: is cool
   playerPrefab: {fileID: 5394900565442393736, guid: c9041df8c1db04f41896cb762819526a,
     type: 3}
-  baseHitValue: 5
   maxMinions: 3

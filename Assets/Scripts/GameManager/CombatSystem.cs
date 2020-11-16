@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CombatSystem : MonoBehaviour
 {
-
     //Debug functionality
     public Enemy[] dE;
 
@@ -21,22 +19,16 @@ public class CombatSystem : MonoBehaviour
     public Transform playerSpawn; 
     public Transform[] pos; //Spawn points for enemies
 
-    //Paty UI
-    public TextMeshProUGUI playerNameText;
-    public TextMeshProUGUI playerHPText;
-    public Slider playerHPSlider;
+    //Party UI
 
-    public Image[] display; //The panel that enemy info is listed on. [Disable to make everything disabled.]
-    public TextMeshProUGUI[] enemyHP;
-    public TextMeshProUGUI[] enemyName;
+    public Image[] eDisplay; //The panel that enemy info is listed on. [Disable to make everything disabled.]
+    public Image[] aDisplay; //The panel that ally info is listed on. [Disable to make everything disabled.]
     public Image[] enemyAction;
     public Sprite[] actions;
-    public Slider[] enemyHPSlider;
-    public Image[] enemyImg;
 
     public static int livingEnemies;
 
-    //Accessed libraries
+    //Accessed classes
     private EnemyMoves em;
     private PlayerMoves pm;
     private UpdateHUD uh;
@@ -44,7 +36,12 @@ public class CombatSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (enemyParty == null) enemyParty = dE;
+        if (enemyParty == null)
+        {
+            enemyParty = new Enemy[dE.Length];
+
+            for(int i = 0; i < dE.Length; i++) enemyParty[i] = Instantiate(dE[i]);
+        }
 
         livingEnemies = enemyParty.Length;
         
@@ -57,31 +54,9 @@ public class CombatSystem : MonoBehaviour
 
     private void SetUpCombat()
     {
-        //Player UI setup
-        Instantiate(player1.playerPrefab, playerSpawn);
-        player1.currentHP = player1.maxHP;
-        player1.HitValue = player1.baseHitValue;
-        playerNameText.text = "Name: " + player1.eName;
-        playerHPSlider.maxValue = player1.maxHP;
-
-        //Enemy UI setup
-        for (int i = 0; i < enemyParty.Length; i++)
-        {
-            enemyParty[i] = Instantiate(enemyParty[i], pos[i]);
-
-            display[i].gameObject.SetActive(true);
-
-            enemyParty[i].currentHP = enemyParty[i].maxHP;
-            enemyParty[i].HitValue = enemyParty[i].baseHitValue;
-
-            enemyName[i].text = "Name: " + enemyParty[i].eName;
-            enemyHPSlider[i].maxValue = enemyParty[i].maxHP;
-
-            enemyImg[i].sprite = enemyParty[i].enemySprite;
-        }
-
         allyParty[0] = player1;
 
+        uh.LoadHUDs();
         uh.UpdateEveryHUD();
 
         PlayerTurn();
@@ -102,10 +77,11 @@ public class CombatSystem : MonoBehaviour
     public void EnemyDeadCheck()
     {
         for (int i = 0; i < enemyParty.Length; i++)
-            if (enemyParty[i].currentHP <= 0)
+            if (enemyParty[i].currentHP <= 0 && !enemyParty[i].isDead)
             {
                 enemyParty[i].isDead = true;
-                display[i].gameObject.SetActive(false);
+                eDisplay[i].gameObject.SetActive(false);
+                livingEnemies--;
             }
 
         uh.UpdateEveryHUD();
@@ -122,27 +98,32 @@ public class CombatSystem : MonoBehaviour
     {
         for(int i = 0; i < enemyParty.Length; i++)
             //Enemy move is decided if enemy is alive
-            if(!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(player1, enemyParty[i]));
+            if(!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(enemyParty[i]));
         PlayerDeadCheck();
     }
 
     private void PlayerDeadCheck()
     {
+        for (int i = 0; i < allyParty.Length; i++)
+        {
+            if (allyParty[i] != null && allyParty[i].currentHP <= 0 && !allyParty[i].isDead)
+            {
+                if (i == 0) EndCombat(false);
+                else
+                {
+                    allyParty[i].isDead = true;
+                    aDisplay[i].gameObject.SetActive(false);
+                }
+            }
+        }
+
         uh.UpdateEveryHUD();
 
-        if (player1.currentHP <= 0)
-        {
-            EndCombat(false);
-        }
-        else
-        {
-            //if the player is not dead start the cycle over(Player Turn)
-            Invoke("PlayerTurn", 1);
-        }
+        Invoke("PlayerTurn", 1);
     }
 
     //this is where we would put functionality for if a battle is won or lost (win animations/lose states etc.)
-    void EndCombat(bool won)
+    private void EndCombat(bool won)
     {
         if(won)
         {

@@ -95,7 +95,7 @@ public class PlayerButtons : MonoBehaviour
     /// TARGET BUTTONS ///
 
     //Select an Enemy to Target
-    void SelectTarget(bool isActive, bool enemyParty)
+    private void SelectTarget(bool isActive, bool enemyParty)//isActive is for turning buttons on and off
     {
         if(isActive)
         {

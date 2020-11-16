@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eName: Sean
   Description: Fuck
-  maxHP: 20
-  currentHP: 20
-  baseHitValue: 3
-  HitValue: 3
+  maxHP: 15
+  currentHP: 15
+  baseHitValue: 2
+  HitValue: 2
   targeted: 0
   isDead: 0
   enemyType: {fileID: 398724924085973504, guid: a7ddde629e4834209b9f93c93385acf4,
