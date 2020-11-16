@@ -18,7 +18,7 @@ MonoBehaviour:
   currentHP: 15
   baseHitValue: 2
   HitValue: 2
-  targeted: 0
+  targeted: 1
   isDead: 0
   enemyType: {fileID: 398724924085973504, guid: a7ddde629e4834209b9f93c93385acf4,
     type: 3}

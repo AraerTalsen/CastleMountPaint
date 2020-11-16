@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 159388715}
   - component: {fileID: 159388714}
   - component: {fileID: 159388713}
+  - component: {fileID: 159388716}
   m_Layer: 5
   m_Name: Summon Button
   m_TagString: Untagged
@@ -680,6 +681,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 159388716}
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &159388714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +729,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159388711}
   m_CullTransparentMesh: 0
+--- !u!114 &159388716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159388711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &161630329
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +877,7 @@ GameObject:
   - component: {fileID: 198434086}
   - component: {fileID: 198434085}
   - component: {fileID: 198434084}
+  - component: {fileID: 198434087}
   m_Layer: 5
   m_Name: Heal Button
   m_TagString: Untagged
@@ -934,6 +959,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 159388716}
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &198434085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,6 +1007,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198434082}
   m_CullTransparentMesh: 0
+--- !u!114 &198434087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198434082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201184526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,6 +1253,7 @@ GameObject:
   - component: {fileID: 220404208}
   - component: {fileID: 220404207}
   - component: {fileID: 220404206}
+  - component: {fileID: 220404209}
   m_Layer: 5
   m_Name: Select Enemy2 Button
   m_TagString: Untagged
@@ -1286,8 +1335,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: PerformActionSelected
+      - m_Target: {fileID: 220404209}
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1356,6 +1405,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220404204}
   m_CullTransparentMesh: 0
+--- !u!114 &220404209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220404204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &224765522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,6 +1514,7 @@ GameObject:
   - component: {fileID: 227989840}
   - component: {fileID: 227989839}
   - component: {fileID: 227989838}
+  - component: {fileID: 227989841}
   m_Layer: 5
   m_Name: AllySelect0
   m_TagString: Untagged
@@ -1534,6 +1596,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 227989841}
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &227989839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,6 +1644,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227989836}
   m_CullTransparentMesh: 0
+--- !u!114 &227989841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227989836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &280456369
 GameObject:
   m_ObjectHideFlags: 0
@@ -2114,6 +2199,7 @@ GameObject:
   - component: {fileID: 509178566}
   - component: {fileID: 509178565}
   - component: {fileID: 509178564}
+  - component: {fileID: 509178567}
   m_Layer: 5
   m_Name: Attack Button
   m_TagString: Untagged
@@ -2195,6 +2281,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 159388716}
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &509178565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,6 +2329,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509178562}
   m_CullTransparentMesh: 0
+--- !u!114 &509178567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509178562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509505425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,6 +2750,7 @@ GameObject:
   - component: {fileID: 575197832}
   - component: {fileID: 575197831}
   - component: {fileID: 575197830}
+  - component: {fileID: 575197834}
   m_Layer: 5
   m_Name: AllySelect1
   m_TagString: Untagged
@@ -2693,6 +2803,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 854882902}
         m_MethodName: PerformActionSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 575197834}
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2759,6 +2880,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &575197834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575197829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &614046697
 GameObject:
   m_ObjectHideFlags: 0
@@ -3288,6 +3421,7 @@ GameObject:
   - component: {fileID: 691033863}
   - component: {fileID: 691033862}
   - component: {fileID: 691033861}
+  - component: {fileID: 691033864}
   m_Layer: 5
   m_Name: Sktech Button
   m_TagString: Untagged
@@ -3369,6 +3503,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 159388716}
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &691033862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3406,6 +3551,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691033859}
   m_CullTransparentMesh: 0
+--- !u!114 &691033864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691033859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &701021058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4465,6 +4622,7 @@ GameObject:
   - component: {fileID: 954894575}
   - component: {fileID: 954894574}
   - component: {fileID: 954894573}
+  - component: {fileID: 954894576}
   m_Layer: 5
   m_Name: Select Enemy3 Button
   m_TagString: Untagged
@@ -4546,8 +4704,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: PerformActionSelected
+      - m_Target: {fileID: 220404209}
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4616,6 +4774,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954894571}
   m_CullTransparentMesh: 0
+--- !u!114 &954894576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954894571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &962824346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4697,6 +4867,7 @@ GameObject:
   - component: {fileID: 982828323}
   - component: {fileID: 982828322}
   - component: {fileID: 982828321}
+  - component: {fileID: 982828325}
   m_Layer: 5
   m_Name: AllySelect2
   m_TagString: Untagged
@@ -4749,6 +4920,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 854882902}
         m_MethodName: PerformActionSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 575197834}
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4815,6 +4997,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &982828325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982828320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &997505477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6732,6 +6926,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310797437}
   m_CullTransparentMesh: 0
+--- !u!1 &1328283759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1328283761}
+  - component: {fileID: 1328283760}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1328283760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328283759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Test/Test Music
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!4 &1328283761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328283759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.829999, y: 13.974749, z: -4.0456824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360061366
 GameObject:
   m_ObjectHideFlags: 0
@@ -8241,6 +8489,7 @@ GameObject:
   - component: {fileID: 1843009885}
   - component: {fileID: 1843009884}
   - component: {fileID: 1843009883}
+  - component: {fileID: 1843009887}
   m_Layer: 5
   m_Name: AllySelect3
   m_TagString: Untagged
@@ -8293,6 +8542,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 854882902}
         m_MethodName: PerformActionSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 575197834}
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8359,6 +8619,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -85}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1843009887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843009882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1873086560
 GameObject:
   m_ObjectHideFlags: 0
@@ -8930,6 +9202,7 @@ GameObject:
   - component: {fileID: 2037408009}
   - component: {fileID: 2037408008}
   - component: {fileID: 2037408007}
+  - component: {fileID: 2037408010}
   m_Layer: 5
   m_Name: Select Enemy1 Button
   m_TagString: Untagged
@@ -9011,8 +9284,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: PerformActionSelected
+      - m_Target: {fileID: 220404209}
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9081,6 +9354,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037408005}
   m_CullTransparentMesh: 0
+--- !u!114 &2037408010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037408005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072b28c43d7e49689723a2a4f77f6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2062665954
 GameObject:
   m_ObjectHideFlags: 0
