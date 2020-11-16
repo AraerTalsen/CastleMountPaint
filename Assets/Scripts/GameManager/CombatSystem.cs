@@ -32,6 +32,7 @@ public class CombatSystem : MonoBehaviour
     private EnemyMoves em;
     private PlayerMoves pm;
     private UpdateHUD uh;
+    private PlayerButtons pb;
 
     // Start is called before the first frame update
     void Start()
@@ -48,12 +49,14 @@ public class CombatSystem : MonoBehaviour
         em = FindObjectOfType<EnemyMoves>();
         pm = FindObjectOfType<PlayerMoves>();
         uh = FindObjectOfType<UpdateHUD>();
+        pb = FindObjectOfType<PlayerButtons>();
 
         SetUpCombat();
     }
 
     private void SetUpCombat()
     {
+        MinionBehaviours.numMinions = 0;
         allyParty[0] = player1;
 
         uh.LoadHUDs();
@@ -133,6 +136,7 @@ public class CombatSystem : MonoBehaviour
         else
         {
             Debug.Log("You died");
+            player1.currentHP = player1.maxHP;
             SceneManager.LoadScene(2);
         }
     }

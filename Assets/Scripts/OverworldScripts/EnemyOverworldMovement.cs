@@ -11,6 +11,14 @@ public class EnemyOverworldMovement : MonoBehaviour
     public GameObject PlayerPosition;
     public Enemy[] party = new Enemy[3];//Which enemies will appear in combat
 
+    private void Start()
+    {
+        for(int i = 0; i < party.Length; i++)
+        {
+            party[i] = Instantiate(party[i]);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

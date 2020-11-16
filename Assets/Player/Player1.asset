@@ -18,7 +18,7 @@ MonoBehaviour:
   currentHP: 30
   baseHitValue: 5
   HitValue: 5
-  targeted: 1
+  targeted: 0
   isDead: 0
   playerPrefab: {fileID: 5394900565442393736, guid: c9041df8c1db04f41896cb762819526a,
     type: 3}

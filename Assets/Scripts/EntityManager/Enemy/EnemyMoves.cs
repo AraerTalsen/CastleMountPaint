@@ -27,26 +27,26 @@ public class EnemyMoves : EntityBehaviours
         selectedMove(target, user);
     }
 
-    private Entity ChooseTarget()
+    private Entity ChooseTarget(bool friendly)
     {
-        Entity[] a = CombatSystem.allyParty;
+        Entity[] p = friendly ? CombatSystem.enemyParty : CombatSystem.allyParty;
         int count = 0, j = 0;
 
         //if (a[1] != null && !a[1].isDead) return a[1];
 
-        for (int i = 0; i < a.Length; i++)
-            if (a[i] != null && !a[i].isDead) count++;
+        for (int i = 0; i < p.Length; i++)
+            if (p[i] != null && !p[i].isDead) count++;
 
         int[] active = new int[count];
 
-        for(int i = 0; i < a.Length; i++)
-            if (a[i] != null && !a[i].isDead)
+        for(int i = 0; i < p.Length; i++)
+            if (p[i] != null && !p[i].isDead)
             {
                 active[j] = i;
                 j++;
             }
 
-        return a[active[Random.Range(0, active.Length)]];
+        return p[active[Random.Range(0, active.Length)]];
     }
 
     //DEBUG: Enemies cannot buff or debuff because enemyAttackPhase (below) can only be set to 0 or 1,
@@ -54,11 +54,11 @@ public class EnemyMoves : EntityBehaviours
     //Randomly choose an action for enemy to perform
     public string ChooseAction(Entity user)
     {
-        Entity t = ChooseTarget();
         Entity target;
         string action;
 
         int enemyAttackPhase = Random.Range(0, 2);
+        Entity t = ChooseTarget(enemyAttackPhase % 2 == 1);
 
         if (user.currentHP <= user.maxHP / 2) enemyAttackPhase = Random.Range(0, 2);
 
