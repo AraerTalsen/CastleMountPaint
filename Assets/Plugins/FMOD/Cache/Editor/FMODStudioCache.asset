@@ -905,7 +905,7 @@ MonoBehaviour:
   Path: event:/Combat/Summon
   guid: 01d3ef3b35d2a749afb4c1c26c067387
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3315,7 +3315,7 @@ MonoBehaviour:
   Path: event:/Combat/Battle Start
   guid: c3e902b7e9ae6e4cb85f80a4687c6d79
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -10354,7 +10354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Casey FMOD Folder/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637408985790237865
+  lastModified: 637410804190000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -17579,7 +17579,7 @@ MonoBehaviour:
   Path: event:/Combat/UI Hover
   guid: f259a9c6beed874590bba49dbe90c5f8
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -29248,6 +29248,24 @@ MonoBehaviour:
   LoadResult: 13
   FileSizes: []
   Exists: 0
+--- !u!114 &-361768875224168325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637410804190000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-359282595550254064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29959,7 +29977,7 @@ MonoBehaviour:
   Path: event:/Combat/UI Select
   guid: ac80b871fe88e048b4581261b112a20d
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -30531,7 +30549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6018443020658894150}
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   EditorEvents:
   - {fileID: 7048260133064116561}
   - {fileID: 5517551802852919668}
@@ -30543,10 +30561,10 @@ MonoBehaviour:
   - {fileID: 6883893804591196925}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   StringsBanks:
   - {fileID: -6018443020658894150}
-  stringsBankWriteTime: 637408985790237865
+  stringsBankWriteTime: 637410804190000000
   cacheVersion: 3
 --- !u!114 &4488663653242295
 MonoBehaviour:
@@ -47482,7 +47500,7 @@ MonoBehaviour:
   Path: event:/Combat/Enemy Damaged
   guid: 91f7cfff63608a4ea7ec2b2b0dd46df4
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -48468,7 +48486,7 @@ MonoBehaviour:
   Path: event:/Combat/Player Damaged
   guid: 30be11148581fb4fb57577723d03f7e7
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -53025,7 +53043,7 @@ MonoBehaviour:
   Path: event:/Test/Test Music
   guid: aab456b28a2309439afdca314c28078d
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -53476,7 +53494,7 @@ MonoBehaviour:
   Path: event:/Test/G6
   guid: 260831eaa0078b4e8102e57a88259270
   Banks:
-  - {fileID: 6841414998184547337}
+  - {fileID: -361768875224168325}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
