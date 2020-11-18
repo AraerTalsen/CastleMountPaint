@@ -6820,11 +6820,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7781422163779200628, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7781422163779200634, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
         type: 3}
       propertyPath: m_Enabled
@@ -6920,11 +6915,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8749316409870452380, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8749316410662039733, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -6973,11 +6963,6 @@ PrefabInstance:
     - target: {fileID: 8749316410847494231, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8749316410847494233, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
-        type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
