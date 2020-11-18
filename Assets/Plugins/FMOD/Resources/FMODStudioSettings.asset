@@ -15,13 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-<<<<<<< Updated upstream
   sourceProjectPath: Casey FMOD Folder/Casey FMOD Folder.fspro
   sourceBankPath: Casey FMOD Folder/Build
-=======
-  sourceProjectPath: 
-  sourceBankPath: 
->>>>>>> Stashed changes
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -63,13 +58,9 @@ MonoBehaviour:
     Value: 0
   - Platform: 20
     Value: 0
-<<<<<<< Updated upstream
   BankDirectorySettings:
   - Platform: 2
     Value: Desktop
-=======
-  BankDirectorySettings: []
->>>>>>> Stashed changes
   VirtualChannelSettings:
   - Platform: 1
     Value: 1024
@@ -85,12 +76,8 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-<<<<<<< Updated upstream
   MasterBanks:
   - Master
-=======
-  MasterBanks: []
->>>>>>> Stashed changes
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
