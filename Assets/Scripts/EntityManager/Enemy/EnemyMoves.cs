@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Actions an enemy can perform while in combat
 public class EnemyMoves : EntityBehaviours
 {
+    public delegate void MoveChoice(Entity target, Entity user);
     public MoveChoice[] moves;
     private MoveChoice selectedMove;
-
-    public delegate void MoveChoice(Entity target, Entity user);
 
     private void Start()
     {
         moves = new MoveChoice[] { DealDamage, HealAllies, DebuffOpponent, BuffAlly };
     }
 
+    //Switch move that delegate will use
     private void Directory(int index)
     {
         selectedMove = moves[index];
@@ -26,14 +27,38 @@ public class EnemyMoves : EntityBehaviours
         selectedMove(target, user);
     }
 
-    //checks if it is the enemy's turn
-    //this could later be used to decide what attacks the enemy is doing
-    public string ChooseAction(Entity t, Entity user)
+    private Entity ChooseTarget(bool friendly)
+    {
+        Entity[] p = friendly ? CombatSystem.enemyParty : CombatSystem.allyParty;
+        int count = 0, j = 0;
+
+        //if (a[1] != null && !a[1].isDead) return a[1];
+
+        for (int i = 0; i < p.Length; i++)
+            if (p[i] != null && !p[i].isDead) count++;
+
+        int[] active = new int[count];
+
+        for(int i = 0; i < p.Length; i++)
+            if (p[i] != null && !p[i].isDead)
+            {
+                active[j] = i;
+                j++;
+            }
+
+        return p[active[Random.Range(0, active.Length)]];
+    }
+
+    //DEBUG: Enemies cannot buff or debuff because enemyAttackPhase (below) can only be set to 0 or 1,
+    //ignoring moves 2 and 3.
+    //Randomly choose an action for enemy to perform
+    public string ChooseAction(Entity user)
     {
         Entity target;
         string action;
-        //random choose an attack state for the enemy to perform
+
         int enemyAttackPhase = Random.Range(0, 2);
+        Entity t = ChooseTarget(enemyAttackPhase % 2 == 1);
 
         if (user.currentHP <= user.maxHP / 2) enemyAttackPhase = Random.Range(0, 2);
 
@@ -168,25 +193,15 @@ public class EnemyMoves : EntityBehaviours
         
     }
 
-    //Applies damage buff onto allies
+    //Applies hit value buff onto allies
     private void BuffAlly(Entity target, Entity user)
     {
-        //Debug.Log("Increase enemy ally damage");
-        //increase the amount of damage that the enemies are dealing 
-        print(target.eName);
         if (!target.isDead) user.HitValue++;
-
-        target.targeted = false; //the player is no longer targeted
     }
 
-    //Applies debuff to the player
+    //Applies hit value debuff to the opponent
     private void DebuffOpponent(Entity target, Entity user)
     {
-        if (target.targeted == true) //if the player is targeted
-        {
-            print("Debuff player");
-            target.HitValue = target.HitValue--; //apply enemy's hit value to the player
-            target.targeted = false; //the player is no longer targeted
-        }
+        if (!target.isDead)  target.HitValue--;
     }
 }

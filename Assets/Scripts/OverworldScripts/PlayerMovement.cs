@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     //sets the speed the player moves at
     public float playerSpeed = 2.0f;
 
+    public ListCreator UpdateMinionInventoryFunction;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         enemy1Combat = false;
         enemy2Combat = false;
         enemy3Combat = false;
+        
     }
 
     //Takes the wasd and arrow keys for movement in 8 directions
@@ -76,6 +79,30 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "painting1")
         {
             SceneManager.LoadScene(4);
+        }
+
+        if (collision.gameObject.tag == "enemy1Sketch")
+        {
+            ListCreator.numberOfItemsCollected++;
+            ListCreator.runInventoryUpdate = true;
+            UpdateMinionInventoryFunction.InsertNewMinion();
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "enemy2Sketch")
+        {
+            ListCreator.numberOfItemsCollected++;
+            ListCreator.runInventoryUpdate = true;
+            UpdateMinionInventoryFunction.InsertNewMinion();
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "enemy3Sketch")
+        {
+            ListCreator.numberOfItemsCollected++;
+            ListCreator.runInventoryUpdate = true;
+            UpdateMinionInventoryFunction.InsertNewMinion();
+            Destroy(collision.gameObject);
         }
     }
 }

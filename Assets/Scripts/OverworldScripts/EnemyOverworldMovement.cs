@@ -9,7 +9,15 @@ public class EnemyOverworldMovement : MonoBehaviour
     public Vector2 target;
     public Vector2 position;
     public GameObject PlayerPosition;
-    public Enemy[] party = new Enemy[3];
+    public Enemy[] party = new Enemy[3];//Which enemies will appear in combat
+
+    private void Start()
+    {
+        for(int i = 0; i < party.Length; i++)
+        {
+            party[i] = Instantiate(party[i]);
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,6 +27,7 @@ public class EnemyOverworldMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, step);
     }
 
+    //Start combat if collide with player
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.CompareTag("Player"))

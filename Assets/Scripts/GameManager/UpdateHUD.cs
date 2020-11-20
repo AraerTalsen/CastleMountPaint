@@ -6,6 +6,9 @@ using TMPro;
 
 public class UpdateHUD : MonoBehaviour
 {
+    public Image[] eDisplay; //The panel that enemy info is listed on. [Disable to make everything disabled.]
+    public Image[] aDisplay; //The panel that ally info is listed on. [Disable to make everything disabled.]
+
     //Allies
     public TextMeshProUGUI[] allyHP;
     public Slider[] allyHPSlider;
@@ -25,7 +28,6 @@ public class UpdateHUD : MonoBehaviour
     {
         Entity[] a = CombatSystem.allyParty;
         int numAllies = MinionBehaviours.numMinions + 1;
-
 
         for (int i = 0; i < numAllies; i++)
         {
@@ -49,5 +51,44 @@ public class UpdateHUD : MonoBehaviour
                 enemyHPSlider[i].value = e[i].currentHP;
             }
         }
+    }
+
+    public void LoadHUDs()
+    {
+        Entity[] a = CombatSystem.allyParty;
+        int numAllies = MinionBehaviours.numMinions + 1;
+
+        for (int i = 0; i < numAllies; i++)
+        {
+            if(a[i] != null)
+            {
+                aDisplay[i].gameObject.SetActive(true);
+
+                aDisplay[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + a[i].eName;
+                aDisplay[i].transform.GetChild(1).GetComponent<Slider>().maxValue = a[i].maxHP;
+            }
+        }
+
+        Enemy[] e = CombatSystem.enemyParty;
+
+        for (int i = 0; i < e.Length; i++)
+        {
+            eDisplay[i].gameObject.SetActive(true);
+
+            eDisplay[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + e[i].eName;
+            eDisplay[i].transform.GetChild(1).GetComponent<Slider>().maxValue = e[i].maxHP;
+            eDisplay[i].transform.GetChild(2).GetComponent<Image>().sprite = e[i].enemySprite;
+        }
+    }
+
+    public void AddAlly(Enemy a)
+    {
+        int numAllies = MinionBehaviours.numMinions;
+
+        aDisplay[numAllies].gameObject.SetActive(true);
+
+        aDisplay[numAllies].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + a.eName;
+        aDisplay[numAllies].transform.GetChild(1).GetComponent<Slider>().maxValue = a.maxHP;
+        aDisplay[numAllies].transform.GetChild(2).GetComponent<Image>().sprite = a.enemySprite;
     }
 }
