@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerMinionInventory : MonoBehaviour
+using UnityEngine.EventSystems;
+public class ButtonDropHandler : MonoBehaviour, IDropHandler
 {
+    public void OnDrop(PointerEventData eventData)
+    {
+        RectTransform invPanel = transform as RectTransform;
+    }
 
-    public static bool sketch1Active = false;
-    public static bool sketch2Active = false;
-    public static bool sketch3Active = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,6 @@ public class PlayerMinionInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
-
-
-
 }

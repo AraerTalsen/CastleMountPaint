@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     //sets the speed the player moves at
     public float playerSpeed = 2.0f;
 
+    public ListCreator UpdateMinionInventoryFunction;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -81,19 +83,25 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "enemy1Sketch")
         {
-            PlayerMinionInventory.sketch1Active = true;
+            ListCreator.numberOfItemsCollected++;
+            ListCreator.runInventoryUpdate = true;
+            UpdateMinionInventoryFunction.InsertNewMinion();
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "enemy2Sketch")
         {
-            PlayerMinionInventory.sketch2Active = true;
+            ListCreator.numberOfItemsCollected++;
+            ListCreator.runInventoryUpdate = true;
+            UpdateMinionInventoryFunction.InsertNewMinion();
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "enemy3Sketch")
         {
-            PlayerMinionInventory.sketch3Active = true;
+            ListCreator.numberOfItemsCollected++;
+            ListCreator.runInventoryUpdate = true;
+            UpdateMinionInventoryFunction.InsertNewMinion();
             Destroy(collision.gameObject);
         }
     }
