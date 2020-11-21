@@ -10,12 +10,12 @@ public class UISound : MonoBehaviour, IPointerEnterHandler
     //Button Select Sounds (OnCLick)
     public void SelectSound()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat Events/Select Option");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/UI Select");
     }
 
     //On Button Hover
     public void OnPointerEnter(PointerEventData eventData)
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat Events/Hover Option");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/UI Hover");
     }
 }

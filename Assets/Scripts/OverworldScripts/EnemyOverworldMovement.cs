@@ -11,20 +11,105 @@ public class EnemyOverworldMovement : MonoBehaviour
     public GameObject PlayerPosition;
     public Enemy[] party = new Enemy[3];//Which enemies will appear in combat
 
+    public bool playerInRange = false;
+
+    private Animator anim;
+    private Rigidbody2D rb;
+
+    public bool newValue = true;
+    public bool canPatrol = true;
+    public bool canMove = true;
+    public float moveX;
+    public float moveY;
+
+    public GameObject alertSprite;
+
     private void Start()
     {
         for(int i = 0; i < party.Length; i++)
         {
             party[i] = Instantiate(party[i]);
         }
+
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float step = speed * Time.deltaTime;
-        target = new Vector2(PlayerPosition.transform.position.x, PlayerPosition.transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, target, step);
+        if (playerInRange)
+        {
+            canMove = false;
+
+            alertSprite.SetActive(true);
+            //StartCoroutine(Alert());
+
+            anim.SetBool("isMoving", true);
+
+            float step = speed * Time.deltaTime;
+            target = new Vector2(PlayerPosition.transform.position.x, PlayerPosition.transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, target, step);
+        }
+
+        if (!playerInRange && canPatrol)
+        {
+            StartCoroutine(Patrol());
+        }
+
+        if (canMove)
+        {
+            anim.SetBool("isMoving", true);
+
+            float step = speed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(moveX, moveY), step);
+        }
+
+        //if(rb.velocity.y > 0)
+        //{
+        //    transform.localScale = new Vector3(-1, 1, 1); //flip the sprite
+        //}
+        //else
+        //{
+        //    transform.localScale = new Vector3(1, 1, 1); //flip the sprite
+        //}
+    }
+
+    IEnumerator Patrol()
+    {
+        canPatrol = false;
+        if(newValue == true)
+        {
+            NewValue();
+        }
+
+        anim.SetBool("isMoving", false);
+        canMove = false;
+
+        yield return new WaitForSeconds(2f);
+
+        canMove = true;
+
+        yield return new WaitForSeconds(2f);
+
+        canPatrol = true;
+        newValue = true;
+    }
+
+    //IEnumerator Alert()
+    //{
+    //    alertSprite.SetActive(true);
+
+    //    yield return new WaitForSeconds(1f);
+
+    //    alertSprite.SetActive(false);
+    //}
+
+    public void NewValue()
+    {
+        moveX = Random.Range(-10f, 10f);
+        moveY = Random.Range(-10f, 10f);
+        newValue = false;
     }
 
     //Start combat if collide with player
@@ -34,6 +119,27 @@ public class EnemyOverworldMovement : MonoBehaviour
         {
             CombatSystem.enemyParty = party;
             SceneManager.LoadScene(1);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
+
+            alertSprite.SetActive(true);
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            alertSprite.SetActive(false);
+            playerInRange = false;
+            anim.SetBool("isMoving", false);
         }
     }
 }

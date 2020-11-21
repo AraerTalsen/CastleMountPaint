@@ -6956,7 +6956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Test/Test Music
+  Event: event:/Combat/Music/General Battle
   PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
