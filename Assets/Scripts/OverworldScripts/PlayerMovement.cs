@@ -45,24 +45,24 @@ public class PlayerMovement : MonoBehaviour
         vert = Input.GetAxisRaw("Vertical"); // -1 is down
 
 
-        if (hor)
-        {
+        //if (hor)
+        //{
             //change animator to run side
-            anim.SetInteger("Direction", 2);
+        //    anim.SetInteger("Direction", 2);
 
-        }
+        //}
 
-        if (vert)
-        {
-            //change animator to run front/run back
-            anim.SetInteger("Direction", 3);
-        }
+        //if (vert)
+        //{
+        //    //change animator to run front/run back
+        //    anim.SetInteger("Direction", 3);
+        //}
 
-        if(!vert || !hor)
-        {
-            //change animator to idle
-            anim.SetInteger("Direction", 0);
-        }
+        //if(!vert || !hor)
+        //{
+        //    //change animator to idle
+        //    anim.SetInteger("Direction", 0);
+        //}
 
         if (hor > 0 && !facingRight)
         {
