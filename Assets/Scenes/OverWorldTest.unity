@@ -187,7 +187,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -4403262270717121119, guid: 0e0a392c8681e4d438d56e82bfc6f49f,
+      objectReference: {fileID: 9050212121600270836, guid: 312917ddb197719408ca964f87da7901,
         type: 3}
     - target: {fileID: 5394900565442393736, guid: c9041df8c1db04f41896cb762819526a,
         type: 3}
@@ -275,6 +275,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 170494817}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &170494824
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170494818}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efa726cd9b8f946f18287fe329e04b4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &383847244
 GameObject:
   m_ObjectHideFlags: 0

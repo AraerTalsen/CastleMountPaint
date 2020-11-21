@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     public ListCreator UpdateMinionInventoryFunction;
 
+    private Animator anim;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         enemy1Combat = false;
         enemy2Combat = false;
         enemy3Combat = false;
+
+        anim = GetComponent<Animator>();
         
     }
 
@@ -39,6 +43,26 @@ public class PlayerMovement : MonoBehaviour
         // Gives a value between -1 and 1
         hor = Input.GetAxisRaw("Horizontal"); // -1 is left
         vert = Input.GetAxisRaw("Vertical"); // -1 is down
+
+
+        if (hor)
+        {
+            //change animator to run side
+            anim.SetInteger("Direction", 2);
+
+        }
+
+        if (vert)
+        {
+            //change animator to run front/run back
+            anim.SetInteger("Direction", 3);
+        }
+
+        if(!vert || !hor)
+        {
+            //change animator to idle
+            anim.SetInteger("Direction", 0);
+        }
 
         if (hor > 0 && !facingRight)
         {
