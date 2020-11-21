@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool enemy1Combat, enemy2Combat, enemy3Combat = false;
 
     //sets the speed the player moves at
-    public float playerSpeed = 2.0f;
+    public float playerSpeed = 10.0f;
 
     public ListCreator UpdateMinionInventoryFunction;
 
@@ -40,51 +40,61 @@ public class PlayerMovement : MonoBehaviour
     //Takes the wasd and arrow keys for movement in 8 directions
     void Update()
     {
-        // Gives a value between -1 and 1
-        hor = Input.GetAxisRaw("Horizontal"); // -1 is left
-        vert = Input.GetAxisRaw("Vertical"); // -1 is down
+        //// Gives a value between -1 and 1
+        //hor = Input.GetAxisRaw("Horizontal"); // -1 is left
+        //vert = Input.GetAxisRaw("Vertical"); // -1 is down
 
-
-        //if (hor)
+        //if (hor > 0 && !facingRight)
         //{
-            //change animator to run side
-        //    anim.SetInteger("Direction", 2);
-
+        //    changeDirectionFacing();
+        //} else if (hor < 0 && facingRight)
+        //{
+        //    changeDirectionFacing();
         //}
 
-        //if (vert)
-        //{
-        //    //change animator to run front/run back
-        //    anim.SetInteger("Direction", 3);
-        //}
-
-        //if(!vert || !hor)
-        //{
-        //    //change animator to idle
-        //    anim.SetInteger("Direction", 0);
-        //}
-
-        if (hor > 0 && !facingRight)
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            changeDirectionFacing();
-        } else if (hor < 0 && facingRight)
-        {
-            changeDirectionFacing();
+            body.velocity = new Vector2(0, playerSpeed);
+            anim.SetInteger("Direction", 1);
         }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            body.velocity = new Vector2(0, -playerSpeed);
+            anim.SetInteger("Direction", 3);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            body.velocity = new Vector2(-playerSpeed, 0);
+            anim.SetInteger("Direction", 2);
+            transform.localScale = new Vector3(-1, 1, 1); //flip the sprite
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            body.velocity = new Vector2(playerSpeed, 0);
+            anim.SetInteger("Direction", 2);
+            transform.localScale = new Vector3(1, 1, 1); //flip the sprite
+        }
+
+        if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+        {
+            body.velocity = new Vector2(0, 0);
+            anim.SetInteger("Direction", 0);
+        }
+
     }
 
     //every frame, move the dude on screen
     void FixedUpdate()
     {
-        // if player is moving vertically, slow them down a bit
-        if (hor != 0 && vert != 0) 
-        {
-            //sets them to .7 move speed
-            hor *= moveLimiter;
-            vert *= moveLimiter;
-        }
+        //// if player is moving vertically, slow them down a bit
+        //if (hor != 0 && vert != 0)
+        //{
+        //    //sets them to .7 move speed
+        //    hor *= moveLimiter;
+        //    vert *= moveLimiter;
+        //}
 
-        body.velocity = new Vector2(hor * playerSpeed, vert * playerSpeed);
+        //body.velocity = new Vector2(hor * playerSpeed, vert * playerSpeed);
     }
 
     void changeDirectionFacing()
