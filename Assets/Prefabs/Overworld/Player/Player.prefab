@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4048037190172155731}
   - component: {fileID: 4315516897086599426}
-  - component: {fileID: 9018641500339820732}
+  - component: {fileID: 6668431647963557285}
   - component: {fileID: 170494821}
-  - component: {fileID: 170494824}
   - component: {fileID: 170494819}
   - component: {fileID: 1909957373736462683}
+  - component: {fileID: 170494824}
   m_Layer: 0
-  m_Name: PlayerCombatSprite
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &9018641500339820732
+--- !u!50 &6668431647963557285
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -134,6 +134,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74019635, y: 0.88985574}
   m_EdgeRadius: 0
+--- !u!114 &170494819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394900565442393736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db351e5a016e8f04cb7ff1661676fb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  mainCamera: {fileID: 0}
+  playerSpeed: 5
+  UpdateMinionInventoryFunction: {fileID: 0}
+--- !u!114 &1909957373736462683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394900565442393736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71e6b5a33249485fbd416f1f4ba5a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: 7580578180eaf4a91b5319b69090a099, type: 3}
 --- !u!95 &170494824
 Animator:
   serializedVersion: 3
@@ -153,31 +182,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &170494819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5394900565442393736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db351e5a016e8f04cb7ff1661676fb2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facingRight: 0
-  playerSpeed: 5
-  UpdateMinionInventoryFunction: {fileID: 0}
---- !u!114 &1909957373736462683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5394900565442393736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f71e6b5a33249485fbd416f1f4ba5a9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cursor: {fileID: 2800000, guid: 7580578180eaf4a91b5319b69090a099, type: 3}

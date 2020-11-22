@@ -7,6 +7,21 @@ public class CameraFollow : MonoBehaviour
     public float smoothTime = 0.3F;
     private Vector3 velocity = Vector3.zero;
 
+    private static bool cameraExists = false;
+
+    private void Start()
+    {
+        //if (!cameraExists)
+        //{
+        //    cameraExists = true;
+        //    DontDestroyOnLoad(transform.gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+    }
+
     void Update()
     {
         // Define a target position above and behind the target transform
