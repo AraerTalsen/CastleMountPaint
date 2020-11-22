@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e4e04f5988404290b3d3536acdba4e7, type: 3}
+  m_Name: SummonedMinion3
+  m_EditorClassIdentifier: 
+  maxHP: 5
+  currentHP: 5
+  HitValue: 1
+  targeted: 0
+  eName: Jacob
+  isDead: 0
+  Description: who knows anymore
+  playerPrefab: {fileID: 7039985120971442677, guid: 56376df567fa14bf3b638c12604a610d,
+    type: 3}
+  baseHitValue: 1
+  maxMinions: 3
