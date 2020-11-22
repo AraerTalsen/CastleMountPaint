@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def0098854d9e4ab2898c09b4e0b81cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4048037190172155731, guid: c9041df8c1db04f41896cb762819526a, type: 3}
+  target: {fileID: 0}
   smoothTime: 0
 --- !u!114 &7485899815987089734
 MonoBehaviour:
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
+  m_AssetsPPU: 48
   m_RefResolutionX: 640
   m_RefResolutionY: 320
   m_UpscaleRT: 0
