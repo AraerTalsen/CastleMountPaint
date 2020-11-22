@@ -247,8 +247,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Overworld
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 11f81e8ab446841fca7abf5f461aba6c, type: 2}
-  m_sharedMaterial: {fileID: 2356559315681561065, guid: 11f81e8ab446841fca7abf5f461aba6c,
+  m_fontAsset: {fileID: 11400000, guid: 2372a327b53024bfcaf34e7cc83d6a72, type: 2}
+  m_sharedMaterial: {fileID: -759619981594541772, guid: 2372a327b53024bfcaf34e7cc83d6a72,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -820,8 +820,8 @@ MonoBehaviour:
 
     Nice Work!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 11f81e8ab446841fca7abf5f461aba6c, type: 2}
-  m_sharedMaterial: {fileID: 2356559315681561065, guid: 11f81e8ab446841fca7abf5f461aba6c,
+  m_fontAsset: {fileID: 11400000, guid: 2372a327b53024bfcaf34e7cc83d6a72, type: 2}
+  m_sharedMaterial: {fileID: -759619981594541772, guid: 2372a327b53024bfcaf34e7cc83d6a72,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
