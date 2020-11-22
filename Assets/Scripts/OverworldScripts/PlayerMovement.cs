@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public bool facingRight;
 
     //horizontal and vertical floats for player movement
-    float hor;
-    float vert;
-    float moveLimiter = 0.7f;
+    //float hor;
+    //float vert;
+    //float moveLimiter = 0.7f;
 
     //sets the enemy that the player collided with - loads that enemy type
     public static bool enemy1Combat, enemy2Combat, enemy3Combat = false;

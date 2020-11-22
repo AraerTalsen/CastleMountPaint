@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10805a524bad3364e8963faacd6fc501
+guid: 7fd5e98a71e1e4ef5b30d8d75de3a0bb
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -20,6 +20,12 @@ TextureImporter:
   - first:
       213: -3657657140355920814
     second: PaintManRan_5
+  - first:
+      213: 7816459740527982559
+    second: PaintManRan_6
+  - first:
+      213: -5393241558113841408
+    second: PaintManRan_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -238,6 +244,48 @@ TextureImporter:
       bones: []
       spriteID: 25c0aeeb5346d3dc0800000000000000
       internalID: -3657657140355920814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PaintManRan_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7ff4b78b4a97c60800000000000000
+      internalID: 7816459740527982559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PaintManRan_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f00c4a06b5725b0800000000000000
+      internalID: -5393241558113841408
       vertices: []
       indices: 
       edges: []

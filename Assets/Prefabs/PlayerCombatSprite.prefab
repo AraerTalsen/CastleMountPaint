@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 170494821}
   - component: {fileID: 170494824}
   - component: {fileID: 170494819}
+  - component: {fileID: 1909957373736462683}
   m_Layer: 0
   m_Name: PlayerCombatSprite
   m_TagString: Player
@@ -167,3 +168,16 @@ MonoBehaviour:
   facingRight: 0
   playerSpeed: 5
   UpdateMinionInventoryFunction: {fileID: 0}
+--- !u!114 &1909957373736462683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394900565442393736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71e6b5a33249485fbd416f1f4ba5a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: 7580578180eaf4a91b5319b69090a099, type: 3}
