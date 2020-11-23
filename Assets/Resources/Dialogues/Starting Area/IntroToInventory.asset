@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b05875697436d4c6ba294074e4b9a851, type: 3}
+  m_Name: IntroToInventory
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - myVoice: {fileID: 0}
+    myText: This is a new mechanic currently in development.
+  - myVoice: {fileID: 0}
+    myText: The Minon Inventory System!
+  - myVoice: {fileID: 0}
+    myText: You will now be able to collect the enemies you defeat after battle and
+      store them in your inventory.
+  - myVoice: {fileID: 0}
+    myText: Outside of combat, you can decide what enemies you would like to take
+      along into battle.
+  - myVoice: {fileID: 0}
+    myText: No longer will you have to take up a turn during combat to summon your
+      minions.
+  - myVoice: {fileID: 0}
+    myText: This mechanic currently has no effect on combat...However!
+  - myVoice: {fileID: 0}
+    myText: You can collect the enemies over there and see them appear in your inventory
+      by pressing TAB.
+  - myVoice: {fileID: 0}
+    myText: We hope to get this up and running soon!

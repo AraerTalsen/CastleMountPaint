@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private static bool playerExists = false;
     //public static Vector2 lastMove;
 
+    public DialogueManager DM;
+
     void Start()
     {
         //if (!playerExists)
@@ -51,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
     {
         LocationRememberer.pos[num] = transform.position;
 
+        if (!DialogueManager.inDialogue)
+        {
             //Player Movement//
             if (Input.GetKey(KeyCode.UpArrow))
             {
@@ -85,6 +89,16 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(0, 0);
                 anim.SetInteger("Direction", 0);
             }
+        }
+        else if (DialogueManager.inDialogue)
+        {
+            body.velocity = new Vector2(0, 0);
+
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.E))
+            {
+                DM.DequeueDialogue();
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

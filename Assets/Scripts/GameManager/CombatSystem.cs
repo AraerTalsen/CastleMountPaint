@@ -35,6 +35,8 @@ public class CombatSystem : MonoBehaviour
     private UpdateHUD uh;
     private PlayerButtons pb;
 
+    public GameObject[] img;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,11 +106,16 @@ public class CombatSystem : MonoBehaviour
     {
         for(int i = 0; i < enemyParty.Length; i++)
         {
+            img[i].GetComponent<enemyCombatAnim>().AnimTime();
+            yield return new WaitForSeconds(1f);
             //Enemy move is decided if enemy is alive
             if (!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(enemyParty[i]));
             PlayerDeadCheck();
+            img[i].GetComponent<enemyCombatAnim>().Retract();
             yield return new WaitForSeconds(1f);
-        }    
+        }
+
+        Invoke("PlayerTurn", 1);
     }
 
     private void PlayerDeadCheck()
@@ -127,8 +134,6 @@ public class CombatSystem : MonoBehaviour
         }
 
         uh.UpdateEveryHUD();
-
-        Invoke("PlayerTurn", 1);
     }
 
     //this is where we would put functionality for if a battle is won or lost (win animations/lose states etc.)
@@ -137,13 +142,16 @@ public class CombatSystem : MonoBehaviour
         if(won)
         {
             Debug.Log("You did it!");
-            LeaveBattle();
+            SceneManager.LoadScene("CombatWinState");
+            //LeaveBattle();
         }
         else
         {
             Debug.Log("You died");
             player1.currentHP = player1.maxHP;
-            LeaveBattle();
+
+            SceneManager.LoadScene("CombatLoseState");
+            //LeaveBattle();
         }
     }
 

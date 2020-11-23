@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{07c1adcc-da2d-4582-9079-7fa3eff2d8a4}">
+		<property name="assetPath">
+			<value>Combat/Sound FX/New Stuff/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{30e6cc85-5e7d-4bd1-9e15-99fcd13df9b4}</destination>
+		</relationship>
+	</object>
+</objects>

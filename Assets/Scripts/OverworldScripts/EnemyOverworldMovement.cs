@@ -119,7 +119,7 @@ public class EnemyOverworldMovement : MonoBehaviour
         {
             CombatSystem.enemyParty = party;
             LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Combat");
         }
     }
 
