@@ -7,12 +7,16 @@ using UnityEngine;
 
 public class PlayerButtons : MonoBehaviour
 {
+    //Interactables
+    public GameObject[] interacts;
+
     //Select target
     public Button[] enemySelect;
     public Button[] allySelect;
     private Button[] targetedPartyButtons;
 
     //Available moves
+    public SpawnButtons sb;
     public Button[] pActions, mActions;
     public Button[][] actions = new Button[4][];
     private delegate void useMove(int target);
@@ -26,7 +30,7 @@ public class PlayerButtons : MonoBehaviour
     
 
     private bool wasEnemyParty = false;
-    private int num, allyIndex;
+    private int num, allyIndex, select;
 
     //Accessed classes
     private PlayerMoves pm;
@@ -41,7 +45,7 @@ public class PlayerButtons : MonoBehaviour
         em = FindObjectOfType<EnemyMoves>();
         mb = FindObjectOfType<MinionBehaviours>();
 
-        actions.SetValue(pActions, 0);
+        //actions.SetValue(pActions, 0);
 
         whichEntity = new useMove[] { PlayerMove, MinionMove};
     }
@@ -61,7 +65,7 @@ public class PlayerButtons : MonoBehaviour
         SetButtonsActive(true, allyIndex);
 
         bool isMaxAllies = pm.numMinions < 3;
-        actions[allyIndex][1].gameObject.SetActive(isMaxAllies);
+        //actions[allyIndex][1].gameObject.SetActive(isMaxAllies);
 
         selectedEntity = whichEntity[allyIndex > 0 ? 1 : 0];
     }
@@ -69,26 +73,34 @@ public class PlayerButtons : MonoBehaviour
     //Use ally moves based on button number selected
     public void OnActionSelect()
     {
-        string pos = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TextMeshProUGUI>().name;
+        string pos = EventSystem.current.currentSelectedGameObject.GetComponent<RectTransform>().GetChild(0).name;
         int.TryParse(pos, out num);
 
-        if (targetedParty != null) SelectTarget(false, wasEnemyParty);
-        SelectTarget(true, num % 2 == 0);
         SetButtonsActive(false, allyIndex);
+        if (targetedParty != null) SelectTarget(false, wasEnemyParty);
+        SelectTarget(true, num % 2 == 0); 
     }
 
     //Set accessibility of action buttons
     private void SetButtonsActive(bool isActive, int index)
     {
-        index = index == 0 ? MinionBehaviours.numMinions : index - 1;
+        if (index != 0)
+        {
+            index = index == 0 ? MinionBehaviours.numMinions : index - 1;
 
-        for (int i = 0; i < actions[index].Length; i++)
-            actions[index][i].gameObject.SetActive(false);
+            for (int i = 0; i < actions[index].Length; i++)
+                actions[index][i].gameObject.SetActive(false);
 
-        index = index == MinionBehaviours.numMinions ? 0 : index + 1;
+            index = index == MinionBehaviours.numMinions ? 0 : index + 1;
 
-        for (int i = 0; i < actions[index].Length; i++)
-            actions[index][i].gameObject.SetActive(isActive);
+            for (int i = 0; i < actions[index].Length; i++)
+                actions[index][i].gameObject.SetActive(isActive);
+        }
+        else
+        {
+            if (isActive) sb.Spawn();
+            else sb.Retract();
+        }
     }
 
 
@@ -117,16 +129,23 @@ public class PlayerButtons : MonoBehaviour
     {
         SelectTarget(false, wasEnemyParty); //hide all the buttons 
 
-        int.TryParse(EventSystem.current.currentSelectedGameObject.transform.GetChild(0).name, out int select);
+        int.TryParse(EventSystem.current.currentSelectedGameObject.transform.GetChild(0).name, out select);
 
         targetedParty[select].targeted = true; //Target Toggle on Enemy Object is set to true
 
-        selectedEntity(select);
+        if (allyIndex != 0 || num != 0)
+            selectedEntity(select);
+        else
+        {
+            interacts[0].SetActive(true);
+            print(interacts[0].activeSelf);
+        }
     }
 
     //Use an ally move(int whichMove, Entity target, Entity user)
     private void PlayerMove(int target)
     {
+        print(target);
         pm.UseMove(num, targetedParty[target], p);
     }
 
@@ -148,5 +167,15 @@ public class PlayerButtons : MonoBehaviour
     public void SetAllyToButtons(int i)
     {
         actions[i] = mActions;
+    }
+
+    public void SkillCheck(int success)
+    {
+        interacts[0].SetActive(false);
+
+        if (success == 0) num = 4;
+
+        selectedEntity(select);
+
     }
 }

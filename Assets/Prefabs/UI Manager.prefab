@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2236611334431528915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2236611334431528912}
+  - component: {fileID: 2236611334431528913}
+  - component: {fileID: 2236611334431528942}
+  m_Layer: 0
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2236611334431528912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236611334431528915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1014.0574, y: 263.2286, z: -111.43976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2236611334431528913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236611334431528915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3267bff046bfc4d28b3d083cfb2aa4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitText: {fileID: 0}
+--- !u!114 &2236611334431528942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2236611334431528915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7e96d1d27aa64892b140d66049f473e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackButton: {fileID: 965524462638526212, guid: 8e86fcf9de77c4256afce7f62c40fca0,
+    type: 3}
+  SpecialButton: {fileID: 3329719585471057396, guid: 7f6e4608be4a047bb8cccac72b5fd357,
+    type: 3}
+  ItemsButton: {fileID: 2468921302061434784, guid: 4c77e5cd5a18b4767991ea8999d8fefc,
+    type: 3}
+  RunButton: {fileID: 4445675502839046750, guid: b964148bdd45240c59c9d292481d9ded,
+    type: 3}
+  CloneAttackButton: {fileID: 0}
+  CloneSpecialButton: {fileID: 0}
+  CloneItemsButton: {fileID: 0}
+  CloneRunButton: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  canSpawn: 0

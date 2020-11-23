@@ -37,7 +37,7 @@ public class PlayerMoves : EntityBehaviours
         em = FindObjectOfType<EnemyMoves>();
         mb = FindObjectOfType<MinionBehaviours>();
 
-        moves = new MoveChoice[4] { DealDamage, HealAllies, Sketch, SummonAllies };
+        moves = new MoveChoice[5] { DealDamage, HealAllies, Sketch, SummonAllies, Miss };
     }
 
     //Player Decision UI elements pop up

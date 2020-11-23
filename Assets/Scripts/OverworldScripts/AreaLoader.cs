@@ -7,6 +7,7 @@ public class AreaLoader : MonoBehaviour
 {
 
     public string AreaToLoad;
+    public bool delay = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,12 @@ public class AreaLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !delay)
         {
             PlayerMovement.firstTime = false;
+            LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
             SceneManager.LoadScene(AreaToLoad);
         }
+        else if (delay) delay = false;
     }
 }

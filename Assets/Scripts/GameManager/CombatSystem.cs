@@ -8,6 +8,7 @@ public class CombatSystem : MonoBehaviour
 {
     //Debug functionality
     public Enemy[] dE;
+    public Enemy[] dA;
 
     //Combative parties
     public Player player1; 
@@ -43,6 +44,8 @@ public class CombatSystem : MonoBehaviour
 
             for(int i = 0; i < dE.Length; i++) enemyParty[i] = Instantiate(dE[i]);
         }
+
+        //for (int i = 1; i < allyParty.Length; i++) allyParty[i] = Instantiate(dA[i - 1]);
 
         livingEnemies = enemyParty.Length;
         
@@ -97,12 +100,15 @@ public class CombatSystem : MonoBehaviour
     }
 
     //this could later be used to decide what attacks the enemy is doing
-    public void EnemyTurn()
+    public IEnumerator EnemyTurn()
     {
         for(int i = 0; i < enemyParty.Length; i++)
+        {
             //Enemy move is decided if enemy is alive
-            if(!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(enemyParty[i]));
-        PlayerDeadCheck();
+            if (!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(enemyParty[i]));
+            PlayerDeadCheck();
+            yield return new WaitForSeconds(1f);
+        }    
     }
 
     private void PlayerDeadCheck()
@@ -131,14 +137,19 @@ public class CombatSystem : MonoBehaviour
         if(won)
         {
             Debug.Log("You did it!");
-            SceneManager.LoadScene(3);
+            LeaveBattle();
         }
         else
         {
             Debug.Log("You died");
             player1.currentHP = player1.maxHP;
-            SceneManager.LoadScene(2);
+            LeaveBattle();
         }
+    }
+
+    public void LeaveBattle()
+    {
+        SceneManager.LoadScene(4);
     }
 
     //Displays to player what the enemy did for its attack

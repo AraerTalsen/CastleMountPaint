@@ -118,6 +118,7 @@ public class EnemyOverworldMovement : MonoBehaviour
         if(collision.collider.CompareTag("Player"))
         {
             CombatSystem.enemyParty = party;
+            LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
             SceneManager.LoadScene(1);
         }
     }

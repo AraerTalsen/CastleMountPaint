@@ -17,4 +17,9 @@ public class EntityBehaviours : MonoBehaviour
         t.currentHP = Mathf.Clamp(t.currentHP, 0, t.maxHP);
         print(t.eName);
     }
+
+    public void Miss(Entity t, Entity u)
+    {
+        print(u.eName + " missed " + t.eName);
+    }
 }

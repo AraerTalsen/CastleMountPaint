@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 723135988}
+    - target: {fileID: 170494819, guid: c9041df8c1db04f41896cb762819526a, type: 3}
+      propertyPath: num
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4048037190172155731, guid: c9041df8c1db04f41896cb762819526a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -260,6 +264,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 891284549}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &723135989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723135988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00250db7f2d68ad429294fd111dfb2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  num: 1
+  player: {fileID: 286156588}
 --- !u!1 &754770728
 GameObject:
   m_ObjectHideFlags: 0
@@ -18386,7 +18404,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 34
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -18485,7 +18503,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 32
-      m_TileSpriteIndex: 15
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -24427,14 +24445,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 5912366852581680502, guid: ee9df31dfa568094f9f998c6f39da8f5,
       type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 2632580963097927500, guid: ee9df31dfa568094f9f998c6f39da8f5,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1990925279605853917, guid: c60abc9f9cdfc874cb37e76644d224af,
       type: 3}

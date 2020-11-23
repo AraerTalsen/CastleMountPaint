@@ -5,6 +5,7 @@ using UnityEngine;
 //player overworld movement script
 public class PlayerMovement : MonoBehaviour
 {
+    public int num;
     private Rigidbody2D body;
     private Animator anim;
     private SpriteRenderer rend;
@@ -48,7 +49,9 @@ public class PlayerMovement : MonoBehaviour
     //Takes the wasd and arrow keys for movement in 8 directions
     void Update()
     {
-        //Player Movement//
+        LocationRememberer.pos[num] = transform.position;
+
+            //Player Movement//
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 //Up

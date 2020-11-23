@@ -49,7 +49,7 @@ public class MinionBehaviours : MonoBehaviour
         else
         {
             cs.EnemyDeadCheck();
-            Invoke("EnemyTurn", 1); //switch to the Enemy Turn Function with a small delay
+            cs.StartCoroutine("EnemyTurn"); //switch to the Enemy Turn Function with a small delay
         }
     }
 

@@ -11,7 +11,7 @@ public class EnemyMoves : EntityBehaviours
 
     private void Start()
     {
-        moves = new MoveChoice[] { DealDamage, HealAllies, DebuffOpponent, BuffAlly };
+        moves = new MoveChoice[] { DealDamage, HealAllies, DebuffOpponent, BuffAlly};
     }
 
     //Switch move that delegate will use
