@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public Sprite blankSprite;
     public Image[] inventory;
     List<Sprite> inventoryList = new List<Sprite>();
+    
 
     public void AddItem(Sprite item)
     {

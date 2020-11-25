@@ -54,17 +54,4 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    public void NonCombatToCombatButton(Button button)
-    {
-
-    }
-
-
-    public void CombatToNonCombatButton(Button button)
-    {
-        
-
-       
-    }
-
 }

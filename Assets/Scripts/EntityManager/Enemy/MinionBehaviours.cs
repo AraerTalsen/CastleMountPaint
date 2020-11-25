@@ -27,7 +27,29 @@ public class MinionBehaviours : MonoBehaviour
 
     public void NewMinion()
     {
-        minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(Random.Range(0, 3))); //Minion brain is created
+        if (ListCreator.minion1Active == true)
+        {
+            minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(0));
+            ListCreator.minion1Active = false;
+            ListCreator.callMinion1 = false;
+        }
+
+        if (ListCreator.minion2Active == true)
+        {
+            minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(1));
+            ListCreator.minion2Active = false;
+            ListCreator.callMinion2 = false;
+        }
+
+        if (ListCreator.minion1Active == true)
+        {
+            minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(2));
+            ListCreator.minion3Active = false;
+            ListCreator.callMinion3 = false;
+        }
+
+        //Randomly do the minions for the player
+        //minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(Random.Range(0, 3))); //Minion brain is created
 
         numMinions++;
         pb.SetAllyToButtons(numMinions);

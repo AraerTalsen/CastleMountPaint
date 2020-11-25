@@ -25,6 +25,7 @@ public class ListCreator : MonoBehaviour
     public List<string> itemNames = new List<string>();
     public List<Sprite> itemImages = new List<Sprite>();
     public List<GameObject> itemHolder = new List<GameObject>();
+    public static List<string> combatMinionsList = new List<string>();
 
     public static bool runInventoryUpdate = false;
     public static bool moveButtonToCombat = false;
@@ -32,6 +33,14 @@ public class ListCreator : MonoBehaviour
     public static int numMinionInCombat = 0;
 
     public int throwAwayIntForTesting = 1;
+
+    public static bool minion1Active = false;
+    public static bool minion2Active = false;
+    public static bool minion3Active = false;
+
+    public static bool callMinion1 = true;
+    public static bool callMinion2 = true;
+    public static bool callMinion3 = true;
 
     void Update()
     {
@@ -46,7 +55,35 @@ public class ListCreator : MonoBehaviour
         if(moveButtonToCombat == true)
         {
             //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
+            string s = EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text;
             GameObject g = itemHolder[itemHolder.IndexOf(EventSystem.current.currentSelectedGameObject)];
+            if (s == "Dan")
+            {
+                combatMinionsList.Add("Dan");
+            } else if (s == "Mike")
+            {
+                combatMinionsList.Add("Mike");
+            } else if (s == "Sean")
+            {
+                combatMinionsList.Add("Sean");
+            }
+
+            if (combatMinionsList.Contains("Dan") && callMinion1 == true)
+            {
+                minion1Active = true;
+            }
+
+            if (combatMinionsList.Contains("Mike") && callMinion2 == true)
+            {
+                minion2Active = true;
+            }
+
+            if (combatMinionsList.Contains("Sean") && callMinion3 == true)
+            {
+                minion3Active = true;
+            }
+
+
             itemNames.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
             itemImages.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().image.sprite);
             itemHolder.Remove(EventSystem.current.currentSelectedGameObject);
@@ -66,7 +103,6 @@ public class ListCreator : MonoBehaviour
     public void UpdateMinionInventory()
     {
         //setContent Holder Height;
-        //Debug.Log(numberOfItems);
         content.sizeDelta = new Vector2(0, numberOfItems * 50);
         int f = itemHolder.Count;
         for (int i = 0; i < f; i++)
@@ -75,7 +111,7 @@ public class ListCreator : MonoBehaviour
             itemHolder.Remove(g);
             Destroy(g);
         }
-        Debug.Log(numberOfItems);
+        
 
         for (int i = 0; i < numberOfItems; i++)
         {
