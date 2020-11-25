@@ -45,45 +45,37 @@ public class ListCreator : MonoBehaviour
 
         if(moveButtonToCombat == true)
         {
-            string n = EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text;
-            Debug.Log(n);
-            /*
-            if (n == "Dan")
-            {
-                itemHolder.Remove(item);
-                itemNames.Remove(n);
-                itemImages.Remove(image1);
-                itemHolder.IndexOf(n);
-            } else if (n == "Mike")
-            {
-                itemHolder.Remove(item);
-                itemNames.Remove(n);
-                itemImages.Remove(image2);
-            } else if (n == "Sean")
-            {
-                itemHolder.Remove(item);
-                itemNames.Remove(n);
-                itemImages.Remove(image3);
-            }
-            */
-            //right now only removes first item in list but I physically can't work on this anymore my brain has died
-            GameObject g = itemHolder[0];
-            itemHolder.RemoveAt(0);
-            itemNames.RemoveAt(0);
-            itemImages.RemoveAt(0);
+            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
+            GameObject g = itemHolder[itemHolder.IndexOf(EventSystem.current.currentSelectedGameObject)];
+            itemNames.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
+            itemImages.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().image.sprite);
+            itemHolder.Remove(EventSystem.current.currentSelectedGameObject);
             Destroy(g);
             addToCombatInventory = true;
             numMinionInCombat++;
+            numberOfItems--;
             numberOfItemsCollected--;
             moveButtonToCombat = false;
-        }
+            UpdateMinionInventory();
 
+        }
+        //return event system to what needs it (combat)
+        //before destroying g, send data from it to combat
     }
 
     public void UpdateMinionInventory()
     {
         //setContent Holder Height;
+        //Debug.Log(numberOfItems);
         content.sizeDelta = new Vector2(0, numberOfItems * 50);
+        int f = itemHolder.Count;
+        for (int i = 0; i < f; i++)
+        {
+            GameObject g = itemHolder[0];
+            itemHolder.Remove(g);
+            Destroy(g);
+        }
+        Debug.Log(numberOfItems);
 
         for (int i = 0; i < numberOfItems; i++)
         {
@@ -111,6 +103,7 @@ public class ListCreator : MonoBehaviour
         {
             itemNames.Insert(0, "Dan");
             itemImages.Insert(0, image1);
+            
             throwAwayIntForTesting++;
         } else if (throwAwayIntForTesting == 2)
         {

@@ -18,7 +18,6 @@ public class InventoryUI : MonoBehaviour
     public static bool minion2Removed = false;
     public static bool minion3Removed = false;
 
-
     // Start is called before the first frame update
     void Start()
     {

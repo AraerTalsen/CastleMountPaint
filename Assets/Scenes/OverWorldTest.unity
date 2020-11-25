@@ -168,6 +168,15 @@ PrefabInstance:
       propertyPath: DM
       value: 
       objectReference: {fileID: 855166205}
+    - target: {fileID: 170494819, guid: c9041df8c1db04f41896cb762819526a, type: 3}
+      propertyPath: Inventory
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 170494819, guid: c9041df8c1db04f41896cb762819526a, type: 3}
+      propertyPath: minionSprite
+      value: 
+      objectReference: {fileID: -8601826741900776645, guid: c60abc9f9cdfc874cb37e76644d224af,
+        type: 3}
     - target: {fileID: 4048037190172155731, guid: c9041df8c1db04f41896cb762819526a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3837,6 +3846,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 449209687316981900, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4577014969723167419, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3851,6 +3865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672921388709674430, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7781422163341485857, guid: 09532cd592c0d624fb6cf21e0c9c0d36,
         type: 3}

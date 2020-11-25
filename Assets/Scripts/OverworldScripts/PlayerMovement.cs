@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
     public static bool firstTime = true;
     private static bool playerExists = false;
+
+    public Sprite minionSprite;
     //public static Vector2 lastMove;
 
     public DialogueManager DM;
@@ -56,26 +58,26 @@ public class PlayerMovement : MonoBehaviour
         if (!DialogueManager.inDialogue)
         {
             //Player Movement//
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 //Up
                 body.velocity = new Vector2(0, playerSpeed);
                 anim.SetInteger("Direction", 1); //animation change
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
                 //Down
                 body.velocity = new Vector2(0, -playerSpeed);
                 anim.SetInteger("Direction", 3);
             }
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 //Left
                 body.velocity = new Vector2(-playerSpeed, 0);
                 anim.SetInteger("Direction", 2);
                 transform.localScale = new Vector3(-1, 1, 1); //flip the sprite
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 //Right
                 body.velocity = new Vector2(playerSpeed, 0);
@@ -83,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.localScale = new Vector3(1, 1, 1); //flip the sprite
             }
 
-            if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
+            if (!Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
             {
                 //No Input
                 body.velocity = new Vector2(0, 0);
