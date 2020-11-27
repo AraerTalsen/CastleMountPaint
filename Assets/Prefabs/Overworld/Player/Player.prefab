@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012523234, y: -0.020872355}
+  m_Offset: {x: 0.0042022467, y: 0.0022085905}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.74019635, y: 0.88985574}
+  m_Size: {x: 0.4893142, y: 0.93601763}
   m_EdgeRadius: 0
 --- !u!114 &170494819
 MonoBehaviour:
@@ -149,7 +149,8 @@ MonoBehaviour:
   num: 1
   playerSpeed: 5
   UpdateMinionInventoryFunction: {fileID: 0}
-  minionSprite: {fileID: 0}
+  minionSprite: {fileID: -8601826741900776645, guid: c60abc9f9cdfc874cb37e76644d224af,
+    type: 3}
   DM: {fileID: 0}
 --- !u!114 &1909957373736462683
 MonoBehaviour:

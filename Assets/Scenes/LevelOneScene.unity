@@ -1734,14 +1734,6 @@ PrefabInstance:
       propertyPath: DM
       value: 
       objectReference: {fileID: 1084925224}
-    - target: {fileID: 170494821, guid: c9041df8c1db04f41896cb762819526a, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.0013587773
-      objectReference: {fileID: 0}
-    - target: {fileID: 170494821, guid: c9041df8c1db04f41896cb762819526a, type: 3}
-      propertyPath: m_Size.y
-      value: 0.9288829
-      objectReference: {fileID: 0}
     - target: {fileID: 4048037190172155731, guid: c9041df8c1db04f41896cb762819526a,
         type: 3}
       propertyPath: m_LocalPosition.x

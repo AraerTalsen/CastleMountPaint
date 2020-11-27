@@ -168,15 +168,6 @@ PrefabInstance:
       propertyPath: DM
       value: 
       objectReference: {fileID: 855166205}
-    - target: {fileID: 170494819, guid: c9041df8c1db04f41896cb762819526a, type: 3}
-      propertyPath: Inventory
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 170494819, guid: c9041df8c1db04f41896cb762819526a, type: 3}
-      propertyPath: minionSprite
-      value: 
-      objectReference: {fileID: -8601826741900776645, guid: c60abc9f9cdfc874cb37e76644d224af,
-        type: 3}
     - target: {fileID: 4048037190172155731, guid: c9041df8c1db04f41896cb762819526a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8730,6 +8721,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8080295008416593069, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 30.96997
+      objectReference: {fileID: 0}
     - target: {fileID: 8080295009212103315, guid: 7e604ab21dc0d49a38373023790a89f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8843,7 +8839,7 @@ PrefabInstance:
     - target: {fileID: 8080295009332495090, guid: 7e604ab21dc0d49a38373023790a89f3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 35.30005
+      value: 35.299805
       objectReference: {fileID: 0}
     - target: {fileID: 8080295009332495093, guid: 7e604ab21dc0d49a38373023790a89f3,
         type: 3}
