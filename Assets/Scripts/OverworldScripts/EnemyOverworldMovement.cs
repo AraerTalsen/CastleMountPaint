@@ -24,6 +24,8 @@ public class EnemyOverworldMovement : MonoBehaviour
 
     public GameObject alertSprite;
 
+    public Animator transition;
+
     private void Start()
     {
         for(int i = 0; i < party.Length; i++)
@@ -119,7 +121,7 @@ public class EnemyOverworldMovement : MonoBehaviour
         {
             CombatSystem.enemyParty = party;
             LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
-            SceneManager.LoadScene("Combat");
+            LoadNextLevel();
         }
     }
 
@@ -142,5 +144,19 @@ public class EnemyOverworldMovement : MonoBehaviour
             playerInRange = false;
             anim.SetBool("isMoving", false);
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        StartCoroutine(LoadLevel("Combat"));
+    }
+
+    IEnumerator LoadLevel(string levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("Combat");
     }
 }

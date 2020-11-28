@@ -5,21 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class AreaLoader : MonoBehaviour
 {
-
+    public Animator transition;
     public string AreaToLoad;
     public bool delay = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,8 +15,24 @@ public class AreaLoader : MonoBehaviour
         {
             PlayerMovement.firstTime = false;
             LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
-            SceneManager.LoadScene(AreaToLoad);
+            LoadNextLevel();
+            //SceneManager.LoadScene(AreaToLoad);
         }
         else if (delay) delay = false;
     }
+
+    public void LoadNextLevel()
+    {
+        StartCoroutine(LoadLevel("LevelOneScene"));
+    }
+
+    IEnumerator LoadLevel(string levelIndex)
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("LevelOneScene");
+    }
+
 }
