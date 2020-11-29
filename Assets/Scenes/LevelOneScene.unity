@@ -7155,6 +7155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8448ec368237f4b53a355044d14f7f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transition: {fileID: 0}
   AreaToLoad: OverWorldTest
   delay: 0
 --- !u!61 &1144243796
