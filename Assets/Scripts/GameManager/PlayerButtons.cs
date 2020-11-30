@@ -48,6 +48,11 @@ public class PlayerButtons : MonoBehaviour
         //actions.SetValue(pActions, 0);
 
         whichEntity = new useMove[] { PlayerMove, MinionMove};
+
+        for (int i = 1; i <= 3; i++)
+        {
+            actions[i] = mActions;
+        }    
     }
 
 
@@ -84,14 +89,15 @@ public class PlayerButtons : MonoBehaviour
     //Set accessibility of action buttons
     private void SetButtonsActive(bool isActive, int index)
     {
+        print(index);
         if (index != 0)
         {
-            index = index == 0 ? MinionBehaviours.numMinions : index - 1;
+            //index = index == 0 ? MinionBehaviours.numMinions : index - 1;
 
             for (int i = 0; i < actions[index].Length; i++)
                 actions[index][i].gameObject.SetActive(false);
 
-            index = index == MinionBehaviours.numMinions ? 0 : index + 1;
+            //index = index == MinionBehaviours.numMinions ? 0 : index + 1;
 
             for (int i = 0; i < actions[index].Length; i++)
                 actions[index][i].gameObject.SetActive(isActive);
@@ -145,7 +151,6 @@ public class PlayerButtons : MonoBehaviour
     //Use an ally move(int whichMove, Entity target, Entity user)
     private void PlayerMove(int target)
     {
-        print(target);
         pm.UseMove(num, targetedParty[target], p);
     }
 

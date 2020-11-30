@@ -69,6 +69,16 @@ public class UpdateHUD : MonoBehaviour
             }
         }
 
+        for(int i = 1; i < numAllies; i++)
+        {
+            Enemy c = (Enemy)a[i];
+            aDisplay[i].gameObject.SetActive(true);
+
+            aDisplay[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + c.eName;
+            aDisplay[i].transform.GetChild(1).GetComponent<Slider>().maxValue = c.maxHP;
+            aDisplay[i].transform.GetChild(2).GetComponent<Image>().sprite = c.enemySprite;
+        }
+
         Enemy[] e = CombatSystem.enemyParty;
 
         for (int i = 0; i < e.Length; i++)

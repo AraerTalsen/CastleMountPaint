@@ -5929,7 +5929,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCombatSprite
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 170494819, guid: c9041df8c1db04f41896cb762819526a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c9041df8c1db04f41896cb762819526a, type: 3}
 --- !u!1 &982828320
 GameObject:

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeb9a6233e68846b4b933b3447adf8ad, type: 3}
-  m_Name: Enemy2
+  m_Name: Dan
   m_EditorClassIdentifier: 
   eName: Dan
   Description: Shit
@@ -18,7 +18,7 @@ MonoBehaviour:
   currentHP: 15
   baseHitValue: 2
   HitValue: 2
-  targeted: 1
+  targeted: 0
   isDead: 0
   enemyType: {fileID: 6097236154317962364, guid: a3d7b21235a5f48d69a32f0ce9f88957,
     type: 3}

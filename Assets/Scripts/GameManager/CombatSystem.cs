@@ -61,8 +61,26 @@ public class CombatSystem : MonoBehaviour
 
     private void SetUpCombat()
     {
-        MinionBehaviours.numMinions = 0;
+        List<string> s = ListCreator.combatMinionsList;
+        
         allyParty[0] = player1;
+
+        if(s == null)
+        {
+            MinionBehaviours.numMinions = 3;
+            print("Debug party active");
+            for (int i = 1; i < allyParty.Length; i++)
+                allyParty[i] = dA[i - 1];
+        }
+        else
+        {
+            MinionBehaviours.numMinions = s.Count;
+            for (int i = 1; i <= s.Count; i++)
+            {
+                allyParty[i] = Instantiate((Entity)Resources.Load("Enemies/" + s[i - 1], typeof(Object)));
+            }
+        }
+        
 
         uh.LoadHUDs();
         uh.UpdateEveryHUD();
@@ -79,7 +97,7 @@ public class CombatSystem : MonoBehaviour
 
     private void PlayerTurn()
     {
-        pm.PlayerDecision(player1, enemyParty);
+        pm.PlayerDecision(allyParty, enemyParty);
     }
 
     public void EnemyDeadCheck()
@@ -106,13 +124,16 @@ public class CombatSystem : MonoBehaviour
     {
         for(int i = 0; i < enemyParty.Length; i++)
         {
-            img[i].GetComponent<enemyCombatAnim>().AnimTime();
-            yield return new WaitForSeconds(1f);
-            //Enemy move is decided if enemy is alive
-            if (!enemyParty[i].isDead) enemyAction[i].sprite = ImageAssign(em.ChooseAction(enemyParty[i]));
-            PlayerDeadCheck();
-            img[i].GetComponent<enemyCombatAnim>().Retract();
-            yield return new WaitForSeconds(1f);
+            if(!enemyParty[i].isDead)
+            {
+                img[i].GetComponent<enemyCombatAnim>().AnimTime();
+                yield return new WaitForSeconds(1f);
+                //Enemy move is decided if enemy is alive
+                enemyAction[i].sprite = ImageAssign(em.ChooseAction(enemyParty[i]));
+                PlayerDeadCheck();
+                img[i].GetComponent<enemyCombatAnim>().Retract();
+                yield return new WaitForSeconds(1f);
+            }
         }
 
         Invoke("PlayerTurn", 1);
@@ -142,7 +163,7 @@ public class CombatSystem : MonoBehaviour
         if(won)
         {
             Debug.Log("You did it!");
-            SceneManager.LoadScene("CombatWinState");
+            SceneManager.LoadScene("LevelOneScene");
             //LeaveBattle();
         }
         else
@@ -150,7 +171,7 @@ public class CombatSystem : MonoBehaviour
             Debug.Log("You died");
             player1.currentHP = player1.maxHP;
 
-            SceneManager.LoadScene("CombatLoseState");
+            SceneManager.LoadScene("OverWorldTest");
             //LeaveBattle();
         }
     }

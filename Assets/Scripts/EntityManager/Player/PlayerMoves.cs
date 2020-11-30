@@ -10,7 +10,7 @@ public class PlayerMoves : EntityBehaviours
 
     private Player p;
     private Enemy[] e; //enemy party
-    private Entity[] a = new Entity[5]; //ally party
+    private Entity[] a = new Entity[4]; //ally party
 
     //Accessed libraries
     private CombatSystem cs;
@@ -41,12 +41,12 @@ public class PlayerMoves : EntityBehaviours
     }
 
     //Player Decision UI elements pop up
-    public void PlayerDecision(Player player, Enemy[] enemies)
+    public void PlayerDecision(Entity[] allies, Enemy[] enemies)
     {
-        p = player;
+        p = (Player)allies[0];
         pb.SetPlayer(p);
         e = enemies;
-        a[0] = p;
+        a = allies;
 
         pb.PlayerNewTurn(0, e, a);
     }
