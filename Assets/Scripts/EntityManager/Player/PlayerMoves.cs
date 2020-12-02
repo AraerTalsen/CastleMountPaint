@@ -37,7 +37,7 @@ public class PlayerMoves : EntityBehaviours
         em = FindObjectOfType<EnemyMoves>();
         mb = FindObjectOfType<MinionBehaviours>();
 
-        moves = new MoveChoice[5] { DealDamage, HealAllies, Sketch, SummonAllies, Miss };
+        moves = new MoveChoice[5] { DealDamage, HealAllies, SpecialAttack, SummonAllies, Miss };
     }
 
     //Player Decision UI elements pop up
@@ -86,5 +86,16 @@ public class PlayerMoves : EntityBehaviours
 
             a[nMinions + 1] = mb.minions[nMinions];
         }
+    }
+
+    public void SpecialAttack(Entity t, Entity u)
+    {
+        if(p.currentPaint - 3 >= 0)
+        {
+            t.currentHP -= u.HitValue * 2;
+            p.currentPaint -= 3;
+        }
+        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Player Damaged");
     }
 }

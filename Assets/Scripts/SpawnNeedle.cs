@@ -34,7 +34,6 @@ public class SpawnNeedle : MonoBehaviour
     void RandomInt()
     {
         side = Random.Range(0, 2);
-        Debug.Log(side);
 
         if (side == 0)
         {

@@ -12,6 +12,7 @@ public class UpdateHUD : MonoBehaviour
     //Allies
     public TextMeshProUGUI[] allyHP;
     public Slider[] allyHPSlider;
+    public Slider paintSlider;
 
     //Enemies
     public TextMeshProUGUI[] enemyHP;
@@ -37,6 +38,7 @@ public class UpdateHUD : MonoBehaviour
                 allyHPSlider[i].value = a[i].currentHP;
             }
         }
+        paintSlider.value = ((Player)a[0]).currentPaint;
     }
 
     private void UpdateEnemyHUD()
@@ -58,18 +60,13 @@ public class UpdateHUD : MonoBehaviour
         Entity[] a = CombatSystem.allyParty;
         int numAllies = MinionBehaviours.numMinions + 1;
 
-        for (int i = 0; i < numAllies; i++)
-        {
-            if(a[i] != null)
-            {
-                aDisplay[i].gameObject.SetActive(true);
+        aDisplay[0].gameObject.SetActive(true);
 
-                aDisplay[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + a[i].eName;
-                aDisplay[i].transform.GetChild(1).GetComponent<Slider>().maxValue = a[i].maxHP;
-            }
-        }
+        aDisplay[0].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + a[0].eName;
+        aDisplay[0].transform.GetChild(1).GetComponent<Slider>().maxValue = a[0].maxHP;
+        paintSlider.maxValue = ((Player)a[0]).currentPaint;
 
-        for(int i = 1; i < numAllies; i++)
+        for (int i = 1; i < numAllies; i++)
         {
             Enemy c = (Enemy)a[i];
             aDisplay[i].gameObject.SetActive(true);

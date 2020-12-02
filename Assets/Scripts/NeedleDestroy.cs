@@ -50,7 +50,6 @@ public class NeedleDestroy : MonoBehaviour
             else if(transform.position.x <= 0.5f && transform.position.x >= -0.5f)
             {
                 success = 2;
-                Debug.Log("Crit");
 
                 canAct = false;
                 crit = true;

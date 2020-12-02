@@ -15,6 +15,4 @@ public class Entity : ScriptableObject
 
     public bool targeted = false;
     public bool isDead = false;
-    
-    
 }

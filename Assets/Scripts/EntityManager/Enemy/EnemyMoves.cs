@@ -20,19 +20,23 @@ public class EnemyMoves : EntityBehaviours
         selectedMove = moves[index];
     }
 
-    public void UseMove(int index, Entity target, Entity user)
+    public void UseMove(int index, Entity target, Entity user, Player p)
     {
         Directory(index);
 
-        selectedMove(target, user);
+        if(index == 1 && p.currentPaint > 0)
+        {
+            selectedMove(target, user);
+            p.currentPaint--;
+            if (p.currentPaint < 0) p.currentPaint = 0;
+        }
+        else if(index == 0) selectedMove(target, user);
     }
 
     private Entity ChooseTarget(bool friendly)
     {
         Entity[] p = friendly ? CombatSystem.enemyParty : CombatSystem.allyParty;
         int count = 0, j = 0;
-
-        //if (a[1] != null && !a[1].isDead) return a[1];
 
         for (int i = 0; i < p.Length; i++)
             if (p[i] != null && !p[i].isDead) count++;
@@ -59,8 +63,6 @@ public class EnemyMoves : EntityBehaviours
 
         int enemyAttackPhase = Random.Range(0, 2);
         Entity t = ChooseTarget(enemyAttackPhase % 2 == 1);
-
-        if (user.currentHP <= user.maxHP / 2) enemyAttackPhase = Random.Range(0, 2);
 
         Directory(enemyAttackPhase);
 

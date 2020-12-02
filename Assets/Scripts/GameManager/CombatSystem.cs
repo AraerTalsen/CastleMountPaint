@@ -47,8 +47,6 @@ public class CombatSystem : MonoBehaviour
             for(int i = 0; i < dE.Length; i++) enemyParty[i] = Instantiate(dE[i]);
         }
 
-        //for (int i = 1; i < allyParty.Length; i++) allyParty[i] = Instantiate(dA[i - 1]);
-
         livingEnemies = enemyParty.Length;
         
         em = FindObjectOfType<EnemyMoves>();
@@ -64,13 +62,15 @@ public class CombatSystem : MonoBehaviour
         List<string> s = ListCreator.combatMinionsList;
         
         allyParty[0] = player1;
+        ((Player)allyParty[0]).currentPaint = ((Player)allyParty[0]).maxPaint;
 
-        if(s == null)
+        if (s == null || s.Count == 0)
         {
             MinionBehaviours.numMinions = 3;
             print("Debug party active");
             for (int i = 1; i < allyParty.Length; i++)
-                allyParty[i] = dA[i - 1];
+                allyParty[i] = Instantiate(dA[i - 1]);
+                
         }
         else
         {
@@ -162,9 +162,16 @@ public class CombatSystem : MonoBehaviour
     {
         if(won)
         {
+            List<string> s = new List<string>();
+            for(int i = 1; i < allyParty.Length; i++)
+            {
+                if (!allyParty[i].isDead) s.Add(allyParty[i].eName);
+            }
+
+            ListCreator.combatMinionsList = s;
+
             Debug.Log("You did it!");
             SceneManager.LoadScene("LevelOneScene");
-            //LeaveBattle();
         }
         else
         {

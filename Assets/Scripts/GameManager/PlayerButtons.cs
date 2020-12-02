@@ -89,7 +89,6 @@ public class PlayerButtons : MonoBehaviour
     //Set accessibility of action buttons
     private void SetButtonsActive(bool isActive, int index)
     {
-        print(index);
         if (index != 0)
         {
             //index = index == 0 ? MinionBehaviours.numMinions : index - 1;
@@ -144,7 +143,6 @@ public class PlayerButtons : MonoBehaviour
         else
         {
             interacts[0].SetActive(true);
-            print(interacts[0].activeSelf);
         }
     }
 
@@ -157,7 +155,7 @@ public class PlayerButtons : MonoBehaviour
     //Use an ally move(int whichMove, Entity target, Entity user)
     private void MinionMove(int target)
     {
-        em.UseMove(num, targetedParty[target], a[allyIndex]);
+        em.UseMove(num, targetedParty[target], a[allyIndex], (Player)a[0]);
 
         mb.MinionTurn(allyIndex + 1, e, a);
     }
