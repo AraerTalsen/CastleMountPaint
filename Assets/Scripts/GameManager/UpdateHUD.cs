@@ -17,6 +17,7 @@ public class UpdateHUD : MonoBehaviour
     //Enemies
     public TextMeshProUGUI[] enemyHP;
     public Slider[] enemyHPSlider;
+    public SpriteRenderer[] eSprites;
 
     // Update is called once per frame
     public void UpdateEveryHUD()
@@ -73,7 +74,7 @@ public class UpdateHUD : MonoBehaviour
 
             aDisplay[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + c.eName;
             aDisplay[i].transform.GetChild(1).GetComponent<Slider>().maxValue = c.maxHP;
-            aDisplay[i].transform.GetChild(2).GetComponent<Image>().sprite = c.enemySprite;
+            aDisplay[i].transform.GetComponentInParent<SpriteRenderer>().sprite = c.enemySprite;
         }
 
         Enemy[] e = CombatSystem.enemyParty;
@@ -84,7 +85,7 @@ public class UpdateHUD : MonoBehaviour
 
             eDisplay[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + e[i].eName;
             eDisplay[i].transform.GetChild(1).GetComponent<Slider>().maxValue = e[i].maxHP;
-            eDisplay[i].transform.GetChild(2).GetComponent<Image>().sprite = e[i].enemySprite;
+            eSprites[i].sprite = e[i].enemySprite;
         }
     }
 

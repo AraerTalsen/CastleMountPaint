@@ -63,12 +63,12 @@ public class MinionBehaviours : MonoBehaviour
 
     public void MinionTurn(int index, Enemy[] e, Entity[]a)
     {
-        if (index <= numMinions)
+        if (index <= numMinions && !CombatSystem.allyParty[index].isDead)
         {
             pb.PlayerNewTurn(index, e, a);
             cs.EnemyDeadCheck();
         }
-        else
+        else if(index > numMinions)
         {
             cs.EnemyDeadCheck();
             cs.StartCoroutine("EnemyTurn"); //switch to the Enemy Turn Function with a small delay

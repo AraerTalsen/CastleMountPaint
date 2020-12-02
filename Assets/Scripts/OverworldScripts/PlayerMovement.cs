@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         LocationRememberer.pos[num] = transform.position;
-        print(LocationRememberer.pos[num]);
 
         if (!DialogueManager.inDialogue)
         {

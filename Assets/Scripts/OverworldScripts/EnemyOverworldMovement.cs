@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyOverworldMovement : MonoBehaviour
 {
+    public int num;
     public float speed;
     public Vector2 target;
     public Vector2 position;
@@ -28,6 +29,7 @@ public class EnemyOverworldMovement : MonoBehaviour
 
     private void Start()
     {
+        gameObject.SetActive(ActiveOverworldEntity.entityInDimension[0][num]);
         for(int i = 0; i < party.Length; i++)
         {
             party[i] = Instantiate(party[i]);
@@ -120,7 +122,7 @@ public class EnemyOverworldMovement : MonoBehaviour
         if(collision.collider.CompareTag("Player"))
         {
             CombatSystem.enemyParty = party;
-            LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
+            //LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
             LoadNextLevel();
         }
     }
@@ -148,6 +150,8 @@ public class EnemyOverworldMovement : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        CombatSystem.id = num;
+        CombatSystem.enemyParty = party;
         StartCoroutine(LoadLevel("Combat"));
     }
 

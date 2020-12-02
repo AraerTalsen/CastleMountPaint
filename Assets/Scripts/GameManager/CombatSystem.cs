@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class CombatSystem : MonoBehaviour
 {
+    //Enemy ID
+    public static int id;
+
     //Debug functionality
     public Enemy[] dE;
     public Enemy[] dA;
@@ -22,8 +25,8 @@ public class CombatSystem : MonoBehaviour
 
     //Party UI
 
-    public Image[] eDisplay; //The panel that enemy info is listed on. [Disable to make everything disabled.]
-    public Image[] aDisplay; //The panel that ally info is listed on. [Disable to make everything disabled.]
+    public GameObject[] eDisplay; //The panel that enemy info is listed on. [Disable to make everything disabled.]
+    public GameObject[] aDisplay; //The panel that ally info is listed on. [Disable to make everything disabled.]
     public Image[] enemyAction;
     public Sprite[] actions;
 
@@ -40,11 +43,16 @@ public class CombatSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (enemyParty == null)
+        print(id);
+        if (enemyParty == null || enemyParty.Length == 0)
         {
             enemyParty = new Enemy[dE.Length];
 
-            for(int i = 0; i < dE.Length; i++) enemyParty[i] = Instantiate(dE[i]);
+            for (int i = 0; i < dE.Length; i++)
+            {
+                enemyParty[i] = Instantiate(dE[i]);
+                enemyParty[i].currentHP = 1;
+            }
         }
 
         livingEnemies = enemyParty.Length;
@@ -69,8 +77,9 @@ public class CombatSystem : MonoBehaviour
             MinionBehaviours.numMinions = 3;
             print("Debug party active");
             for (int i = 1; i < allyParty.Length; i++)
+            {
                 allyParty[i] = Instantiate(dA[i - 1]);
-                
+            }                  
         }
         else
         {
@@ -106,7 +115,7 @@ public class CombatSystem : MonoBehaviour
             if (enemyParty[i].currentHP <= 0 && !enemyParty[i].isDead)
             {
                 enemyParty[i].isDead = true;
-                eDisplay[i].gameObject.SetActive(false);
+                eDisplay[i].SetActive(false);
                 livingEnemies--;
             }
 
@@ -114,6 +123,7 @@ public class CombatSystem : MonoBehaviour
 
         if (livingEnemies <= 0)
         {
+            print("e");
             Debug.Log("Battle Won");
             EndCombat(true);
         }
@@ -145,11 +155,15 @@ public class CombatSystem : MonoBehaviour
         {
             if (allyParty[i] != null && allyParty[i].currentHP <= 0 && !allyParty[i].isDead)
             {
-                if (i == 0) EndCombat(false);
+                if (i == 0)
+                {
+                    print("p");
+                    EndCombat(false);
+                }
                 else
                 {
                     allyParty[i].isDead = true;
-                    aDisplay[i].gameObject.SetActive(false);
+                    aDisplay[i].SetActive(false);
                 }
             }
         }
@@ -171,21 +185,22 @@ public class CombatSystem : MonoBehaviour
             ListCreator.combatMinionsList = s;
 
             Debug.Log("You did it!");
-            SceneManager.LoadScene("LevelOneScene");
+            ActiveOverworldEntity.entityInDimension[0][id] = false;
+            ActiveOverworldEntity.entityCount[0]--;
+            LeaveBattle();
         }
         else
         {
             Debug.Log("You died");
             player1.currentHP = player1.maxHP;
 
-            SceneManager.LoadScene("OverWorldTest");
-            //LeaveBattle();
+            LeaveBattle();
         }
     }
 
     public void LeaveBattle()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("LevelOneScene");
     }
 
     //Displays to player what the enemy did for its attack
