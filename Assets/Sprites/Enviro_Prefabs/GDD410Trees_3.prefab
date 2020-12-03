@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3278611828822923527}
   - component: {fileID: 3321102019219297615}
   - component: {fileID: 1444523934272074554}
+  - component: {fileID: -8998349232263007113}
   m_Layer: 0
   m_Name: GDD410Trees_3
   m_TagString: Untagged
@@ -109,3 +110,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5921707, y: 0.28726006}
   m_EdgeRadius: 0
+--- !u!114 &-8998349232263007113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174153749488905305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d88545828ce6841ac0ce149c68436a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  c: {r: 0, g: 0, b: 0, a: 0}
+  num: 0
+  minion: 0
+  player: {fileID: 5394900565442393736, guid: c9041df8c1db04f41896cb762819526a, type: 3}

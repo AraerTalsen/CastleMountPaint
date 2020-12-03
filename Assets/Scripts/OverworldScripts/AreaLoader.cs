@@ -14,7 +14,7 @@ public class AreaLoader : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !delay)
         {
             PlayerMovement.firstTime = false;
-            LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
+             
             LoadNextLevel();
             //SceneManager.LoadScene(AreaToLoad);
         }

@@ -9,7 +9,7 @@ public class LocationLoader : MonoBehaviour
 
     private AreaLoader al;
 
-    private void Awake()
+    private void Start()
     {
         if (LocationRememberer.awokenDim[num])
         {
@@ -17,5 +17,7 @@ public class LocationLoader : MonoBehaviour
             al = FindObjectOfType<AreaLoader>();
             al.delay = true;
         }
+        else
+            LocationRememberer.awokenDim[num] = true;
     }
 }

@@ -185,7 +185,7 @@ public class CombatSystem : MonoBehaviour
             ListCreator.combatMinionsList = s;
 
             Debug.Log("You did it!");
-            ActiveOverworldEntity.entityInDimension[0][id] = false;
+            ActiveOverworldEntity.entityInDimension[0][0][id].SetActive(false);
             ActiveOverworldEntity.entityCount[0]--;
             LeaveBattle();
         }

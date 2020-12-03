@@ -5,8 +5,13 @@ using UnityEngine;
 public class ActiveOverworldEntity : MonoBehaviour
 {
     public static int[] entityCount = { 3 };
-    public static bool[][] entityInDimension =
+
+    public static List<GameObject>[][] entityInDimension =
     {
-        new bool[]{ true, true, true}
+        new List<GameObject>[]//Level 1
+        {
+            new List<GameObject>(),//Enemies
+            new List<GameObject>() //Assets
+        }
     };
 }

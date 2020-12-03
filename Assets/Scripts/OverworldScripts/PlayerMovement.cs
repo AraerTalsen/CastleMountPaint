@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public int num;
+    public Vector2 facing = Vector2.down;
     private Rigidbody2D body;
     private Animator anim;
     private SpriteRenderer rend;
@@ -61,18 +62,21 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 //Up
+                facing = Vector2.up;
                 body.velocity = new Vector2(0, playerSpeed);
                 anim.SetInteger("Direction", 1); //animation change
             }
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
                 //Down
+                facing = Vector2.down;
                 body.velocity = new Vector2(0, -playerSpeed);
                 anim.SetInteger("Direction", 3);
             }
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 //Left
+                facing = Vector2.left;
                 body.velocity = new Vector2(-playerSpeed, 0);
                 anim.SetInteger("Direction", 2);
                 transform.localScale = new Vector3(-1, 1, 1); //flip the sprite
@@ -80,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 //Right
+                facing = Vector2.right;
                 body.velocity = new Vector2(playerSpeed, 0);
                 anim.SetInteger("Direction", 2);
                 transform.localScale = new Vector3(1, 1, 1); //flip the sprite

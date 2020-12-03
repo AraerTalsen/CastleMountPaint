@@ -12,7 +12,7 @@ public class LocationRememberer : MonoBehaviour
         pos[0] = new Vector2(0, -8);
         pos[1] = new Vector2(-13, 2);
 
-        awokenDim[0] = false;
-        awokenDim[1] = false;
+        //awokenDim[0] = false;
+        //awokenDim[1] = false;
     }
 }
