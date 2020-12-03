@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
-            UpdateMinionInventoryFunction.InsertNewMinion();
+            UpdateMinionInventoryFunction.InsertSeanMinion();
             Destroy(other.gameObject);
         }
 
@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
-            UpdateMinionInventoryFunction.InsertNewMinion();
+            UpdateMinionInventoryFunction.InsertMikeMinion();
             Destroy(other.gameObject);
         }
 
@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
-            UpdateMinionInventoryFunction.InsertNewMinion();
+            UpdateMinionInventoryFunction.InsertDanMinion();
             Destroy(other.gameObject);
         }
     }

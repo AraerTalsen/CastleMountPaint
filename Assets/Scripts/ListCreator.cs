@@ -66,13 +66,15 @@ public class ListCreator : MonoBehaviour
 
     void Update()
     {
-        numberOfItems = numberOfItemsCollected;
+        int combatListLength = combatMinionsList.Count;
 
+        numberOfItems = numberOfItemsCollected;
+        SaveInventoryDataAcrossScenes();
         if (runInventoryUpdate == true)
         {
             UpdateMinionInventory();
             runInventoryUpdate = false;
-            SaveInventoryDataAcrossScenes();
+            
         }
 
         if(moveButtonToCombat == true)
@@ -80,43 +82,50 @@ public class ListCreator : MonoBehaviour
             //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
             string s = EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text;
             GameObject g = itemHolder[itemHolder.IndexOf(EventSystem.current.currentSelectedGameObject)];
-            if (s == "Dan")
-            {
-                combatMinionsList.Add("Dan");
-            } else if (s == "Mike")
-            {
-                combatMinionsList.Add("Mike");
-            } else if (s == "Sean")
-            {
-                combatMinionsList.Add("Sean");
-            }
 
-            if (combatMinionsList.Contains("Dan") && callMinion1 == true)
+            //int combatListLength = combatMinionsList.Count;
+            if (combatListLength < 3)
             {
-                minion1Active = true;
-            }
+                if (s == "Dan")
+                {
+                    combatMinionsList.Add("Dan");
+                }
+                else if (s == "Mike")
+                {
+                    combatMinionsList.Add("Mike");
+                }
+                else if (s == "Sean")
+                {
+                    combatMinionsList.Add("Sean");
+                }
 
-            if (combatMinionsList.Contains("Mike") && callMinion2 == true)
-            {
-                minion2Active = true;
-            }
+                if (combatMinionsList.Contains("Dan") && callMinion1 == true)
+                {
+                    minion1Active = true;
+                }
 
-            if (combatMinionsList.Contains("Sean") && callMinion3 == true)
-            {
-                minion3Active = true;
-            }
+                if (combatMinionsList.Contains("Mike") && callMinion2 == true)
+                {
+                    minion2Active = true;
+                }
 
+                if (combatMinionsList.Contains("Sean") && callMinion3 == true)
+                {
+                    minion3Active = true;
+                }
 
-            itemNames.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
-            itemImages.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().image.sprite);
-            itemHolder.Remove(EventSystem.current.currentSelectedGameObject);
-            Destroy(g);
-            addToCombatInventory = true;
-            numMinionInCombat++;
-            numberOfItems--;
-            numberOfItemsCollected--;
-            moveButtonToCombat = false;
-            UpdateMinionInventory();
+                itemNames.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
+                itemImages.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().image.sprite);
+                itemHolder.Remove(EventSystem.current.currentSelectedGameObject);
+                Destroy(g);
+                addToCombatInventory = true;
+                numMinionInCombat++;
+                numberOfItems--;
+                numberOfItemsCollected--;
+                moveButtonToCombat = false;
+                UpdateMinionInventory();
+            } 
+
 
         }
 
@@ -154,25 +163,23 @@ public class ListCreator : MonoBehaviour
         }
     }
 
-    //adds minion to inventory on collision
-    public void InsertNewMinion()
+    //adds minion to non combat inventory
+    public void InsertSeanMinion()
     {
-        if (throwAwayIntForTesting == 1)
-        {
-            itemNames.Insert(0, "Dan");
-            itemImages.Insert(0, image1);
-            throwAwayIntForTesting++;
-        } else if (throwAwayIntForTesting == 2)
-        {
-            itemNames.Insert(0, "Mike");
-            itemImages.Insert(0, image2);
-            throwAwayIntForTesting++;
-        } else if (throwAwayIntForTesting == 3)
-        {
-            itemNames.Insert(0, "Sean");
-            itemImages.Insert(0, image3);
-        }
+        itemNames.Insert(0, "Sean");
+        itemImages.Insert(0, image3);
+    }
 
+    public void InsertMikeMinion()
+    {
+        itemNames.Insert(0, "Mike");
+        itemImages.Insert(0, image2);
+    }
+
+    public void InsertDanMinion()
+    {
+        itemNames.Insert(0, "Dan");
+        itemImages.Insert(0, image1);
     }
 
     public void SaveInventoryDataAcrossScenes()
@@ -183,4 +190,105 @@ public class ListCreator : MonoBehaviour
         GlobalControl.Instance.combatMinionsList = combatMinionsList;
     }
 
+    public void CombatButtonOne()
+    {
+        int indexOfSean = combatMinionsList.IndexOf("Sean");
+        int indexOfMike = combatMinionsList.IndexOf("Mike");
+        int indexOfDan = combatMinionsList.IndexOf("Dan");
+        if (combatMinionsList.Contains("Sean") && indexOfSean == 0)
+        {
+            combatMinionsList.Remove("Sean");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertSeanMinion();
+            UpdateMinionInventory();
+        }
+        if (combatMinionsList.Contains("Mike") && indexOfMike == 0)
+        {
+            combatMinionsList.Remove("Mike");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertMikeMinion();
+            UpdateMinionInventory();
+        }
+        if (combatMinionsList.Contains("Dan") && indexOfDan == 0)
+        {
+            combatMinionsList.Remove("Dan");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertDanMinion();
+            UpdateMinionInventory();
+        }
+    }
+
+    public void CombatButtonTwo()
+    {
+        int indexOfSean = combatMinionsList.IndexOf("Sean");
+        int indexOfMike = combatMinionsList.IndexOf("Mike");
+        int indexOfDan = combatMinionsList.IndexOf("Dan");
+        if (combatMinionsList.Contains("Sean") && indexOfSean == 1)
+        {
+            combatMinionsList.Remove("Sean");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertSeanMinion();
+            UpdateMinionInventory();
+        }
+        if (combatMinionsList.Contains("Mike") && indexOfMike == 1)
+        {
+            combatMinionsList.Remove("Mike");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertMikeMinion();
+            UpdateMinionInventory();
+        }
+        if (combatMinionsList.Contains("Dan") && indexOfDan == 1)
+        {
+            combatMinionsList.Remove("Dan");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertDanMinion();
+            UpdateMinionInventory();
+        }
+    }
+
+    public void CombatButtonThree()
+    {
+        int indexOfSean = combatMinionsList.IndexOf("Sean");
+        int indexOfMike = combatMinionsList.IndexOf("Mike");
+        int indexOfDan = combatMinionsList.IndexOf("Dan");
+        if (combatMinionsList.Contains("Sean") && indexOfSean == 2)
+        {
+            combatMinionsList.Remove("Sean");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertSeanMinion();
+            UpdateMinionInventory();
+        }
+        if (combatMinionsList.Contains("Mike") && indexOfMike == 2)
+        {
+            combatMinionsList.Remove("Mike");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertMikeMinion();
+            UpdateMinionInventory();
+        }
+        if (combatMinionsList.Contains("Dan") && indexOfDan == 2)
+        {
+            combatMinionsList.Remove("Dan");
+            numMinionInCombat--;
+            numberOfItems++;
+            numberOfItemsCollected++;
+            InsertDanMinion();
+            UpdateMinionInventory();
+        }
+    }
 }

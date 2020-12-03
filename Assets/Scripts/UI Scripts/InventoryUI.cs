@@ -18,15 +18,27 @@ public class InventoryUI : MonoBehaviour
     public static bool minion2Removed = false;
     public static bool minion3Removed = false;
 
+    public bool openInvOnce = true;
+
     // Start is called before the first frame update
     void Start()
     {
         //DontDestroyOnLoad(transform.gameObject);
+        StartCoroutine(FixInvBug());
+
+    }
+
+    IEnumerator FixInvBug()
+    {
         inventoryOpen = true;
         inventoryUIObject.SetActive(true);
+        inventoryUIObject.transform.localPosition = new Vector2(1000, 1000);
+        yield return new WaitForEndOfFrame();
         inventoryOpen = false;
+        inventoryUIObject.transform.localPosition = new Vector2(0, 0);
         inventoryUIObject.SetActive(false);
     }
+
 
     // Update is called once per frame
     void Update()
@@ -44,14 +56,23 @@ public class InventoryUI : MonoBehaviour
             
         }
 
+        if (ListCreator.numMinionInCombat == 0)
+        {
+            CombatMinionInventory[0].GetComponent<Image>().enabled = false;
+            CombatMinionInventory[1].GetComponent<Image>().enabled = false;
+            CombatMinionInventory[2].GetComponent<Image>().enabled = false;
+        }
         if (ListCreator.numMinionInCombat == 1)
         {
             CombatMinionInventory[0].GetComponent<Image>().enabled = true;
+            CombatMinionInventory[1].GetComponent<Image>().enabled = false;
+            CombatMinionInventory[2].GetComponent<Image>().enabled = false;
         }
         if (ListCreator.numMinionInCombat == 2)
         {
             CombatMinionInventory[0].GetComponent<Image>().enabled = true;
             CombatMinionInventory[1].GetComponent<Image>().enabled = true;
+            CombatMinionInventory[2].GetComponent<Image>().enabled = false;
         }
         if (ListCreator.numMinionInCombat == 3)
         {
