@@ -22,6 +22,10 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         //DontDestroyOnLoad(transform.gameObject);
+        inventoryOpen = true;
+        inventoryUIObject.SetActive(true);
+        inventoryOpen = false;
+        inventoryUIObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,10 +50,13 @@ public class InventoryUI : MonoBehaviour
         }
         if (ListCreator.numMinionInCombat == 2)
         {
+            CombatMinionInventory[0].GetComponent<Image>().enabled = true;
             CombatMinionInventory[1].GetComponent<Image>().enabled = true;
         }
         if (ListCreator.numMinionInCombat == 3)
         {
+            CombatMinionInventory[0].GetComponent<Image>().enabled = true;
+            CombatMinionInventory[1].GetComponent<Image>().enabled = true;
             CombatMinionInventory[2].GetComponent<Image>().enabled = true;
         }
     }

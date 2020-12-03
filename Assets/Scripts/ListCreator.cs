@@ -42,6 +42,28 @@ public class ListCreator : MonoBehaviour
     public static bool callMinion2 = true;
     public static bool callMinion3 = true;
 
+    void Start()
+    {
+        if (itemNames != null)
+        {
+            itemNames = GlobalControl.Instance.itemNames;
+        }
+        if (itemImages != null)
+        {
+            itemImages = GlobalControl.Instance.itemImages;
+        }
+        if (itemHolder != null)
+        {
+            itemHolder = GlobalControl.Instance.itemHolder;
+        }
+        if (combatMinionsList != null)
+        {
+            combatMinionsList = GlobalControl.Instance.combatMinionsList;
+        }
+
+    }
+
+
     void Update()
     {
         numberOfItems = numberOfItemsCollected;
@@ -50,6 +72,7 @@ public class ListCreator : MonoBehaviour
         {
             UpdateMinionInventory();
             runInventoryUpdate = false;
+            SaveInventoryDataAcrossScenes();
         }
 
         if(moveButtonToCombat == true)
@@ -96,8 +119,7 @@ public class ListCreator : MonoBehaviour
             UpdateMinionInventory();
 
         }
-        //return event system to what needs it (combat)
-        //before destroying g, send data from it to combat
+
     }
 
     public void UpdateMinionInventory()
@@ -139,7 +161,6 @@ public class ListCreator : MonoBehaviour
         {
             itemNames.Insert(0, "Dan");
             itemImages.Insert(0, image1);
-            
             throwAwayIntForTesting++;
         } else if (throwAwayIntForTesting == 2)
         {
@@ -152,6 +173,14 @@ public class ListCreator : MonoBehaviour
             itemImages.Insert(0, image3);
         }
 
+    }
+
+    public void SaveInventoryDataAcrossScenes()
+    {
+        GlobalControl.Instance.itemNames = itemNames;
+        GlobalControl.Instance.itemImages = itemImages;
+        GlobalControl.Instance.itemHolder = itemHolder;
+        GlobalControl.Instance.combatMinionsList = combatMinionsList;
     }
 
 }
