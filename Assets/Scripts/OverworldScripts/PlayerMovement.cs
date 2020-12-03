@@ -44,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         rend = GetComponent<SpriteRenderer>();
 
+        UpdateMinionInventoryFunction = FindObjectOfType<ListCreator>();
+
         enemy1Combat = false;
         enemy2Combat = false;
         enemy3Combat = false;
@@ -110,10 +112,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+
         if (other.gameObject.tag == "enemy1Sketch")
         {
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
+            Debug.Log(UpdateMinionInventoryFunction == null);
             UpdateMinionInventoryFunction.InsertSeanMinion();
             Destroy(other.gameObject);
         }
@@ -122,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
+            Debug.Log(UpdateMinionInventoryFunction == null);
             UpdateMinionInventoryFunction.InsertMikeMinion();
             Destroy(other.gameObject);
         }
@@ -130,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
+            Debug.Log(UpdateMinionInventoryFunction == null);
             UpdateMinionInventoryFunction.InsertDanMinion();
             Destroy(other.gameObject);
         }

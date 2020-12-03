@@ -60,6 +60,7 @@ public class ListCreator : MonoBehaviour
         {
             combatMinionsList = GlobalControl.Instance.combatMinionsList;
         }
+        runInventoryUpdate = true;
 
     }
 
@@ -80,13 +81,20 @@ public class ListCreator : MonoBehaviour
         if(moveButtonToCombat == true)
         {
             //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
+            //Debug.Log(EventSystem.current == null);
+            //Debug.Log(EventSystem.current.currentSelectedGameObject == null);
+            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>() == null);
+            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text == null);
+            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text == null);
+
+
             string s = EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text;
             GameObject g = itemHolder[itemHolder.IndexOf(EventSystem.current.currentSelectedGameObject)];
 
-            //int combatListLength = combatMinionsList.Count;
             if (combatListLength < 3)
             {
-                if (s == "Dan")
+                Debug.Log("Dan");
+                if (s == "Dan") 
                 {
                     combatMinionsList.Add("Dan");
                 }
@@ -102,16 +110,27 @@ public class ListCreator : MonoBehaviour
                 if (combatMinionsList.Contains("Dan") && callMinion1 == true)
                 {
                     minion1Active = true;
+                } else
+                {
+                    minion1Active = false;
                 }
 
                 if (combatMinionsList.Contains("Mike") && callMinion2 == true)
                 {
                     minion2Active = true;
                 }
+                else
+                {
+                    minion2Active = false;
+                }
 
                 if (combatMinionsList.Contains("Sean") && callMinion3 == true)
                 {
                     minion3Active = true;
+                }
+                else
+                {
+                    minion3Active = false;
                 }
 
                 itemNames.Remove(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
@@ -124,8 +143,8 @@ public class ListCreator : MonoBehaviour
                 numberOfItemsCollected--;
                 moveButtonToCombat = false;
                 UpdateMinionInventory();
-            } 
-
+            }
+            
 
         }
 
@@ -156,6 +175,7 @@ public class ListCreator : MonoBehaviour
             itemHolder[0].transform.SetParent(SpawnPoint, false);
             //get ItemDetails Component
             ItemDetails itemDetails = itemHolder[0].GetComponent<ItemDetails>();
+            Debug.Log(itemDetails);
             //set name
             itemDetails.text.text = itemNames[i];
             //set image
