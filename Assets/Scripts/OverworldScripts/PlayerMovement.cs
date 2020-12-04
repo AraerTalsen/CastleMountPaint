@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(0, 0);
 
-            if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 DM.DequeueDialogue();
             }

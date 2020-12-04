@@ -20,7 +20,7 @@ public class Interactable : MonoBehaviour
         if(Vector2.Distance(gameObject.transform.position, OverworldManager.instance.Player.position) < interactRange)
         { 
             interactIcon.SetActive(true);
-            if (Input.GetKeyUp(KeyCode.E))
+            if (Input.GetKeyUp(KeyCode.E) && !DialogueManager.inDialogue)
             {
                 Interact();
             }

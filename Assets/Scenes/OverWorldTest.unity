@@ -1888,7 +1888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1461865748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23150,7 +23150,7 @@ PrefabInstance:
     - target: {fileID: 8501476262476298072, guid: 223586fd9d8867b4fb1c268069fd9a12,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8501476262476298073, guid: 223586fd9d8867b4fb1c268069fd9a12,
         type: 3}
@@ -23641,6 +23641,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventoryDataHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589323821014079383, guid: 1e1561bee3381d84f8db71b79bfa9ab7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1561bee3381d84f8db71b79bfa9ab7, type: 3}

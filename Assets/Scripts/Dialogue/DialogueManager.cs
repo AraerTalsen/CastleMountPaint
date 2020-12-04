@@ -159,7 +159,7 @@ public class DialogueManager : MonoBehaviour
         {
             yield return new WaitForSeconds(delay);
             dialogueText.text += c;
-            AudioManager.instance.PlayClip(info.myVoice); //play every letter
+            //AudioManager.instance.PlayClip(info.myVoice); //play every letter
         }
         isCurrentlyTyping = false;
     }
