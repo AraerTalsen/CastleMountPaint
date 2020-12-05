@@ -27,17 +27,8 @@ public class EnemyOverworldMovement : MonoBehaviour
 
     public Animator transition;
 
-    private void Awake()
-    {
-        if (!LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num])
-        {
-            ActiveOverworldEntity.entityInDimension[0][0].Add(gameObject);
-        }
-    }
-
     private void Start()
     {
-        gameObject.SetActive(ActiveOverworldEntity.entityInDimension[0][0][num]);
         for(int i = 0; i < party.Length; i++)
         {
             party[i] = Instantiate(party[i]);
@@ -158,7 +149,7 @@ public class EnemyOverworldMovement : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        CombatSystem.id = num;
+        CombatSystem.id = GetComponent<Whackable>().id;
         CombatSystem.enemyParty = party;
         StartCoroutine(LoadLevel("Combat"));
     }

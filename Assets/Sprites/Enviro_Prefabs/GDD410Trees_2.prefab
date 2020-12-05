@@ -123,6 +123,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   c: {r: 0, g: 0, b: 0, a: 0}
-  num: 0
+  type: 1
+  id: 0
   minion: 0
-  player: {fileID: 5394900565442393736, guid: c9041df8c1db04f41896cb762819526a, type: 3}
+  on: 1
+  pFacing: {x: 0, y: 0}
+  meToPlayer: {x: 0, y: 0}

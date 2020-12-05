@@ -9,7 +9,7 @@ public class EnemiesAliveHUD : MonoBehaviour
 
     public void Start()
     {
-        t.text = "Enemies: " + ActiveOverworldEntity.entityCount[0];
+        t.text = "Enemies: " + ActiveOverworldEntity.entityCount[1];
     }
 
 }

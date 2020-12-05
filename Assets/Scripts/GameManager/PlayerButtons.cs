@@ -36,7 +36,6 @@ public class PlayerButtons : MonoBehaviour
     private PlayerMoves pm;
     private EnemyMoves em;
     private MinionBehaviours mb;
-
     
 
     private void Awake()
@@ -139,7 +138,9 @@ public class PlayerButtons : MonoBehaviour
         targetedParty[select].targeted = true; //Target Toggle on Enemy Object is set to true
 
         if (allyIndex != 0 || num != 0)
+        {
             selectedEntity(select);
+        }    
         else
         {
             interacts[0].SetActive(true);

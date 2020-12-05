@@ -31,6 +31,7 @@ public class CombatSystem : MonoBehaviour
     public Sprite[] actions;
 
     public static int livingEnemies;
+    private bool debugSession = false;
 
     //Accessed classes
     private EnemyMoves em;
@@ -43,7 +44,6 @@ public class CombatSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print(id);
         if (enemyParty == null || enemyParty.Length == 0)
         {
             enemyParty = new Enemy[dE.Length];
@@ -53,7 +53,9 @@ public class CombatSystem : MonoBehaviour
                 enemyParty[i] = Instantiate(dE[i]);
                 enemyParty[i].currentHP = 1;
             }
+            debugSession = true;
         }
+        else debugSession = false;
 
         livingEnemies = enemyParty.Length;
         
@@ -123,8 +125,6 @@ public class CombatSystem : MonoBehaviour
 
         if (livingEnemies <= 0)
         {
-            print("e");
-            Debug.Log("Battle Won");
             EndCombat(true);
         }
     }
@@ -179,14 +179,21 @@ public class CombatSystem : MonoBehaviour
             List<string> s = new List<string>();
             for(int i = 1; i < allyParty.Length; i++)
             {
-                if (!allyParty[i].isDead) s.Add(allyParty[i].eName);
+                if (allyParty[i] != null &&!allyParty[i].isDead) s.Add(allyParty[i].eName);
             }
 
             ListCreator.combatMinionsList = s;
 
             Debug.Log("You did it!");
-            ActiveOverworldEntity.entityInDimension[0][0][id].SetActive(false);
-            ActiveOverworldEntity.entityCount[0]--;
+
+            if(!debugSession)
+            {
+                print(id);
+                ActiveOverworldEntity.entityInDimension[1][0][id] = false;
+                ActiveOverworldEntity.entityCount[1]--;
+            }
+            else ActiveOverworldEntity.dim = 1;
+
             LeaveBattle();
         }
         else

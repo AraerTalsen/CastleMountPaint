@@ -3891,6 +3891,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 1
   player: {fileID: 286156588}
+--- !u!114 &723135990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723135988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271f3b3c1284932439bb77091ff78893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &725788016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4685303857792211870, guid: c733940b0f60c0044b9919b166a36438,
@@ -7484,6 +7496,7 @@ MonoBehaviour:
   transition: {fileID: 0}
   AreaToLoad: OverWorldTest
   delay: 0
+  goingToDim: 0
 --- !u!61 &1144243796
 BoxCollider2D:
   m_ObjectHideFlags: 0

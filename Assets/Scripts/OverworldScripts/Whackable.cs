@@ -5,25 +5,27 @@ using UnityEngine;
 public class Whackable : MonoBehaviour
 {
     public Color c;
-    public int num;
-    public bool minion;
+    public int type, id;
+    public bool minion, on = true;
     private static PlayerMovement pm;
     private Transform pos;
 
     public Vector2 pFacing, meToPlayer;
+    public Whackable[] w;
 
-    private void Awake()
+    /*private void Awake()
     {
-        if(!LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num])
+        if (!LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num])
         {
-            ActiveOverworldEntity.entityInDimension[0][1].Add(gameObject);
+            id = ActiveOverworldEntity.AddEntity(type, this);
         }
-    }
+        else if (on) on = ActiveOverworldEntity.entityInDimension[1][type].Find();
+    }*/
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(ActiveOverworldEntity.entityInDimension[0][1][num]);
+        //gameObject.SetActive(on);
         pm = FindObjectOfType<PlayerMovement>();
     }
 
@@ -52,7 +54,12 @@ public class Whackable : MonoBehaviour
 
     private void GetWhacked()
     {
-        ActiveOverworldEntity.entityInDimension[0][1][num].SetActive(false);
+        on = false;
         gameObject.SetActive(false);
+    }
+
+    public void UpdateEntity()
+    {
+        gameObject.SetActive(on);
     }
 }

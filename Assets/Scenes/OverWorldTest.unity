@@ -1246,6 +1246,7 @@ MonoBehaviour:
   transition: {fileID: 2032539513}
   AreaToLoad: LevelOneScene
   delay: 0
+  goingToDim: 1
 --- !u!1 &812952500
 GameObject:
   m_ObjectHideFlags: 0
@@ -23393,6 +23394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause Menu Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080295009212103319, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8080295009332495090, guid: 7e604ab21dc0d49a38373023790a89f3,
         type: 3}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 80744162620146483}
   - component: {fileID: 1570206553103657760}
   - component: {fileID: 206428106}
+  - component: {fileID: -3304174643778185972}
   m_Layer: 0
   m_Name: PaintMite
   m_TagString: Enemy
@@ -162,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e944d3c70ed131408c242166819b16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  num: 0
   speed: 1
   target: {x: 0, y: 0}
   position: {x: 0, y: 0}
@@ -177,6 +179,7 @@ MonoBehaviour:
   moveX: 0
   moveY: 0
   alertSprite: {fileID: 1574774579971643678}
+  transition: {fileID: 0}
 --- !u!95 &206428106
 Animator:
   serializedVersion: 3
@@ -196,6 +199,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3304174643778185972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171763555570473251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d88545828ce6841ac0ce149c68436a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  c: {r: 0, g: 0, b: 0, a: 0}
+  type: 0
+  id: 0
+  minion: 0
+  on: 1
+  pFacing: {x: 0, y: 0}
+  meToPlayer: {x: 0, y: 0}
 --- !u!1 &1574774579971643678
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class AreaLoader : MonoBehaviour
     public Animator transition;
     public string AreaToLoad;
     public bool delay = false;
+    public int goingToDim;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,6 +24,7 @@ public class AreaLoader : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        ActiveOverworldEntity.dim = goingToDim;
         StartCoroutine(LoadLevel("LevelOneScene"));
     }
 
