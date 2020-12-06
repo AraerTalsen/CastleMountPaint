@@ -27,17 +27,16 @@ public class InventoryUI : MonoBehaviour
     {
         //DontDestroyOnLoad(transform.gameObject);
         StartCoroutine(FixInvBug());
-
     }
 
     IEnumerator FixInvBug()
     {
         inventoryOpen = true;
         inventoryUIObject.SetActive(true);
-        inventoryUIObject.transform.localPosition = new Vector2(1000, 1000);
+        //inventoryUIObject.transform.localPosition = new Vector2(1000, 1000);
         yield return new WaitForEndOfFrame();
         inventoryOpen = false;
-        inventoryUIObject.transform.localPosition = new Vector2(0, 0);
+        //inventoryUIObject.transform.localPosition = new Vector2(0, 0);
         inventoryUIObject.SetActive(false);
     }
 
@@ -55,7 +54,6 @@ public class InventoryUI : MonoBehaviour
 
         } else if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == true)
         {
-            inventoryUIObject.transform.localPosition = new Vector2(0,-200);
             PlayerMovement.pauseGame = false;
             inventoryOpen = false;
             inventoryUIObject.SetActive(false);
