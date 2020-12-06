@@ -120,6 +120,8 @@ public class EnemyOverworldMovement : MonoBehaviour
     {
         if(collision.collider.CompareTag("Player"))
         {
+            PlayerMovement.pauseGame = true;
+            playerInRange = false;
             CombatSystem.enemyParty = party;
             //LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num] = true;
             LoadNextLevel();

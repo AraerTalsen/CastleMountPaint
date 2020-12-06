@@ -20,6 +20,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.P))
         {
+            Time.timeScale = 1;
+            PlayerMovement.pauseGame = false;
             OpenMenu();
         }
 
@@ -41,6 +43,8 @@ public class PauseMenu : MonoBehaviour
         }
         else if (!menuOpen)
         {
+            Time.timeScale = 0;
+            PlayerMovement.pauseGame = true;
             menuOpen = true;
         }
     }

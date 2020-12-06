@@ -43,14 +43,16 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && inventoryOpen == false)
+        if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == false)
         {
+            PlayerMovement.pauseGame = true;
             inventoryOpen = true;
             inventoryUIObject.SetActive(true);
 
 
-        } else if (Input.GetKeyDown(KeyCode.Tab) && inventoryOpen == true)
+        } else if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == true)
         {
+            PlayerMovement.pauseGame = false;
             inventoryOpen = false;
             inventoryUIObject.SetActive(false);
             

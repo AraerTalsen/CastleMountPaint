@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     //sets the speed the player moves at
     public float playerSpeed = 10.0f;
+    public float speedStore;
 
     public ListCreator UpdateMinionInventoryFunction;
 
@@ -23,9 +24,10 @@ public class PlayerMovement : MonoBehaviour
     private static bool playerExists = false;
 
     public Sprite minionSprite;
-    //public static Vector2 lastMove;
 
     public DialogueManager DM;
+
+    public static bool pauseGame = false;
 
     void Start()
     {
@@ -51,14 +53,18 @@ public class PlayerMovement : MonoBehaviour
         enemy3Combat = false;
 
         rend.enabled = true;
-    }
+
+        pauseGame = false;
+
+        speedStore = playerSpeed;
+}
 
     //Takes the wasd and arrow keys for movement in 8 directions
     void Update()
     {
         LocationRememberer.pos[num] = transform.position;
 
-        if (!DialogueManager.inDialogue)
+        if (!DialogueManager.inDialogue && pauseGame == false)
         {
             //Player Movement//
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
@@ -107,6 +113,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 DM.DequeueDialogue();
             }
+        }
+
+        if (pauseGame)
+        {
+            body.velocity = new Vector2(0,0);
+            playerSpeed = 0;
+            anim.enabled = false;
+        }
+        else
+        {
+            anim.enabled = true;
+            playerSpeed = speedStore;
         }
     }
 

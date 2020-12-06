@@ -14,6 +14,8 @@ public class AreaLoader : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !delay)
         {
+            PlayerMovement.pauseGame = true;
+
             PlayerMovement.firstTime = false;
              
             LoadNextLevel();
