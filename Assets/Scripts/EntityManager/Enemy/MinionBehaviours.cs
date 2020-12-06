@@ -28,25 +28,28 @@ public class MinionBehaviours : MonoBehaviour
 
     public void NewMinion()
     {
-        if (ListCreator.minion1Active == true)
+        if(ListCreator.combatMinionsList.Count != 0)
         {
-            minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(0));
-            ListCreator.minion1Active = false;
-            ListCreator.callMinion1 = false;
-        }
+            if (ListCreator.minion1Active == true)
+            {
+                minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(0));
+                ListCreator.minion1Active = false;
+                ListCreator.callMinion1 = false;
+            }
 
-        if (ListCreator.minion2Active == true)
-        {
-            minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(1));
-            ListCreator.minion2Active = false;
-            ListCreator.callMinion2 = false;
-        }
+            if (ListCreator.minion2Active == true)
+            {
+                minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(1));
+                ListCreator.minion2Active = false;
+                ListCreator.callMinion2 = false;
+            }
 
-        if (ListCreator.minion1Active == true)
-        {
-            minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(2));
-            ListCreator.minion3Active = false;
-            ListCreator.callMinion3 = false;
+            if (ListCreator.minion3Active == true)
+            {
+                minions[numMinions] = Instantiate(EnemyLibrary.ChooseEnemy(2));
+                ListCreator.minion3Active = false;
+                ListCreator.callMinion3 = false;
+            }
         }
 
         //Randomly do the minions for the player

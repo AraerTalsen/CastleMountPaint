@@ -34,10 +34,10 @@ public class InventoryUI : MonoBehaviour
     {
         inventoryOpen = true;
         inventoryUIObject.SetActive(true);
-        //inventoryUIObject.transform.localPosition = new Vector2(1000, 1000);
+        inventoryUIObject.transform.localPosition = new Vector2(1000, 1000);
         yield return new WaitForEndOfFrame();
         inventoryOpen = false;
-        //inventoryUIObject.transform.localPosition = new Vector2(0, 0);
+        inventoryUIObject.transform.localPosition = new Vector2(0, 0);
         inventoryUIObject.SetActive(false);
     }
 
@@ -50,12 +50,12 @@ public class InventoryUI : MonoBehaviour
             PlayerMovement.pauseGame = true;
             inventoryOpen = true;
             inventoryUIObject.SetActive(true);
-
             LeanTween.move(inventoryUIObject, movePoint, 0.3f);
 
 
         } else if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == true)
         {
+            inventoryUIObject.transform.localPosition = new Vector2(0,-200);
             PlayerMovement.pauseGame = false;
             inventoryOpen = false;
             inventoryUIObject.SetActive(false);

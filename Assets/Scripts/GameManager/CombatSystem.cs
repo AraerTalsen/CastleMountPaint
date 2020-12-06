@@ -76,7 +76,7 @@ public class CombatSystem : MonoBehaviour
 
         if (s == null || s.Count == 0)
         {
-            MinionBehaviours.numMinions = 3;
+            MinionBehaviours.numMinions = 0;
             print("Debug party active");
             for (int i = 1; i < allyParty.Length; i++)
             {

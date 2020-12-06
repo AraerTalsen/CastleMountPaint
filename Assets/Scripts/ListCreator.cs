@@ -61,7 +61,6 @@ public class ListCreator : MonoBehaviour
             combatMinionsList = GlobalControl.Instance.combatMinionsList;
         }
         runInventoryUpdate = true;
-
     }
 
 
@@ -80,20 +79,11 @@ public class ListCreator : MonoBehaviour
 
         if(moveButtonToCombat == true)
         {
-            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text);
-            //Debug.Log(EventSystem.current == null);
-            //Debug.Log(EventSystem.current.currentSelectedGameObject == null);
-            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>() == null);
-            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text == null);
-            //Debug.Log(EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text == null);
-
-
             string s = EventSystem.current.currentSelectedGameObject.GetComponent<ItemDetails>().text.text;
             GameObject g = itemHolder[itemHolder.IndexOf(EventSystem.current.currentSelectedGameObject)];
 
             if (combatListLength < 3)
             {
-                Debug.Log("Dan");
                 if (s == "Dan") 
                 {
                     combatMinionsList.Add("Dan");
