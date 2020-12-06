@@ -18,6 +18,9 @@ public class LocationLoader : MonoBehaviour
             //al.delay = true;
         }
         else
+        {
             LocationRememberer.awokenDim[num] = true;
+            print("good");
+        }   
     }
 }

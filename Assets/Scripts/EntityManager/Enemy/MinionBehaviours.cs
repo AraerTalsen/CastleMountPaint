@@ -75,9 +75,8 @@ public class MinionBehaviours : MonoBehaviour
         if (index <= numMinions && !CombatSystem.allyParty[index].isDead)
         {
             pb.PlayerNewTurn(index, e, a);
-            Debug.Log("Dan the man");
 
-            cs.EnemyDeadCheck();
+            //cs.EnemyDeadCheck();
         }
         else if(index > numMinions)
         {
@@ -86,10 +85,9 @@ public class MinionBehaviours : MonoBehaviour
                 bodies[i].GetComponent<MinionAnimScript>().MinionRetract();
             }
 
-            cs.EnemyDeadCheck();
+            //cs.EnemyDeadCheck();
             cs.StartCoroutine("EnemyTurn"); //switch to the Enemy Turn Function with a small delay
         }
-        //bodies[index].GetComponent<MinionAnimScript>().MinionRetract();
     }
 
     //Invoke can only be called on a method in the same class, but Enemy Turn is in a different class.

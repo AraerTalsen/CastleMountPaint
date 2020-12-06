@@ -74,9 +74,9 @@ public class CombatSystem : MonoBehaviour
         allyParty[0] = player1;
         ((Player)allyParty[0]).currentPaint = ((Player)allyParty[0]).maxPaint;
 
-        if (s == null || s.Count == 0)
+        if (s == null || debugSession)
         {
-            MinionBehaviours.numMinions = 0;
+            MinionBehaviours.numMinions = 3;
             print("Debug party active");
             for (int i = 1; i < allyParty.Length; i++)
             {
@@ -188,7 +188,7 @@ public class CombatSystem : MonoBehaviour
 
             if(!debugSession)
             {
-                print(id);
+                print(1);
                 ActiveOverworldEntity.entityInDimension[1][0][id] = false;
                 ActiveOverworldEntity.entityCount[1]--;
             }

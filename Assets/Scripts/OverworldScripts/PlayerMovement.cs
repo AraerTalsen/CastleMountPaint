@@ -5,6 +5,7 @@ using UnityEngine;
 //player overworld movement script
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject hitRange;
     public int num;
     public Vector2 facing = Vector2.down;
     private Rigidbody2D body;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public DialogueManager DM;
 
     public static bool pauseGame = false;
+    private bool swing = false;
 
     void Start()
     {
@@ -64,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         LocationRememberer.pos[num] = transform.position;
 
-        if (!DialogueManager.inDialogue && pauseGame == false)
+        if (!DialogueManager.inDialogue && pauseGame == false && !swing)
         {
             //Player Movement//
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
@@ -84,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 //Left
-                facing = Vector2.left;
+                facing = Vector2.right;
                 body.velocity = new Vector2(-playerSpeed, 0);
                 anim.SetInteger("Direction", 2);
                 transform.localScale = new Vector3(-1, 1, 1); //flip the sprite
@@ -104,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(0, 0);
                 anim.SetInteger("Direction", 0);
             }
+
+            Whack(); //Check if player wants to whack. If so, whack.
         }
         else if (DialogueManager.inDialogue)
         {
@@ -157,5 +161,28 @@ public class PlayerMovement : MonoBehaviour
             UpdateMinionInventoryFunction.InsertDanMinion();
             Destroy(other.gameObject);
         }
+    }
+
+    private void Whack()
+    {
+        if(!swing && Input.GetKey(KeyCode.LeftShift))
+        {
+            StartCoroutine("SwingTime");
+        }
+    }
+
+    private IEnumerator SwingTime()
+    {
+        swing = true;
+        hitRange.SetActive(true);
+        MoveHitRange();
+        yield return new WaitForSeconds(.5f);
+        hitRange.SetActive(false);
+        swing = false;
+    }
+
+    private void MoveHitRange()
+    {
+        hitRange.transform.localPosition = facing * .25f;
     }
 }

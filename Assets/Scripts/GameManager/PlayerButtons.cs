@@ -36,6 +36,7 @@ public class PlayerButtons : MonoBehaviour
     private PlayerMoves pm;
     private EnemyMoves em;
     private MinionBehaviours mb;
+    private CombatSystem cs;
     
 
     private void Awake()
@@ -43,6 +44,7 @@ public class PlayerButtons : MonoBehaviour
         pm = FindObjectOfType<PlayerMoves>();
         em = FindObjectOfType<EnemyMoves>();
         mb = FindObjectOfType<MinionBehaviours>();
+        cs = FindObjectOfType<CombatSystem>();
 
         //actions.SetValue(pActions, 0);
 
@@ -77,8 +79,6 @@ public class PlayerButtons : MonoBehaviour
     //Use ally moves based on button number selected
     public void OnActionSelect()
     {
-        Debug.Log("Sean Who???");
-
         string pos = EventSystem.current.currentSelectedGameObject.GetComponent<RectTransform>().GetChild(0).name;
         int.TryParse(pos, out num);
 
@@ -159,6 +159,7 @@ public class PlayerButtons : MonoBehaviour
     private void MinionMove(int target)
     {
         em.UseMove(num, targetedParty[target], a[allyIndex], (Player)a[0]);
+        cs.EnemyDeadCheck();
 
         mb.MinionTurn(allyIndex + 1, e, a);
     }

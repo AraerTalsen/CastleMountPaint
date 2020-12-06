@@ -3903,6 +3903,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271f3b3c1284932439bb77091ff78893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whackPack:
+  - {fileID: 2049605541}
+  - {fileID: 1229669754}
+  - {fileID: 1358442270}
 --- !u!4 &725788016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4685303857792211870, guid: c733940b0f60c0044b9919b166a36438,

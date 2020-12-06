@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ActiveOverworldEntity : MonoBehaviour
 {
-    public static int dim;
+    public static int dim = 1;
     public static int[] entityCount = { 0, 3 };
 
     public static List<bool>[][] entityInDimension =
@@ -37,7 +37,7 @@ public class ActiveOverworldEntity : MonoBehaviour
             {
                 if (!w[j].on) entityInDimension[dim][type][j] = false;
                 w[j].on = false;
-                w[j].UpdateEntity();
+                w[j].gameObject.SetActive(false);
             }
             w[j].id = j;
         }

@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class EntityActivator : MonoBehaviour
 {
-    private Whackable[] whack;
+    public GameObject[] whackPack;
+    private List<Whackable> whack =  new List<Whackable>();
     // Start is called before the first frame update
     void Awake()
     {
-        whack = FindObjectsOfType<Whackable>();
+        for(int i = 0; i < whackPack.Length; i++)
+        {
+            for(int j = 0; j < whackPack[i].transform.childCount; j++)
+            {
+                whack.Add(whackPack[i].transform.GetChild(j).GetComponent<Whackable>());
+            }
+        }
 
         if (!LocationRememberer.awokenDim[FindObjectOfType<LocationLoader>().num])
         {
-            for (int i = 0; i < whack.Length; i++)
+            for (int i = 0; i < whack.Count; i++)
                 whack[i].id = ActiveOverworldEntity.AddEntity(whack[i].type, whack[i]);
         }
         else
         {
             Alt();
-        }
-            
-    }
-
-    private void Update()
-    {
-        if(Input.GetKey(KeyCode.Space)) Alt();
+        }     
     }
 
     private void Alt()
@@ -35,7 +36,7 @@ public class EntityActivator : MonoBehaviour
                 new List<Whackable>()
             };
 
-        for (int i = 0; i < whack.Length; i++)
+        for (int i = 0; i < whack.Count; i++)
             w[whack[i].type].Add(whack[i]);
 
         for (int i = 0; i < w.Length; i++)
