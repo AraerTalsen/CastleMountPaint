@@ -77,6 +77,8 @@ public class PlayerButtons : MonoBehaviour
     //Use ally moves based on button number selected
     public void OnActionSelect()
     {
+        Debug.Log("Sean Who???");
+
         string pos = EventSystem.current.currentSelectedGameObject.GetComponent<RectTransform>().GetChild(0).name;
         int.TryParse(pos, out num);
 

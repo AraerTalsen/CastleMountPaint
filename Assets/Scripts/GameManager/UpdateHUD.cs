@@ -13,6 +13,7 @@ public class UpdateHUD : MonoBehaviour
     public TextMeshProUGUI[] allyHP;
     public Slider[] allyHPSlider;
     public Slider paintSlider;
+    public SpriteRenderer[] aSprites;
 
     //Enemies
     public TextMeshProUGUI[] enemyHP;
@@ -74,11 +75,10 @@ public class UpdateHUD : MonoBehaviour
 
             aDisplay[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Name: " + c.eName;
             aDisplay[i].transform.GetChild(1).GetComponent<Slider>().maxValue = c.maxHP;
-            aDisplay[i].transform.GetComponentInParent<SpriteRenderer>().sprite = c.enemySprite;
+            aSprites[i - 1].sprite = ((Enemy)(a[i])).enemySprite;
         }
 
         Enemy[] e = CombatSystem.enemyParty;
-
         for (int i = 0; i < e.Length; i++)
         {
             eDisplay[i].gameObject.SetActive(true);

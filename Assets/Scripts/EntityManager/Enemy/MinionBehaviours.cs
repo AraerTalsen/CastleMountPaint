@@ -12,6 +12,7 @@ public class MinionBehaviours : MonoBehaviour
     public GameObject minionBody;
     private GameObject[] minionBodies = new GameObject[3];
     public Enemy[] minions = new Enemy[3];
+    public GameObject[] bodies;
 
     //Accessed libraries
     private PlayerButtons pb;
@@ -63,16 +64,29 @@ public class MinionBehaviours : MonoBehaviour
 
     public void MinionTurn(int index, Enemy[] e, Entity[]a)
     {
+        if (index - 1 < bodies.Length)
+        {
+            bodies[index - 1].GetComponent<MinionAnimScript>().MinionAnimTime();
+        }
+
         if (index <= numMinions && !CombatSystem.allyParty[index].isDead)
         {
             pb.PlayerNewTurn(index, e, a);
+            Debug.Log("Dan the man");
+
             cs.EnemyDeadCheck();
         }
         else if(index > numMinions)
         {
+            for (int i = 0; i < bodies.Length; i++)
+            {
+                bodies[i].GetComponent<MinionAnimScript>().MinionRetract();
+            }
+
             cs.EnemyDeadCheck();
             cs.StartCoroutine("EnemyTurn"); //switch to the Enemy Turn Function with a small delay
         }
+        //bodies[index].GetComponent<MinionAnimScript>().MinionRetract();
     }
 
     //Invoke can only be called on a method in the same class, but Enemy Turn is in a different class.
