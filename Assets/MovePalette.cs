@@ -5,10 +5,12 @@ using UnityEngine;
 public class MovePalette : MonoBehaviour
 {
     public Transform movePoint;
-    public GameObject palette;
+    public GameObject inventory;
 
-    public GameObject enemyInventory;
-    public Transform enemyMovePoint;
+    public Transform retractPoint;
+
+    //public GameObject enemyInventory;
+    //public Transform enemyMovePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +26,19 @@ public class MovePalette : MonoBehaviour
 
     public void Move()
     {
-        LeanTween.move(palette, movePoint, 0.5f).setEaseInSine();
-        StartCoroutine(MoveUIElements());
+        LeanTween.move(inventory, movePoint, 0.5f).setEaseInSine();
+        //StartCoroutine(MoveUIElements());
     }
 
-    IEnumerator MoveUIElements()
+    public void Retract()
     {
-        yield return new WaitForSeconds(0.3f);
-        LeanTween.move(enemyInventory, enemyMovePoint, 0.5f).setEaseInSine();
-
+        LeanTween.move(inventory, retractPoint, 0.3f).setEaseInSine();
     }
+
+    //IEnumerator MoveUIElements()
+    //{
+    //    yield return new WaitForSeconds(0.3f);
+    //    LeanTween.move(enemyInventory, enemyMovePoint, 0.5f).setEaseInSine();
+
+    //}
 }

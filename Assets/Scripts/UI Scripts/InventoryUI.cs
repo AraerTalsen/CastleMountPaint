@@ -20,11 +20,15 @@ public class InventoryUI : MonoBehaviour
 
     public bool openInvOnce = true;
 
-    public Transform movePoint;
+    public Transform caseMovePoint;
+    public Transform caseRetractPoint;
+
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = inventoryUIObject.GetComponent<Animator>();
         //DontDestroyOnLoad(transform.gameObject);
         StartCoroutine(FixInvBug());
     }
@@ -46,18 +50,21 @@ public class InventoryUI : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == false)
         {
-            PlayerMovement.pauseGame = true;
-            inventoryOpen = true;
-            inventoryUIObject.SetActive(true);
-            LeanTween.move(inventoryUIObject, movePoint, 0.3f);
+            StartCoroutine(OpenInventory());
+            //PlayerMovement.pauseGame = true;
+            //inventoryOpen = true;
+            //inventoryUIObject.SetActive(true);
+            //LeanTween.move(inventoryUIObject, movePoint, 0.3f);
 
 
         } else if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == true)
         {
-            PlayerMovement.pauseGame = false;
-            inventoryOpen = false;
-            inventoryUIObject.SetActive(false);
-            
+            StartCoroutine(CloseInventory());
+            //PlayerMovement.pauseGame = false;
+            //inventoryOpen = false;
+            //inventoryUIObject.SetActive(false);
+            //LeanTween.move(inventoryUIObject, retractPoint, 0.3f);
+
         }
 
         if (ListCreator.numMinionInCombat == 0)
@@ -84,6 +91,32 @@ public class InventoryUI : MonoBehaviour
             CombatMinionInventory[1].GetComponent<Image>().enabled = true;
             CombatMinionInventory[2].GetComponent<Image>().enabled = true;
         }
+    }
+
+    IEnumerator OpenInventory()
+    {
+        anim.Play("Inventory - Painters Case");
+        PlayerMovement.pauseGame = true;
+        inventoryOpen = true;
+        inventoryUIObject.SetActive(true);
+        LeanTween.move(inventoryUIObject, caseMovePoint, 0.3f);
+
+        yield return new WaitForSeconds(1f);
+    }
+
+    IEnumerator CloseInventory()
+    {
+        anim.Play("Inventory - Close Painters Case");
+
+        yield return new WaitForSeconds(1f);
+
+        LeanTween.move(inventoryUIObject, caseRetractPoint, 0.3f);
+
+        yield return new WaitForSeconds(0.5f);
+
+        PlayerMovement.pauseGame = false;
+        inventoryOpen = false;
+        inventoryUIObject.SetActive(false);
     }
 
 }
