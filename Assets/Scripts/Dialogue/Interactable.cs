@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public float interactRange = 1.7f;
+    public float interactRange = 3f;
 
     public GameObject interactIcon;
 

@@ -6,6 +6,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject hitRange;
+    //public GameObject hitRange;
+    //public GameObject hitRange;
+
     public int num;
     public Vector2 facing = Vector2.down;
     private Rigidbody2D body;
@@ -173,16 +176,24 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator SwingTime()
     {
+        anim.SetInteger("isWhacking", 1);
+
+        body.velocity = new Vector2(0, 0);
+        playerSpeed = 0;
+
         swing = true;
-        hitRange.SetActive(true);
-        MoveHitRange();
-        yield return new WaitForSeconds(2f);
+
+        yield return new WaitForSeconds(1.2f);
+
+        playerSpeed = speedStore;
+        anim.SetInteger("isWhacking", 0);
         hitRange.SetActive(false);
         swing = false;
     }
 
-    private void MoveHitRange()
+    public void MoveHitRange()
     {
         hitRange.transform.localPosition = facing * .25f;
+        hitRange.SetActive(true);
     }
 }

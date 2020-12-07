@@ -19,9 +19,9 @@ MonoBehaviour:
   - myVoice: {fileID: 0}
     myText: In Combat you have a variety of options at your disposal.
   - myVoice: {fileID: 0}
-    myText: Or at least you will once the devs make them...
+    myText: You can attack, run, or use a strong special attack.
   - myVoice: {fileID: 0}
-    myText: On your turn you currently can Attack.
+    myText: 'Special attacks will use up your Paint Meter. '
   - myVoice: {fileID: 0}
     myText: Attacking will allow you to select an enemy target. This will then promt
       the attack bar.
@@ -29,8 +29,6 @@ MonoBehaviour:
     myText: Press SPACE when the needle is closest to the center of the attack bar
       to land a powerful attack!
   - myVoice: {fileID: 0}
-    myText: 
+    myText: Kill all hostile enemies in the area to finish the demo.
   - myVoice: {fileID: 0}
-    myText: We are currently working to add Special Attacks and Items to Combat.
-  - myVoice: {fileID: 0}
-    myText: Stay tuned, but for now good luck!
+    myText: Good luck!

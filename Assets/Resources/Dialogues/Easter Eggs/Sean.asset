@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b05875697436d4c6ba294074e4b9a851, type: 3}
-  m_Name: Introduction
+  m_Name: Sean
   m_EditorClassIdentifier: 
   dialogueInfo:
   - myVoice: {fileID: 0}
-    myText: Hello and welcome to our demo of The Artist's Apprentice!
+    myText: Legend has it...
   - myVoice: {fileID: 0}
-    myText: We hope you enjoy yourself while you play our demo.
+    myText: That Sean...
   - myVoice: {fileID: 0}
-    myText: Please read any signs you see. They carry some information to help you
-      along your journey.
-  - myVoice: {fileID: 0}
-    myText: Enjoy!
+    myText: Smells like Old People? Can you believe it?!

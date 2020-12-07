@@ -14,4 +14,19 @@ public class ChangeScenes : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void LoadCastle()
+    {
+        SceneManager.LoadScene("OverWorldTest");
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
 }
