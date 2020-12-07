@@ -160,6 +160,7 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(delay);
             dialogueText.text += c;
             //AudioManager.instance.PlayClip(info.myVoice); //play every letter
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/Text Type");
         }
         isCurrentlyTyping = false;
     }

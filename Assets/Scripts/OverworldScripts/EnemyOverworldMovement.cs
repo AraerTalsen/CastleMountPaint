@@ -132,6 +132,7 @@ public class EnemyOverworldMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/Inventory/ShakeLeft");
             FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
 
             alertSprite.SetActive(true);
@@ -158,6 +159,7 @@ public class EnemyOverworldMovement : MonoBehaviour
 
     IEnumerator LoadLevel(string levelIndex)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/EnterCombat");
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);

@@ -140,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "enemy1Sketch")
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
             Debug.Log(UpdateMinionInventoryFunction == null);
@@ -149,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "enemy2Sketch")
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
             Debug.Log(UpdateMinionInventoryFunction == null);
@@ -158,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "enemy3Sketch")
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
             ListCreator.numberOfItemsCollected++;
             ListCreator.runInventoryUpdate = true;
             Debug.Log(UpdateMinionInventoryFunction == null);

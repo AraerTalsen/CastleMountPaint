@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         }
         else if (!menuOpen)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/Pause");
             Time.timeScale = 0;
             PlayerMovement.pauseGame = true;
             menuOpen = true;

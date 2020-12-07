@@ -28,10 +28,10 @@ AnimationClip:
     - time: 0.5833333
       value: {fileID: 1108820771403225401, guid: 530fbf16af802484ebc58480a873305d,
         type: 3}
-    - time: 0.6666667
+    - time: 0.6166667
       value: {fileID: -7623307354105833005, guid: 530fbf16af802484ebc58480a873305d,
         type: 3}
-    - time: 0.75
+    - time: 0.65
       value: {fileID: -3983890106143509892, guid: 530fbf16af802484ebc58480a873305d,
         type: 3}
     attribute: m_Sprite
@@ -63,7 +63,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.76666665
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -85,6 +85,20 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: Retract
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6166667
+    functionName: PlayClose
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.65
+    functionName: PlayClick
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -100,6 +100,7 @@ public class InventoryUI : MonoBehaviour
         inventoryOpen = true;
         inventoryUIObject.SetActive(true);
         LeanTween.move(inventoryUIObject, caseMovePoint, 0.3f);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/Inventory/Sweep");
 
         yield return new WaitForSeconds(1f);
     }
@@ -110,6 +111,7 @@ public class InventoryUI : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/Inventory/SweepDown");
         LeanTween.move(inventoryUIObject, caseRetractPoint, 0.3f);
 
         yield return new WaitForSeconds(0.5f);

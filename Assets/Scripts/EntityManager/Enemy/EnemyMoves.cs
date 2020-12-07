@@ -78,12 +78,14 @@ public class EnemyMoves : EntityBehaviours
                     }
                 case 1:
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/SFX/Debuff");
                         target = t;//Start Attack opponent
                         action = "Debuff";
                         break;
                     }
                 default:
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/SFX/Debuff");
                         target = t;//Start Attack opponent
                         action = "Debuff";
                         break;
@@ -107,12 +109,14 @@ public class EnemyMoves : EntityBehaviours
                     }
                 case 1:
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/SFX/Heal");
                         target = t;//Start Attack opponent
                         action = "Heal";
                         break;
                     }
                 default:
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/SFX/Heal");
                         target = t;//Start Attack opponent
                         action = "Heal";
                         break;
@@ -136,12 +140,14 @@ public class EnemyMoves : EntityBehaviours
                     }
                 case 1:
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/SFX/Heal");
                         target = t;//Start Attack opponent
                         action = "Buff";
                         break;
                     }
                 default:
                     {
+                        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/SFX/Heal");
                         target = t;//Start Attack opponent
                         action = "Buff";
                         break;

@@ -36,6 +36,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-9006764815917318376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429171880000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-8971415994588976517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +144,42 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-8157738518668187572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429149310000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-8121620435687769257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429132940000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-7929623874125278525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +216,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-7446128605339256992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Inventory/Open
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Inventory/Open
+  guid: 318eb4bd32d80245a7fbddb6e35e13d7
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-7354979769038542329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +257,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -188,6 +265,47 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1000
+--- !u!114 &-7075105640087179596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429149000000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-7061765486501864799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Inventory/ShakeRight
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Inventory/ShakeRight
+  guid: b958ebff666c0441aa3a52160a0c34ce
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-6907684407554926338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +321,24 @@ MonoBehaviour:
   Path: Casey FMOD Folder/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637420370110000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6838990267148463252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429170490000000
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -224,7 +360,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -249,7 +385,66 @@ MonoBehaviour:
   lastModified: 637420370110000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &-6596830204506765572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429126580000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6527900484586740331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Pause
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Pause
+  guid: 052d2804687a0b48876d69c1212aa27c
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &-6380384919197770356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429170730000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-6317421753102934396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +463,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-6282116057998308488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429168930000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-6189488535961429951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,11 +495,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Casey FMOD Folder/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637420370110000000
+  lastModified: 637429218890000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1532
+    Value: 2324
   Exists: 1
 --- !u!114 &-5975340554153122315
 MonoBehaviour:
@@ -306,6 +519,70 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5800578253768292317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat/SFX/Debuff
+  m_EditorClassIdentifier: 
+  Path: event:/Combat/SFX/Debuff
+  guid: dd0f1a63f66e9e40b2f6afc6e7f4e218
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1423
+--- !u!114 &-5799377019808658589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429130310000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-5704397466276872940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/Music/TitleScreen
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/Music/TitleScreen
+  guid: 51078572d743bb4da09757a8ca0fa46a
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 63272
 --- !u!114 &-5132260561311981510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +601,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -386,7 +663,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -430,6 +707,47 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-4394203999883181048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429218890000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4334715559804248961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/EnterCombat
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/EnterCombat
+  guid: d4892361df1ddd42921309f3175a292c
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2089
 --- !u!114 &-4191108457732159202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +802,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -492,6 +810,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 182
+--- !u!114 &-3709076581740470326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/StartPainting
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/StartPainting
+  guid: 7fe0ea2f0ad1544da0bfa0714efab07a
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3000
+--- !u!114 &-3606227162462944401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat/Run
+  m_EditorClassIdentifier: 
+  Path: event:/Combat/Run
+  guid: 735e85cce95d574e8fe30da972b3384b
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1302
+--- !u!114 &-3557262229255080641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Inventory/SweepDown
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Inventory/SweepDown
+  guid: 29b0759484849946a1b6311b00533aee
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-2988349765275309545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +915,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -536,6 +923,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 218435
+--- !u!114 &-1931017073331405266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Inventory/Sweep
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Inventory/Sweep
+  guid: 6f2928603825d04d88b873cbe47bb9f0
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-1713567694327404002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +982,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -580,6 +990,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 624
+--- !u!114 &-953351554578752041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429171780000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-674694776538735549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,7 +1062,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -678,6 +1106,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-301361738395825440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429134420000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-105246453586658472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,7 +1156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6189488535961429951}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   EditorEvents:
   - {fileID: -5132260561311981510}
   - {fileID: -7354979769038542329}
@@ -725,12 +1171,28 @@ MonoBehaviour:
   - {fileID: 8128084388949627321}
   - {fileID: -1597495472454804490}
   - {fileID: -518350460641523144}
+  - {fileID: 4054887964608034668}
+  - {fileID: 3517609758525966266}
+  - {fileID: -7446128605339256992}
+  - {fileID: -1931017073331405266}
+  - {fileID: 8573238304659300700}
+  - {fileID: -7061765486501864799}
+  - {fileID: 1001727709029820066}
+  - {fileID: -6527900484586740331}
+  - {fileID: -3557262229255080641}
+  - {fileID: 3234440429173205341}
+  - {fileID: -3709076581740470326}
+  - {fileID: -3606227162462944401}
+  - {fileID: -4334715559804248961}
+  - {fileID: 5722228922401503445}
+  - {fileID: -5800578253768292317}
+  - {fileID: -5704397466276872940}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   StringsBanks:
   - {fileID: -6189488535961429951}
-  stringsBankWriteTime: 637420370110000000
+  stringsBankWriteTime: 637429218890000000
   cacheVersion: 3
 --- !u!114 &69675156427295414
 MonoBehaviour:
@@ -750,6 +1212,65 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &150456033456652239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429135290000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &355761046408814331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429174820000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &1001727709029820066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Inventory/Click
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Inventory/Click
+  guid: ef137d6523fce243a0627d7510e3c459
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &1315276797557248111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +1343,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2542117232716026780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429133370000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &2556155059489548786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,7 +1379,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -848,6 +1387,42 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 98400
+--- !u!114 &2599282830312083144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429179890000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &2761653653248449234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429186800000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &3009360529067469428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,6 +1459,92 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3234440429173205341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/EnterPainting
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/EnterPainting
+  guid: 92331dc05698c744a6e7c592e81cbbb8
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4200
+--- !u!114 &3517609758525966266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Inventory/ShakeLeft
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Inventory/ShakeLeft
+  guid: 08ea3f7b1000f54ca23e425ceb4adb51
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &3698849947662086496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429173700000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3906859233439541363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Spotted
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Spotted
+  guid: 0466ef6e396d114ca9b89d09d242a793
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &3966547279843432664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,7 +1563,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -910,6 +1571,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 68000
+--- !u!114 &4054887964608034668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Text Type
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Text Type
+  guid: b56d406f4eec864594fd8d319f4fdce1
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 8000
 --- !u!114 &4638075023051705973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,6 +1609,60 @@ MonoBehaviour:
   Path: Casey FMOD Folder/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637415290210000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &4689436228694661835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429158290000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &4767426598893012429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429166650000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &5036857778089969929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429179770000000
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -946,7 +1684,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -954,6 +1692,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 62857
+--- !u!114 &5722228922401503445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Combat/SFX/Heal
+  m_EditorClassIdentifier: 
+  Path: event:/Combat/SFX/Heal
+  guid: 4c8e84ea6a1ea34f96cca28a439f97eb
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
 --- !u!114 &5759854168921116621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,6 +1748,24 @@ MonoBehaviour:
   Path: Casey FMOD Folder/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637420319550000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &6181046904358088686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429185260000000
   LoadResult: 0
   FileSizes: []
   Exists: 0
@@ -1044,6 +1823,42 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7385696785861781222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429129110000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &7391412002970698730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429205730000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &8069395342105906672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,7 +1877,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1088,7 +1903,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -6804966329210423191}
+  - {fileID: -4394203999883181048}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1132,6 +1947,83 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &8345275636433279730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429148380000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &8573238304659300700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Overworld/SFX/Inventory/Close
+  m_EditorClassIdentifier: 
+  Path: event:/Overworld/SFX/Inventory/Close
+  guid: af4bc435a3eec241b7543dd60bf72251
+  Banks:
+  - {fileID: -4394203999883181048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
+--- !u!114 &8712590495446302971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429135110000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &8716070707779655831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429129800000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &8987146523215622921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +2042,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &8995160361447918560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637429208030000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &9125129239823423177
 MonoBehaviour:
   m_ObjectHideFlags: 0

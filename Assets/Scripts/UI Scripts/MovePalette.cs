@@ -26,12 +26,14 @@ public class MovePalette : MonoBehaviour
 
     public void Move()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/Inventory/Sweep");
         LeanTween.move(inventory, movePoint, 0.5f).setEaseInSine();
         //StartCoroutine(MoveUIElements());
     }
 
     public void Retract()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Overworld/SFX/Inventory/SweepDown");
         LeanTween.move(inventory, retractPoint, 0.3f).setEaseInSine();
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8673443941521720098}
   - component: {fileID: 5417486199534036383}
   - component: {fileID: 4025182898230776741}
+  - component: {fileID: 4901094423465631591}
   m_Layer: 5
   m_Name: ItemButton
   m_TagString: Untagged
@@ -133,6 +134,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4901094423465631591}
+        m_MethodName: PlayShakeRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4025182898230776741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +159,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 7070709234794420251}
   image: {fileID: 4215981310481248135}
+--- !u!114 &4901094423465631591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149141212539371507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9580501e61e5041b1a632c4c34e697a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1222441378342520747
 GameObject:
   m_ObjectHideFlags: 0
