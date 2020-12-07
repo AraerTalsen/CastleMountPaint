@@ -127,5 +127,4 @@ MonoBehaviour:
   id: 0
   minion: 0
   on: 1
-  pFacing: {x: 0, y: 0}
-  meToPlayer: {x: 0, y: 0}
+  whackable: 1

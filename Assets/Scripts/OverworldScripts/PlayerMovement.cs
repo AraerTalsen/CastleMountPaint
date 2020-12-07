@@ -176,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
         swing = true;
         hitRange.SetActive(true);
         MoveHitRange();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(2f);
         hitRange.SetActive(false);
         swing = false;
     }

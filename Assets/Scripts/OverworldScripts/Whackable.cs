@@ -6,7 +6,7 @@ public class Whackable : MonoBehaviour
 {
     public Color c;
     public int type, id;
-    public bool minion, on = true;
+    public bool minion, on = true, whackable = false;
 
     private void GetWhacked()
     {
@@ -25,7 +25,7 @@ public class Whackable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.parent != null && collision.transform.parent.CompareTag("Player"))
+        if(whackable && collision.transform.parent != null && collision.transform.parent.CompareTag("Player"))
         {
             if (Input.GetKey(KeyCode.LeftShift))
                 GetWhacked();
