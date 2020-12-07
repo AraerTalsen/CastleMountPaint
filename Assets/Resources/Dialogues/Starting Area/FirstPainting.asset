@@ -18,5 +18,4 @@ MonoBehaviour:
   - myVoice: {fileID: 0}
     myText: you can enter the painting in front of you!
   - myVoice: {fileID: 0}
-    myText: Make sure you are are ready to go, you never know what is on the other
-      side!
+    myText: Make sure you are ready to go, you never know what is on the other side!

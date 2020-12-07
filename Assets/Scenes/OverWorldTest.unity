@@ -36073,6 +36073,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 690468229, guid: 7e604ab21dc0d49a38373023790a89f3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -45.129883
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080295007864369100, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.30004883
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080295008290695106, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 81.499756
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080295008290695106, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.47296143
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080295008966906091, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.010986328
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080295008966906091, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 8080295009212103315, guid: 7e604ab21dc0d49a38373023790a89f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36182,6 +36211,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause Menu Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080295009551849046, guid: 7e604ab21dc0d49a38373023790a89f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.036987305
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e604ab21dc0d49a38373023790a89f3, type: 3}
