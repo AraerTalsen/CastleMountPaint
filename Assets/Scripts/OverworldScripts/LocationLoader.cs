@@ -20,7 +20,6 @@ public class LocationLoader : MonoBehaviour
         else
         {
             LocationRememberer.awokenDim[num] = true;
-            print("good");
         }   
     }
 }

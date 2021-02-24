@@ -231,7 +231,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Inventory/Open
   guid: 318eb4bd32d80245a7fbddb6e35e13d7
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -257,7 +257,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -298,7 +298,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Inventory/ShakeRight
   guid: b958ebff666c0441aa3a52160a0c34ce
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -360,7 +360,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -419,7 +419,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Pause
   guid: 052d2804687a0b48876d69c1212aa27c
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Casey FMOD Folder/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637429218890000000
+  lastModified: 637441680614585362
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -534,7 +534,7 @@ MonoBehaviour:
   Path: event:/Combat/SFX/Debuff
   guid: dd0f1a63f66e9e40b2f6afc6e7f4e218
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -575,7 +575,7 @@ MonoBehaviour:
   Path: event:/Overworld/Music/TitleScreen
   guid: 51078572d743bb4da09757a8ca0fa46a
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -663,7 +663,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -724,7 +724,7 @@ MonoBehaviour:
   lastModified: 637429218890000000
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4334715559804248961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +740,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/EnterCombat
   guid: d4892361df1ddd42921309f3175a292c
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -802,7 +802,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -825,7 +825,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/StartPainting
   guid: 7fe0ea2f0ad1544da0bfa0714efab07a
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -848,7 +848,7 @@ MonoBehaviour:
   Path: event:/Combat/Run
   guid: 735e85cce95d574e8fe30da972b3384b
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -871,7 +871,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Inventory/SweepDown
   guid: 29b0759484849946a1b6311b00533aee
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -915,7 +915,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -938,7 +938,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Inventory/Sweep
   guid: 6f2928603825d04d88b873cbe47bb9f0
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -982,7 +982,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6189488535961429951}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   EditorEvents:
   - {fileID: -5132260561311981510}
   - {fileID: -7354979769038542329}
@@ -1189,10 +1189,10 @@ MonoBehaviour:
   - {fileID: -5704397466276872940}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   StringsBanks:
   - {fileID: -6189488535961429951}
-  stringsBankWriteTime: 637429218890000000
+  stringsBankWriteTime: 637441680614585362
   cacheVersion: 3
 --- !u!114 &69675156427295414
 MonoBehaviour:
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Inventory/Click
   guid: ef137d6523fce243a0627d7510e3c459
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1343,6 +1343,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2077418652133196420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Casey FMOD Folder/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637441680614515455
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &2542117232716026780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,7 +1397,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1474,7 +1492,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/EnterPainting
   guid: 92331dc05698c744a6e7c592e81cbbb8
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1497,7 +1515,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Inventory/ShakeLeft
   guid: 08ea3f7b1000f54ca23e425ceb4adb51
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1563,7 +1581,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1586,7 +1604,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Text Type
   guid: b56d406f4eec864594fd8d319f4fdce1
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1684,7 +1702,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1707,7 +1725,7 @@ MonoBehaviour:
   Path: event:/Combat/SFX/Heal
   guid: 4c8e84ea6a1ea34f96cca28a439f97eb
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1877,7 +1895,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1903,7 +1921,7 @@ MonoBehaviour:
   - {fileID: -8341408356420431560}
   - {fileID: -6317421753102934396}
   - {fileID: -8971415994588976517}
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1980,7 +1998,7 @@ MonoBehaviour:
   Path: event:/Overworld/SFX/Inventory/Close
   guid: af4bc435a3eec241b7543dd60bf72251
   Banks:
-  - {fileID: -4394203999883181048}
+  - {fileID: 2077418652133196420}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

@@ -7,12 +7,12 @@ public class Whackable : MonoBehaviour
     public Color c;
     public int type, id;
     public bool minion, on = true, whackable = false;
+    public Collider2D canvas;
 
-    private void GetWhacked()
+    public void GetWhacked()
     {
         on = false;
         ActiveOverworldEntity.entityInDimension[1][type][id] = false;
-        //if (Player.currentPaint < Player.maxPaint) Player.currentPaint++;
         gameObject.SetActive(false);
     }
 
@@ -20,18 +20,21 @@ public class Whackable : MonoBehaviour
     {
         on = false;
         ActiveOverworldEntity.entityInDimension[1][type][id] = false;
+        //if (Player.currentPaint < Player.maxPaint) Player.currentPaint++;
         gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(whackable && collision.transform.parent != null && collision.transform.parent.CompareTag("Player"))
+        if(whackable)
         {
             if (Input.GetKey(KeyCode.LeftShift))
-                GetWhacked();
-            /*else if (Input.GetKey(KeyCode.Q))
-                SuckPaint();*/
+            {
+                if(collision.IsTouching(canvas))
+                    GetWhacked();
+            }
         }
-       
-    }
+            else if (Input.GetKey(KeyCode.Q))
+                SuckPaint(); 
+    }*/
 }

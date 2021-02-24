@@ -11,6 +11,7 @@ public class EnemyOverworldMovement : MonoBehaviour
     public Vector2 position;
     public GameObject PlayerPosition;
     public Enemy[] party = new Enemy[3];//Which enemies will appear in combat
+    public GameObject[] lootDrops;
 
     public bool playerInRange = false;
 

@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8695317926906265231}
   - component: {fileID: 1539390999511084679}
+  - component: {fileID: 1182070580882175314}
   m_Layer: 0
   m_Name: HitRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8695317926906265231
 Transform:
   m_ObjectHideFlags: 0
@@ -57,6 +58,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2620115, y: 0.5619528}
   m_EdgeRadius: 0
+--- !u!114 &1182070580882175314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008936098333721728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c2cd9e1f846e34b9f087ddfe1ef3f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
 --- !u!1 &5394900565442393736
 GameObject:
   m_ObjectHideFlags: 0

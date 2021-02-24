@@ -190,13 +190,15 @@ public class PlayerMovement : MonoBehaviour
 
         playerSpeed = speedStore;
         anim.SetInteger("isWhacking", 0);
-        hitRange.SetActive(false);
+        hitRange.GetComponent<Whack>().active = false;
+        //hitRange.SetActive(false);
         swing = false;
     }
 
     public void MoveHitRange()
     {
-        hitRange.transform.localPosition = facing * .25f;
-        hitRange.SetActive(true);
+        hitRange.transform.localPosition = facing * .5f;
+        hitRange.GetComponent<Whack>().active = true;
+        //hitRange.SetActive(true);
     }
 }
