@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject audioMenu;
-    public bool menuOpen = false;
+    public static bool menuOpen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,20 +18,26 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.P))
+        if (InventoryUI.inventoryOpen == true)
         {
-            Time.timeScale = 1;
-            PlayerMovement.pauseGame = false;
-            OpenMenu();
-        }
+            //do nothing, don't open pause menu essentially
+        } else
+        {
+            if (Input.GetKeyUp(KeyCode.P))
+            {
+                Time.timeScale = 1;
+                PlayerMovement.pauseGame = false;
+                OpenMenu();
+            }
 
-        if(menuOpen == true)
-        {
-            audioMenu.SetActive(true);
-        }
-        else
-        {
-            audioMenu.SetActive(false);
+            if (menuOpen == true)
+            {
+                audioMenu.SetActive(true);
+            }
+            else
+            {
+                audioMenu.SetActive(false);
+            }
         }
     }
 

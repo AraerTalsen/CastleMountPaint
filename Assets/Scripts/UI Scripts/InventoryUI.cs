@@ -48,49 +48,49 @@ public class InventoryUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == false)
+        if(PauseMenu.menuOpen == true)
         {
-            StartCoroutine(OpenInventory());
-            //PlayerMovement.pauseGame = true;
-            //inventoryOpen = true;
-            //inventoryUIObject.SetActive(true);
-            //LeanTween.move(inventoryUIObject, movePoint, 0.3f);
+            //do nothing, don't open if the pause menu is open
+        } else
+        {
+            if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == false)
+            {
+                StartCoroutine(OpenInventory());
 
 
-        } else if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == true)
-        {
-            StartCoroutine(CloseInventory());
-            //PlayerMovement.pauseGame = false;
-            //inventoryOpen = false;
-            //inventoryUIObject.SetActive(false);
-            //LeanTween.move(inventoryUIObject, retractPoint, 0.3f);
+            }
+            else if (Input.GetKeyUp(KeyCode.Tab) && inventoryOpen == true)
+            {
+                StartCoroutine(CloseInventory());
 
+            }
+
+            if (ListCreator.numMinionInCombat == 0)
+            {
+                CombatMinionInventory[0].GetComponent<Image>().enabled = false;
+                CombatMinionInventory[1].GetComponent<Image>().enabled = false;
+                CombatMinionInventory[2].GetComponent<Image>().enabled = false;
+            }
+            if (ListCreator.numMinionInCombat == 1)
+            {
+                CombatMinionInventory[0].GetComponent<Image>().enabled = true;
+                CombatMinionInventory[1].GetComponent<Image>().enabled = false;
+                CombatMinionInventory[2].GetComponent<Image>().enabled = false;
+            }
+            if (ListCreator.numMinionInCombat == 2)
+            {
+                CombatMinionInventory[0].GetComponent<Image>().enabled = true;
+                CombatMinionInventory[1].GetComponent<Image>().enabled = true;
+                CombatMinionInventory[2].GetComponent<Image>().enabled = false;
+            }
+            if (ListCreator.numMinionInCombat == 3)
+            {
+                CombatMinionInventory[0].GetComponent<Image>().enabled = true;
+                CombatMinionInventory[1].GetComponent<Image>().enabled = true;
+                CombatMinionInventory[2].GetComponent<Image>().enabled = true;
+            }
         }
 
-        if (ListCreator.numMinionInCombat == 0)
-        {
-            CombatMinionInventory[0].GetComponent<Image>().enabled = false;
-            CombatMinionInventory[1].GetComponent<Image>().enabled = false;
-            CombatMinionInventory[2].GetComponent<Image>().enabled = false;
-        }
-        if (ListCreator.numMinionInCombat == 1)
-        {
-            CombatMinionInventory[0].GetComponent<Image>().enabled = true;
-            CombatMinionInventory[1].GetComponent<Image>().enabled = false;
-            CombatMinionInventory[2].GetComponent<Image>().enabled = false;
-        }
-        if (ListCreator.numMinionInCombat == 2)
-        {
-            CombatMinionInventory[0].GetComponent<Image>().enabled = true;
-            CombatMinionInventory[1].GetComponent<Image>().enabled = true;
-            CombatMinionInventory[2].GetComponent<Image>().enabled = false;
-        }
-        if (ListCreator.numMinionInCombat == 3)
-        {
-            CombatMinionInventory[0].GetComponent<Image>().enabled = true;
-            CombatMinionInventory[1].GetComponent<Image>().enabled = true;
-            CombatMinionInventory[2].GetComponent<Image>().enabled = true;
-        }
     }
 
     IEnumerator OpenInventory()
