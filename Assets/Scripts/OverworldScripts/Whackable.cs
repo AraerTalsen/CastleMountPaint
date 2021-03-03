@@ -11,9 +11,12 @@ public class Whackable : MonoBehaviour
 
     public void GetWhacked()
     {
-        on = false;
-        ActiveOverworldEntity.entityInDimension[1][type][id] = false;
-        gameObject.SetActive(false);
+        if(whackable)
+        {
+            on = false;
+            ActiveOverworldEntity.entityInDimension[1][type][id] = false;
+            gameObject.SetActive(false);
+        }
     }
 
     private void SuckPaint()
