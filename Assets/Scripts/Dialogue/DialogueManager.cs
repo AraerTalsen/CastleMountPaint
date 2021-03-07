@@ -69,6 +69,12 @@ public class DialogueManager : MonoBehaviour
         NextButton.SetActive(true);
         dialogueInfo.Clear();
 
+        if(dialogueBox.activeInHierarchy == true)
+        {
+            PauseMenu.menuOpen = true;
+            InventoryUI.inventoryOpen = true;
+        }
+
 
         //I have scripts we can use if we ever want to add dialogue option prompts. I am leaving them out for now in order to not over complicate
 
@@ -181,6 +187,11 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
 
         inDialogue = false;
+        if(inDialogue == false)
+        {
+            PauseMenu.menuOpen = false;
+            InventoryUI.inventoryOpen = false;
+        }
         //OptionsLogic();
     }
 
