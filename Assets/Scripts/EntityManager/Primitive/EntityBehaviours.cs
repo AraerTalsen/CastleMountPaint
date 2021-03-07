@@ -5,6 +5,8 @@ using UnityEngine;
 //Move set that any entity can perform
 public class EntityBehaviours : MonoBehaviour
 {
+    //statusEffect
+
     public void DealDamage(Entity t, Entity u)
     {
         t.currentHP -= u.HitValue;

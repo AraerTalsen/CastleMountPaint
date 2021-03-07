@@ -105,6 +105,22 @@ public class CombatSystem : MonoBehaviour
         after each opposing party member attacks.
     */
 
+    public void StateMachine()
+    {
+        /*Entity turn*/
+
+        //entity.StatusEffect(0)
+        //ChooseMove()
+        //ChooseTarget()
+        //move.LoadMiniGame()
+        //SendResults()
+        //RecieveCounter()
+        //entity.StatusEffect(1)
+        //UpdateHUD
+
+
+        /*Check if combat is over*/
+    }
 
     private void PlayerTurn()
     {
