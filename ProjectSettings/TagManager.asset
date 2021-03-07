@@ -10,6 +10,7 @@ TagManager:
   - enemy2Sketch
   - enemy3Sketch
   - Enemy
+  - barrelQuestItem
   layers:
   - Default
   - TransparentFX

@@ -22836,12 +22836,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491295714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773c3c44fcddc49fab61690eb7689857, type: 3}
+  m_Script: {fileID: 11500000, guid: ed70bda4ffbcbe14dbf19d77377d3201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 3
   interactIcon: {fileID: 723618047}
-  DB: {fileID: 11400000, guid: 3d92ea6dc3e49b34aa4f1488eb185eb1, type: 2}
+  DB1: {fileID: 11400000, guid: 3d92ea6dc3e49b34aa4f1488eb185eb1, type: 2}
+  DB2: {fileID: 11400000, guid: 9615f6d3eeb299144b7be75d8af84c52, type: 2}
+  DB3: {fileID: 11400000, guid: 3d1d3700fd0b3254895c5f8668b14923, type: 2}
 --- !u!4 &1492798002 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3278611828822923527, guid: 9f6d37c39c6e1d449811e5926704ac4e,
@@ -79896,7 +79898,7 @@ GameObject:
   - component: {fileID: 1721531560}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: barrelQuestItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79908,7 +79910,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721531557}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

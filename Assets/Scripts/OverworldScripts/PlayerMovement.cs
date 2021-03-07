@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
     public static bool pauseGame = false;
     private bool swing = false;
 
+    public static bool barrelQuestItemPickedUp = false;
+    public static bool barrelQuestItemGiven = false;
+
     void Start()
     {
         //if (!playerExists)
@@ -166,6 +169,12 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log(UpdateMinionInventoryFunction == null);
             UpdateMinionInventoryFunction.InsertDanMinion();
             Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.tag == "barrelQuestItem")
+        {
+            Destroy(other.gameObject);
+            barrelQuestItemPickedUp = true;
         }
     }
 
