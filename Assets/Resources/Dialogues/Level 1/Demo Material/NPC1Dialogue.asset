@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueInfo:
   - myVoice: {fileID: 0}
-    myText: This is a basic example of an NPC.
+    myText: EEK!!!! GETAWAY YOU LIT--- wait... you don't look like one of them. What
+      are you??
   - myVoice: {fileID: 0}
-    myText: They can do various things for you.
+    myText: I need your help!! I was minding my own buisness, enjoying the sunlight,
+      when all of a sudden...
   - myVoice: {fileID: 0}
-    myText: 'This NPC will eventually do something. '
+    myText: ...a little gremlin thing stole my barrel! I love that barrel! It was
+      a gift!!
+  - myVoice: {fileID: 0}
+    myText: 'Can you get my barrel back for me? I need it for, ehm, ~personal~ reasons... '

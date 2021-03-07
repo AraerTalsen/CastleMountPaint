@@ -16,6 +16,8 @@ public class NPCMovement : MonoBehaviour
 
     public GameObject alertSprite;
 
+    public bool npcHasQuest;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +27,18 @@ public class NPCMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(npcHasQuest)
+        {
+            alertSprite.SetActive(true);
+        } else
+        {
+            alertSprite.SetActive(false);
+        }
+
         if (playerInRange)
         {
             canMove = false;
-
-            alertSprite.SetActive(true);
         }
 
         if (!playerInRange && canPatrol)
@@ -78,7 +87,6 @@ public class NPCMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            alertSprite.SetActive(true);
             playerInRange = true;
         }
     }
@@ -87,7 +95,6 @@ public class NPCMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            alertSprite.SetActive(false);
             playerInRange = false;
             //anim.SetBool("isMoving", false);
         }
