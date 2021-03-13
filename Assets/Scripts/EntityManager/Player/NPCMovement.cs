@@ -16,13 +16,7 @@ public class NPCMovement : MonoBehaviour
 
     public GameObject alertSprite;
 
-    public bool npcHasQuest;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool npcHasQuest = true;
 
     // Update is called once per frame
     void Update()

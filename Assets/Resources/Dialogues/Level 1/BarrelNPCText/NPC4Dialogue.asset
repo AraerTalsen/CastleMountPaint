@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b05875697436d4c6ba294074e4b9a851, type: 3}
-  m_Name: NPC3Dialogue
+  m_Name: NPC4Dialogue
   m_EditorClassIdentifier: 
   dialogueInfo:
   - myVoice: {fileID: 0}
-    myText: Once the programmers (Mike) finishes the inventory, I'll be able to give
-      you a reward!!
+    myText: DID YOU FIND MY BARREL?!...oh... Please find it, I miss it so much...

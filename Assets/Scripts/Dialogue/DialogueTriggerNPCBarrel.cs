@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTriggerMultipleLines : Interactable
+public class DialogueTriggerNPCBarrel : Interactable
 {
-    public DialogueBase DB1, DB2, DB3;
+    public DialogueBase DB1, DB2, DB3, DB4;
+
+    private int changeDialogue = 0;
 
     public override void Interact()
     {
@@ -15,9 +17,14 @@ public class DialogueTriggerMultipleLines : Interactable
             if(PlayerMovement.barrelQuestItemGiven == true)
             {
                 DialogueManager.instance.EnqueueDialogue(DB3);
-            } else
+            } else if(PlayerMovement.barrelQuestItemGiven == false && changeDialogue == 0)
             {
                 DialogueManager.instance.EnqueueDialogue(DB1);
+                changeDialogue = 1;
+            }
+            else
+            {
+                DialogueManager.instance.EnqueueDialogue(DB4);
             }
         } else if (PlayerMovement.barrelQuestItemPickedUp == true)
         {

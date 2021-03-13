@@ -191,6 +191,7 @@ public class DialogueManager : MonoBehaviour
         {
             PauseMenu.menuOpen = false;
             InventoryUI.inventoryOpen = false;
+            DialogueTriggerHelpfulNPC.helpfulNPCReward = true;
         }
         //OptionsLogic();
     }
