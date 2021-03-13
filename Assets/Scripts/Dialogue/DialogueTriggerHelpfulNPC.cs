@@ -9,8 +9,6 @@ public class DialogueTriggerHelpfulNPC : Interactable
 
     private int timesTalked = 0;
 
-    public static bool helpfulNPCReward = false;
-
     public override void Interact()
     {
         Debug.Log("Interacted");
@@ -18,6 +16,7 @@ public class DialogueTriggerHelpfulNPC : Interactable
         {
             DialogueManager.instance.EnqueueDialogue(DB1);
             timesTalked = 1;
+            QuestRewardManagerScript.helpfulNPCReward = true;
         }
         else
         {

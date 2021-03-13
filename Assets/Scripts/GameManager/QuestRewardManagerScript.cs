@@ -8,16 +8,26 @@ public class QuestRewardManagerScript : MonoBehaviour
     public GameObject sketchQuestRewardTwo;
     public GameObject sketchQuestRewardThree;
 
+    public static bool helpfulNPCReward = false;
+
 
     // Update is called once per frame
     void Update()
     {
         if (PlayerMovement.barrelQuestItemGiven == true)
         {
-            sketchQuestRewardOne.SetActive(true);
+            if(sketchQuestRewardOne != null)
+            {
+                sketchQuestRewardOne.SetActive(true);
+            } else
+            {
+                sketchQuestRewardOne = null;
+                sketchQuestRewardOne.SetActive(false);
+            }
+            
         }
 
-        if(DialogueTriggerHelpfulNPC.helpfulNPCReward == true)
+        if(helpfulNPCReward == true)
         {
             sketchQuestRewardTwo.SetActive(true);
         }

@@ -143,31 +143,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "enemy1Sketch")
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
-            ListCreator.numberOfItemsCollected++;
-            ListCreator.runInventoryUpdate = true;
-            Debug.Log(UpdateMinionInventoryFunction == null);
-            UpdateMinionInventoryFunction.InsertSeanMinion();
+            addSeanMinion();
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.tag == "enemy2Sketch")
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
-            ListCreator.numberOfItemsCollected++;
-            ListCreator.runInventoryUpdate = true;
-            Debug.Log(UpdateMinionInventoryFunction == null);
-            UpdateMinionInventoryFunction.InsertMikeMinion();
+            addMikeMinion();
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.tag == "enemy3Sketch")
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
-            ListCreator.numberOfItemsCollected++;
-            ListCreator.runInventoryUpdate = true;
-            Debug.Log(UpdateMinionInventoryFunction == null);
-            UpdateMinionInventoryFunction.InsertDanMinion();
+            addDanMinion();
             Destroy(other.gameObject);
         }
 
@@ -209,5 +197,32 @@ public class PlayerMovement : MonoBehaviour
         hitRange.transform.localPosition = facing * .5f;
         hitRange.GetComponent<Whack>().active = true;
         //hitRange.SetActive(true);
+    }
+
+    public void addDanMinion()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
+        ListCreator.numberOfItemsCollected++;
+        ListCreator.runInventoryUpdate = true;
+        Debug.Log(UpdateMinionInventoryFunction == null);
+        UpdateMinionInventoryFunction.InsertDanMinion();
+    }
+
+    public void addMikeMinion()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
+        ListCreator.numberOfItemsCollected++;
+        ListCreator.runInventoryUpdate = true;
+        Debug.Log(UpdateMinionInventoryFunction == null);
+        UpdateMinionInventoryFunction.InsertMikeMinion();
+    }
+
+    public void addSeanMinion()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Combat/Summon");
+        ListCreator.numberOfItemsCollected++;
+        ListCreator.runInventoryUpdate = true;
+        Debug.Log(UpdateMinionInventoryFunction == null);
+        UpdateMinionInventoryFunction.InsertSeanMinion();
     }
 }
