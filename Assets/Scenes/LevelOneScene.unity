@@ -5743,7 +5743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/Overworld/Music/Level1Music
-  PlayEvent: 0
+  PlayEvent: 1
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
