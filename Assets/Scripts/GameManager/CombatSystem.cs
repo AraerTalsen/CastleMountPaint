@@ -108,18 +108,32 @@ public class CombatSystem : MonoBehaviour
     public void StateMachine()
     {
         /*Entity turn*/
-
-        //entity.StatusEffect(0)
+        //e.statusEffect[0].Effect();
         //ChooseMove()
-        //ChooseTarget()
-        //move.LoadMiniGame()
-        //SendResults()
-        //RecieveCounter()
-        //entity.StatusEffect(1)
-        //UpdateHUD
+        //e.statusEffect[1].Effect();
+        //uh.UpdateEveryHUD();
 
 
         /*Check if combat is over*/
+    }
+
+    private void ChooseMove()
+    {
+        pb.LoadMoves(enemyParty[0].moveList);
+        //LoadMoves(e.moves)
+            //Open buttons
+            //When a move is chosen, open 'select target'
+    }
+
+    private void SelectTarget()
+    {
+        //Move gives a key for targets
+        //if key == friends[x] -> friend buttons until x
+        //else if key == foes[x] -> foe buttons until x
+        //else if key == all[x] -> friend and foe buttons until x
+        //else -> load predetermined targets
+
+        //move.Load(targets)
     }
 
     private void PlayerTurn()

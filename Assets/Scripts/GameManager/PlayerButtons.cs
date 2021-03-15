@@ -37,6 +37,9 @@ public class PlayerButtons : MonoBehaviour
     private EnemyMoves em;
     private MinionBehaviours mb;
     private CombatSystem cs;
+
+    //Buttons for moves
+    public Button[] b;
     
 
     private void Awake()
@@ -184,5 +187,13 @@ public class PlayerButtons : MonoBehaviour
 
         selectedEntity(select);
 
+    }
+    public delegate void Moves();
+    public void LoadMoves(Moves[] m)
+    {
+        for (int i = 0; i < m.Length; i++)
+        {
+
+        }
     }
 }

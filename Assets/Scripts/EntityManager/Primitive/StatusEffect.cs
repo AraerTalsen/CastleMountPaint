@@ -6,15 +6,8 @@ public class StatusEffect
 {
     private int activationPeriod;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Effect()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("activated");
     }
 }
